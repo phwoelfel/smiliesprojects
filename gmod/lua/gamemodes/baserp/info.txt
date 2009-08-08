@@ -1,0 +1,13 @@
+"Gamemode"
+{
+    "name"          "RP Base"
+    "version"        "0.1"
+
+    "author_name"   "SMILIE[AUT]"
+    "author_email"  "none for you"
+    "author_url"    "also none"
+
+    "icon"  ""
+    "info"  ""
+    "hide"  "0"
+}
