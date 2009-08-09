@@ -1,0 +1,422 @@
+Wednesday 06.05.2009 21:32:31 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:32:55 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:33:16 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:34:01 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:34:14 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:34:29 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:34:41 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:34:52 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:35:03 CEST -- root(1, ::1) -- newContent
+Wednesday 06.05.2009 21:35:08 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:35:30 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:36:14 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:36:33 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:36:48 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:37:44 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:38:03 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:38:18 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:38:39 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:38:43 CEST -- root(1, ::1) -- editNav
+Wednesday 06.05.2009 21:38:51 CEST -- root(1, ::1) -- editNav
+Wednesday 06.05.2009 21:38:54 CEST -- root(1, ::1) -- editNav
+Wednesday 06.05.2009 21:38:55 CEST -- root(1, ::1) -- editNav
+Wednesday 06.05.2009 21:45:02 CEST -- root(1, ::1) -- delNews
+Wednesday 06.05.2009 21:45:28 CEST -- root(1, ::1) -- editContent
+Wednesday 06.05.2009 21:54:21 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:54:48 CEST -- root(1, ::1) -- newNavGroup
+Wednesday 06.05.2009 21:55:39 CEST -- root(1, ::1) -- newNavGroup
+Wednesday 06.05.2009 21:55:49 CEST -- root(1, ::1) -- newNavGroup
+Wednesday 06.05.2009 21:55:52 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:56:05 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:56:16 CEST -- root(1, ::1) -- newUser
+Wednesday 06.05.2009 21:57:09 CEST -- root(1, ::1) -- newUser
+Wednesday 06.05.2009 21:57:52 CEST -- root(1, ::1) -- newUser
+Wednesday 06.05.2009 21:57:56 CEST -- root(1, ::1) -- editUser
+Wednesday 06.05.2009 21:58:00 CEST -- root(1, ::1) -- editUser
+Wednesday 06.05.2009 21:58:05 CEST -- root(1, ::1) -- editUser
+Wednesday 06.05.2009 21:58:08 CEST -- root(1, ::1) -- delUser
+Wednesday 06.05.2009 21:58:11 CEST -- root(1, ::1) -- delUser
+Wednesday 06.05.2009 21:58:20 CEST -- root(1, ::1) -- logout
+Wednesday 06.05.2009 21:59:11 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:59:24 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 21:59:56 CEST -- root(1, ::1) -- newNav
+Wednesday 06.05.2009 22:38:24 CEST -- root(1, ::1) -- editContent
+Wednesday 06.05.2009 22:38:27 CEST -- root(1, ::1) -- editContent
+Wednesday 06.05.2009 22:39:28 CEST -- root(1, ::1) -- editContent
+Wednesday 06.05.2009 22:39:32 CEST -- root(1, ::1) -- editContent
+Wednesday 06.05.2009 22:39:54 CEST -- root(1, ::1) -- editContent
+Wednesday 06.05.2009 22:46:02 CEST -- root(1, ::1) -- editContent
+Wednesday 06.05.2009 23:10:51 CEST -- root(1, ::1) -- delUser
+Wednesday 06.05.2009 23:10:54 CEST -- root(1, ::1) -- delUser
+Wednesday 06.05.2009 23:11:41 CEST -- root(1, ::1) -- unlockUser
+Wednesday 06.05.2009 23:11:43 CEST -- root(1, ::1) -- unlockUser
+Thursday 07.05.2009 22:21:56 CEST -- root(1, ::1) -- editUser
+Thursday 07.05.2009 22:22:02 CEST -- root(1, ::1) -- delUser
+Thursday 07.05.2009 22:22:03 CEST -- root(1, ::1) -- delUser
+Thursday 07.05.2009 22:22:04 CEST -- root(1, ::1) -- delUser
+Thursday 07.05.2009 22:49:30 CEST -- root(1, ::1) -- delUser
+Thursday 07.05.2009 23:37:44 CEST -- root(1, ::1) -- unlockUser
+Thursday 07.05.2009 23:37:48 CEST -- root(1, ::1) -- unlockUser
+Thursday 07.05.2009 23:47:37 CEST -- root(1, ::1) -- unlockUser
+Friday 08.05.2009 08:56:27 CEST -- root(1, ::1) -- unlockUser
+Friday 08.05.2009 14:33:45 CEST -- root(1, ::1) -- unlockUser
+Friday 08.05.2009 14:34:36 CEST -- root(1, ::1) -- newContent
+Friday 08.05.2009 14:34:50 CEST -- root(1, ::1) -- newContent
+Friday 08.05.2009 14:34:52 CEST -- root(1, ::1) -- newNav
+Friday 08.05.2009 14:35:00 CEST -- root(1, ::1) -- newNav
+Friday 08.05.2009 14:35:22 CEST -- root(1, ::1) -- delContent
+Friday 08.05.2009 14:35:25 CEST -- root(1, ::1) -- delContent
+Friday 08.05.2009 14:35:41 CEST -- root(1, ::1) -- delNav
+Friday 08.05.2009 14:35:45 CEST -- root(1, ::1) -- delNav
+Sunday 10.05.2009 01:06:05 CEST -- root(1, ::1) -- delNav
+Monday 11.05.2009 09:20:34 CEST -- root(1, ::1) -- editContent
+Monday 11.05.2009 20:30:32 CEST -- root(1, ::1) -- editContent
+Tuesday 12.05.2009 00:10:23 CEST -- root(1, ::1) -- editContent
+Wednesday 20.05.2009 08:18:36 CEST -- root(1, ::1) -- delNews
+Wednesday 20.05.2009 08:18:39 CEST -- root(1, ::1) -- delNews
+Wednesday 20.05.2009 09:22:55 CEST -- root(1, ::1) -- editNews
+Wednesday 20.05.2009 12:27:32 CEST -- root(1, ::1) -- editNews
+Thursday 21.05.2009 17:17:08 CEST -- root(1, ::1) -- editNews
+Monday 25.05.2009 08:53:33 CEST -- root(1, ::1) -- editNews
+Monday 25.05.2009 09:17:58 CEST -- root(1, ::1) -- editNews
+Monday 25.05.2009 12:50:21 CEST -- root(1, ::1) -- editNews
+Monday 25.05.2009 23:02:57 CEST -- root(1, ::1) -- editNews
+Tuesday 26.05.2009 00:46:04 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:39:42 CEST -- (1, ::1) -- logout
+Wednesday 27.05.2009 08:40:06 CEST -- root(1, ::1) -- newContent
+Wednesday 27.05.2009 08:40:06 CEST -- root(1, ::1) -- newNav
+Wednesday 27.05.2009 08:40:07 CEST -- root(1, ::1) -- newNavGroup
+Wednesday 27.05.2009 08:40:08 CEST -- root(1, ::1) -- delNews
+Wednesday 27.05.2009 08:40:33 CEST -- root(1, ::1) -- editUser
+Wednesday 27.05.2009 08:41:19 CEST -- root(1, ::1) -- logout
+Wednesday 27.05.2009 08:45:57 CEST -- root(1, ::1) -- delTermin
+Wednesday 27.05.2009 08:45:57 CEST -- root(1, ::1) -- delNews
+Wednesday 27.05.2009 08:45:58 CEST -- root(1, ::1) -- delNav
+Wednesday 27.05.2009 08:46:00 CEST -- root(1, ::1) -- delTermin
+Wednesday 27.05.2009 08:46:05 CEST -- root(1, ::1) -- delTermin
+Wednesday 27.05.2009 08:46:07 CEST -- root(1, ::1) -- delTermin
+Wednesday 27.05.2009 08:46:44 CEST -- root(1, ::1) -- delTermin
+Wednesday 27.05.2009 08:46:45 CEST -- root(1, ::1) -- delNav
+Wednesday 27.05.2009 08:46:46 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 08:55:13 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 08:55:16 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:55:18 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:57:19 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 09:33:30 CEST -- root(1, ::1) -- newNav
+Wednesday 27.05.2009 09:33:49 CEST -- root(1, ::1) -- newNav
+Wednesday 27.05.2009 09:36:00 CEST -- root(1, ::1) -- editNav
+Wednesday 27.05.2009 09:36:04 CEST -- root(1, ::1) -- editNav
+Wednesday 27.05.2009 09:36:14 CEST -- root(1, ::1) -- editNav
+Wednesday 27.05.2009 09:38:30 CEST -- root(1, ::1) -- editNav
+Wednesday 27.05.2009 09:38:36 CEST -- root(1, ::1) -- editNav
+Wednesday 27.05.2009 09:39:40 CEST -- root(1, ::1) -- editNav
+Wednesday 27.05.2009 09:40:12 CEST -- root(1, ::1) -- newNav
+Wednesday 27.05.2009 09:40:19 CEST -- root(1, ::1) -- newNav
+Friday 29.05.2009 17:23:17 CEST -- root(1, ::1) -- editNav
+Friday 29.05.2009 17:23:22 CEST -- root(1, ::1) -- delNav
+Friday 29.05.2009 17:23:27 CEST -- root(1, ::1) -- delNav
+Friday 29.05.2009 17:23:33 CEST -- root(1, ::1) -- delNav
+Friday 29.05.2009 17:27:54 CEST -- root(1, ::1) -- newNav
+Friday 29.05.2009 17:30:11 CEST -- root(1, ::1) -- newNav
+Friday 29.05.2009 18:20:00 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:20:03 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:20:07 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:20:13 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:20:15 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:20:23 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:20:41 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:20:43 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:20:49 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:23:27 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:23:30 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:23:38 CEST -- root(1, ::1) -- editUser
+Friday 29.05.2009 18:56:52 CEST -- Admin(5, ::1) -- editNav
+Friday 29.05.2009 18:56:56 CEST -- Admin(5, ::1) -- editNav
+Friday 29.05.2009 18:57:36 CEST -- Admin(5, ::1) -- editNav
+Friday 29.05.2009 18:57:41 CEST -- Admin(5, ::1) -- editNav
+Friday 29.05.2009 18:57:44 CEST -- Admin(5, ::1) -- editNav
+Saturday 30.05.2009 13:32:17 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 13:32:20 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 13:32:24 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 13:37:09 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 13:37:11 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 13:37:15 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 13:40:50 CEST -- Bahmut(30, 92.252.87.231) -- newNav
+Saturday 30.05.2009 13:41:38 CEST -- Bahmut(30, 92.252.87.231) -- editNav
+Saturday 30.05.2009 13:41:41 CEST -- Bahmut(30, 92.252.87.231) -- editNav
+Saturday 30.05.2009 13:41:46 CEST -- Bahmut(30, 92.252.87.231) -- delNav
+Saturday 30.05.2009 13:41:48 CEST -- Bahmut(30, 92.252.87.231) -- newNavGroup
+Saturday 30.05.2009 13:42:13 CEST -- Bahmut(30, 92.252.87.231) -- delNewsComment
+Saturday 30.05.2009 13:42:15 CEST -- Bahmut(30, 92.252.87.231) -- newTermin
+Saturday 30.05.2009 13:42:23 CEST -- Bahmut(30, 92.252.87.231) -- delShoutbox
+Saturday 30.05.2009 13:42:26 CEST -- Bahmut(30, 92.252.87.231) -- editUser
+Saturday 30.05.2009 13:42:32 CEST -- Bahmut(30, 92.252.87.231) -- delUser
+Saturday 30.05.2009 13:42:33 CEST -- Bahmut(30, 92.252.87.231) -- unlockUser
+Saturday 30.05.2009 13:42:35 CEST -- Bahmut(30, 92.252.87.231) -- logout
+Saturday 30.05.2009 13:42:42 CEST -- Bahmut(30, 92.252.87.231) -- editContent
+Saturday 30.05.2009 13:42:45 CEST -- Bahmut(30, 92.252.87.231) -- editContent
+Saturday 30.05.2009 13:43:10 CEST -- Bahmut(30, 92.252.87.231) -- editContent
+Saturday 30.05.2009 13:43:11 CEST -- Bahmut(30, 92.252.87.231) -- newContent
+Saturday 30.05.2009 13:43:14 CEST -- Bahmut(30, 92.252.87.231) -- delContent
+Saturday 30.05.2009 13:43:16 CEST -- Bahmut(30, 92.252.87.231) -- newContent
+Saturday 30.05.2009 13:44:17 CEST -- Bahmut(30, 92.252.87.231) -- newTermin
+Saturday 30.05.2009 14:49:18 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 14:49:26 CEST -- root(1, ::1) -- newUser
+Saturday 30.05.2009 14:49:50 CEST -- root(1, ::1) -- logout
+Saturday 30.05.2009 14:50:02 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:50:34 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:50:55 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:50:57 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:51:04 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:51:06 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:51:06 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:51:24 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:56:05 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:56:34 CEST -- Admin(5, ::1) -- editUser
+Saturday 30.05.2009 14:56:41 CEST -- Admin(5, ::1) -- logout
+Saturday 30.05.2009 14:56:48 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 14:56:52 CEST -- root(1, ::1) -- newUser
+Saturday 30.05.2009 14:57:05 CEST -- root(1, ::1) -- newUser
+Saturday 30.05.2009 14:57:10 CEST -- root(1, ::1) -- unlockUser
+Saturday 30.05.2009 14:57:15 CEST -- root(1, ::1) -- unlockUser
+Saturday 30.05.2009 14:57:20 CEST -- root(1, ::1) -- logout
+Saturday 30.05.2009 14:57:27 CEST -- Admin2(31, ::1) -- editUser
+Saturday 30.05.2009 14:57:30 CEST -- Admin2(31, ::1) -- logout
+Saturday 30.05.2009 14:57:37 CEST -- root(1, ::1) -- editUser
+Saturday 30.05.2009 14:57:43 CEST -- root(1, ::1) -- delUser
+Saturday 30.05.2009 14:57:47 CEST -- root(1, ::1) -- delUser
+Saturday 30.05.2009 14:57:51 CEST -- root(1, ::1) -- newUser
+Saturday 30.05.2009 14:58:00 CEST -- root(1, ::1) -- newUser
+Saturday 30.05.2009 14:58:02 CEST -- root(1, ::1) -- editUser
+Wednesday 03.06.2009 08:54:21 CEST -- root(1, ::1) -- editNav
+Wednesday 03.06.2009 08:54:23 CEST -- root(1, ::1) -- editNav
+Wednesday 03.06.2009 08:54:28 CEST -- root(1, ::1) -- editNav
+Saturday 13.06.2009 14:43:23 CEST -- root(1, ::1) -- newUser
+Saturday 13.06.2009 14:43:44 CEST -- root(1, ::1) -- newUser
+Saturday 13.06.2009 14:44:13 CEST -- root(1, ::1) -- editUser
+Saturday 13.06.2009 15:28:59 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:29:06 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:30:27 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:32:23 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:32:39 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:32:46 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:36:26 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:36:44 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:39:57 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 15:40:47 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:08:42 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:08:53 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:09:15 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:10:14 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:27:50 CEST -- root(1, ::1) -- newContent
+Saturday 13.06.2009 17:28:48 CEST -- root(1, ::1) -- newContent
+Saturday 13.06.2009 17:30:12 CEST -- root(1, ::1) -- newContent
+Saturday 13.06.2009 17:30:16 CEST -- root(1, ::1) -- newNav
+Saturday 13.06.2009 17:30:33 CEST -- root(1, ::1) -- newNav
+Saturday 13.06.2009 17:30:47 CEST -- root(1, ::1) -- delNav
+Saturday 13.06.2009 17:30:52 CEST -- root(1, ::1) -- delNav
+Saturday 13.06.2009 17:31:09 CEST -- root(1, ::1) -- delContent
+Saturday 13.06.2009 17:31:14 CEST -- root(1, ::1) -- delContent
+Saturday 13.06.2009 17:31:15 CEST -- root(1, ::1) -- newContent
+Saturday 13.06.2009 17:31:24 CEST -- root(1, ::1) -- newContent
+Saturday 13.06.2009 17:31:25 CEST -- root(1, ::1) -- newNav
+Saturday 13.06.2009 17:31:36 CEST -- root(1, ::1) -- newNav
+Saturday 13.06.2009 17:57:15 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:57:56 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:58:42 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:59:01 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:59:15 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:59:36 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:59:47 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:59:49 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 17:59:53 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:00:17 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:00:48 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:01:01 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:01:20 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:02:41 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:03:16 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:03:22 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:03:27 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:03:59 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:04:01 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:04:20 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:04:23 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:05:27 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:05:28 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:06:13 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:08:44 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:08:46 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:27:05 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:27:09 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:28:29 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:59:45 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 18:59:54 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 19:00:31 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 19:01:04 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 19:02:14 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 19:02:49 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 19:02:56 CEST -- root(1, ::1) -- testInsert
+Saturday 13.06.2009 19:03:09 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 08:53:39 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 08:53:57 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 08:54:42 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 08:55:20 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 08:57:09 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 08:57:23 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:00:29 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:00:37 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:00:50 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:01:21 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:01:37 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:01:45 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:01:54 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:04:31 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 09:06:33 CEST -- root(1, ::1) -- newNav
+Wednesday 17.06.2009 09:06:50 CEST -- root(1, ::1) -- newNav
+Wednesday 17.06.2009 09:08:26 CEST -- root(1, ::1) -- newNav
+Wednesday 17.06.2009 09:08:36 CEST -- root(1, ::1) -- editNav
+Wednesday 17.06.2009 09:08:39 CEST -- root(1, ::1) -- editNav
+Wednesday 17.06.2009 09:08:42 CEST -- root(1, ::1) -- editNav
+Wednesday 17.06.2009 09:30:54 CEST -- root(1, ::1) -- newNews
+Wednesday 17.06.2009 09:45:11 CEST -- root(1, ::1) -- newNews
+Wednesday 17.06.2009 12:09:19 CEST -- root(1, ::1) -- newNews
+Wednesday 17.06.2009 12:18:27 CEST -- root(1, ::1) -- newNews
+Wednesday 17.06.2009 12:18:38 CEST -- root(1, ::1) -- newNews
+Wednesday 17.06.2009 12:19:05 CEST -- root(1, ::1) -- newNews
+Wednesday 17.06.2009 12:19:13 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 12:48:47 CEST -- root(1, ::1) -- testInsert
+Wednesday 17.06.2009 23:21:23 CEST -- root(1, ::1) -- testInsert
+Wednesday 24.06.2009 11:46:34 CEST -- root(1, ::1) -- editContent
+Wednesday 24.06.2009 11:46:36 CEST -- root(1, ::1) -- editNav
+Wednesday 24.06.2009 11:46:42 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 24.06.2009 11:46:46 CEST -- root(1, ::1) -- editNews
+Wednesday 24.06.2009 11:46:52 CEST -- root(1, ::1) -- editUser
+Wednesday 24.06.2009 12:15:34 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:15:48 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:16:14 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:16:56 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:16:58 CEST -- root(1, ::1) -- testUpdate name=
+Wednesday 24.06.2009 12:17:05 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:17:09 CEST -- root(1, ::1) -- testUpdate name=
+Wednesday 24.06.2009 12:17:25 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:17:28 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:17:29 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:18:00 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:18:02 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:18:14 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:20:50 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:20:59 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:21:23 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:26:35 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:26:36 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:26:54 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:27:27 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:27:29 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:27:36 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:27:48 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:38:28 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:38:42 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:38:45 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:39:18 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:39:45 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:39:50 CEST -- root(1, ::1) -- testUpdate
+Wednesday 24.06.2009 12:45:00 CEST -- root(1, ::1) -- testDelete
+Wednesday 24.06.2009 12:45:08 CEST -- root(1, ::1) -- testDelete
+Wednesday 24.06.2009 12:47:01 CEST -- root(1, ::1) -- editContent
+Wednesday 24.06.2009 12:47:04 CEST -- root(1, ::1) -- editContent
+Wednesday 24.06.2009 12:47:11 CEST -- root(1, ::1) -- editContent
+Wednesday 24.06.2009 23:02:33 CEST -- root(1, ::1) -- editContent
+Wednesday 24.06.2009 23:02:40 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:03:14 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:23:28 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:30:09 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:32:12 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:33:08 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:33:45 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:34:42 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:35:55 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:36:29 CEST -- root(1, ::1) -- newNav
+Wednesday 24.06.2009 23:38:23 CEST -- root(1, ::1) -- newContent
+Wednesday 24.06.2009 23:38:25 CEST -- root(1, ::1) -- newNavIntern
+Wednesday 24.06.2009 23:38:28 CEST -- root(1, ::1) -- newNavExtern
+Wednesday 24.06.2009 23:39:03 CEST -- root(1, ::1) -- newNavExtern
+Wednesday 24.06.2009 23:39:55 CEST -- root(1, ::1) -- delNav
+Wednesday 24.06.2009 23:41:05 CEST -- root(1, ::1) -- delNav
+Wednesday 24.06.2009 23:41:10 CEST -- root(1, ::1) -- delNav
+Wednesday 24.06.2009 23:41:16 CEST -- root(1, ::1) -- delNav
+Thursday 25.06.2009 18:03:23 CEST -- root(1, ::1) -- delNav
+Monday 13.07.2009 20:38:31 CEST -- root(1, ::1) -- newUser
+Monday 13.07.2009 20:38:41 CEST -- root(1, ::1) -- editNav
+Monday 13.07.2009 20:39:47 CEST -- root(1, ::1) -- editNav
+Monday 13.07.2009 20:40:38 CEST -- root(1, ::1) -- editNav
+Monday 13.07.2009 20:52:37 CEST -- root(1, ::1) -- editNav
+Monday 13.07.2009 20:55:15 CEST -- root(1, ::1) -- delTermin
+Tuesday 14.07.2009 20:44:15 CEST -- root(1, ::1) -- logout
+Wednesday 15.07.2009 10:33:01 CEST -- root(1, ::1) -- delShoutbox
+Wednesday 15.07.2009 10:35:06 CEST -- root(1, ::1) -- editNews
+Wednesday 15.07.2009 10:35:09 CEST -- root(1, ::1) -- editNews
+Wednesday 15.07.2009 10:35:48 CEST -- root(1, ::1) -- editNews
+Wednesday 15.07.2009 10:35:50 CEST -- root(1, ::1) -- editNews
+Wednesday 15.07.2009 10:36:08 CEST -- root(1, ::1) -- editNews
+Wednesday 15.07.2009 10:38:51 CEST -- root(1, ::1) -- editNews
+Wednesday 15.07.2009 10:39:48 CEST -- root(1, ::1) -- delNews
+Wednesday 15.07.2009 10:39:53 CEST -- root(1, ::1) -- delNewsComment
+Wednesday 15.07.2009 10:39:55 CEST -- root(1, ::1) -- delNewsComment
+Wednesday 15.07.2009 11:07:50 CEST -- root(1, ::1) -- newUser
+Wednesday 15.07.2009 11:08:15 CEST -- root(1, ::1) -- newUser
+Wednesday 15.07.2009 11:08:59 CEST -- root(1, ::1) -- newUser
+Wednesday 15.07.2009 11:09:19 CEST -- root(1, ::1) -- newUser
+Wednesday 15.07.2009 11:09:51 CEST -- root(1, ::1) -- newUser
+Wednesday 15.07.2009 11:09:53 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:11:13 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:11:21 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:11:26 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:12:08 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:13:32 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:13:35 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:13:40 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:14:33 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:14:36 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:14:38 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:14:59 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:15:12 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:15:59 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:17:15 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:18:06 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:18:42 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:18:50 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:19:15 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 11:19:43 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 12:57:29 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 12:57:41 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 13:00:02 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 13:02:39 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 13:10:24 CEST -- root(1, ::1) -- editUser
+Wednesday 15.07.2009 13:10:26 CEST -- root(1, ::1) -- delUser
+Wednesday 15.07.2009 13:10:28 CEST -- root(1, ::1) -- unlockUser
+Wednesday 15.07.2009 13:19:05 CEST -- root(1, ::1) -- delUser
+Wednesday 15.07.2009 13:19:12 CEST -- root(1, ::1) -- newNavGroup
+Wednesday 15.07.2009 13:19:18 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:19:21 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:19:33 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:20:24 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:20:32 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:21:02 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:21:37 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:21:39 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:21:43 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:24:26 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:24:35 CEST -- root(1, ::1) -- editNavGroup
+Wednesday 15.07.2009 13:26:32 CEST -- root(1, ::1) -- editContent
+Wednesday 15.07.2009 13:26:42 CEST -- root(1, ::1) -- editNews
+Wednesday 15.07.2009 13:26:43 CEST -- root(1, ::1) -- editNews
+Wednesday 15.07.2009 13:50:44 CEST -- root(1, ::1) -- editContent
+Wednesday 15.07.2009 13:50:48 CEST -- root(1, ::1) -- delContent
+Wednesday 15.07.2009 13:57:43 CEST -- root(1, ::1) -- delContent
+Wednesday 15.07.2009 13:57:44 CEST -- root(1, ::1) -- newRights
+Wednesday 15.07.2009 13:57:46 CEST -- root(1, ::1) -- editRights
+Wednesday 15.07.2009 13:57:50 CEST -- root(1, ::1) -- editRights
+Wednesday 15.07.2009 13:57:53 CEST -- root(1, ::1) -- delRights
+Saturday 18.07.2009 00:03:51 CEST -- root(1, ::1) -- delRights
+

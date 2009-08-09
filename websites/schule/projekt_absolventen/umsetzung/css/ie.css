@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+.nav_top
+{
+	margin-bottom: -2px;
+}
+#box
+{
+	width: 990px;
+}
+.content_bg
+{
+	padding-left: 30px;
+}

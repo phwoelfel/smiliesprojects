@@ -1,0 +1,28 @@
+Wednesday 27.05.2009 08:50:06 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 08:50:07 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:50:08 CEST -- root(1, ::1) -- delNews
+Wednesday 27.05.2009 08:50:09 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:55:01 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 08:55:03 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:55:04 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:57:21 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:57:22 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 08:57:29 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 09:24:00 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 09:24:01 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 09:24:01 CEST -- root(1, ::1) -- delNews
+Wednesday 27.05.2009 09:24:02 CEST -- root(1, ::1) -- editNews
+Wednesday 27.05.2009 09:24:03 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 09:33:51 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 09:33:57 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 09:34:38 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 09:34:43 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 09:35:52 CEST -- root(1, ::1) -- newNews
+Wednesday 27.05.2009 09:40:20 CEST -- root(1, ::1) -- newNews
+Friday 29.05.2009 17:37:43 CEST -- root(1, ::1) -- editNews
+Saturday 30.05.2009 13:40:22 CEST -- Bahmut(30, 92.252.87.231) -- newNews
+Saturday 30.05.2009 13:40:27 CEST -- Bahmut(30, 92.252.87.231) -- editNews
+Saturday 30.05.2009 13:40:31 CEST -- Bahmut(30, 92.252.87.231) -- delNews
+Sunday 21.06.2009 18:16:33 CEST -- root(1, ::1) -- editNews
+Sunday 21.06.2009 18:16:36 CEST -- root(1, ::1) -- editNews
+

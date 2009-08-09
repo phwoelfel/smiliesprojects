@@ -1,0 +1,168 @@
+@CHARSET "UTF-8";
+/*
+	allgemeines -------------------------------------------------------------------------------------
+*/
+
+body
+{
+	background-color: #e7e7e7;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12pt;
+}
+
+h1
+{
+	border-bottom: 4px #aeaeae solid;
+	margin: 0px;
+	padding: 0px;
+}
+h2
+{
+	border-bottom: 4px #aeaeae solid;
+	margin: 0px;
+	padding: 0px;
+}
+
+.news
+{
+	border-bottom: 0px #aeaeae solid;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*
+	Divs -------------------------------------------------------------------------------------
+*/
+#box
+{
+	width: 915px;
+	margin: 10px auto;
+}
+#header
+{
+	position: relativ;
+}
+
+#nav
+{
+	float: left;
+	width: 179px;
+	margin-top: 40px;
+	/*border: 1px #000 solid;*/
+}
+
+#content
+{
+	width: 808px;
+	margin-left: 110px;
+	margin-top: 20px;
+}
+
+#footer
+{
+	width: 808px;
+	margin-left: 110px;
+	text-align: center;
+}
+
+/*
+	Navigation -------------------------------------------------------------------------------------
+*/
+
+.navbox
+{
+	
+}
+
+
+.navi, .navi_sub
+{
+	background-image: url("../images/nav_bg.png");
+	height: 20px;
+	padding-left: 10px;
+	background-repeat: repeat-y;
+}
+
+.navi_sub
+{
+	padding-left: 30px;	
+}
+
+.nav_top
+{
+	background-image: url("../images/nav_top.png");
+	height: 16px;
+	background-repeat: no-repeat;
+}
+
+
+.nav_bottom
+{
+	background-image: url("../images/nav_bottom.png");
+	height: 23px;
+	background-repeat: no-repeat;
+}
+
+
+.navbox a
+{
+	color: #000;
+	text-decoration: none;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 9pt;
+	/*font-weight: bold;*/
+	
+}
+.navbox a:visited
+{
+	color: #000;
+	text-decoration: none;
+}
+.navbox a:hover
+{
+	color: #fff;
+	text-decoration: none;
+}
+.navbox a:active
+{
+	color: #fff;
+	text-decoration: underline;
+}
+
+
+
+/*
+	Content -------------------------------------------------------------------------------------
+*/
+
+.content_top
+{
+	background-image: url("../images/content_top.png");
+	height: 16px;
+	background-repeat: repeat-y;
+}
+
+.content_bg
+{
+	background-image: url("../images/content_bg.png");
+	padding:1px 30px 1px 80px;
+	background-repeat: repeat-y;
+}
+
+.content_bottom
+{
+	background-image: url("../images/content_bottom.png");
+	height: 22px;
+	background-repeat: repeat-y;
+}
+
+
+/*
+	Links -------------------------------------------------------------------------------------
+*/
+
+a
+{
+	color: #000;
+	text-decoration: underline;
+}

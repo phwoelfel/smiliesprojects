@@ -1,0 +1,12 @@
+Website: http://htl.kilu.de/projekt/
+phpMyAdmin: http://htl.kilu.de/phpmyadmin/
+FTP: htl.kilu.de
+
+User: htl@1
+Passwort: weAre3ANHtl3R
+
+User und Passwort sind fuer phpMyAdmin und FTP
+
+Admin fuer die Seite:
+User: Admin
+Passwort: AdminPsw

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+<channel rdf:about="feed.php">
+<title>HTL Rennweg Absolventen - News</title>
+<link>feed.php</link>
+<description>RSS News Feed von HTL Rennweg Absolventen</description>
+<dc:language>de-at</dc:language>
+<dc:rights>Copyright by Philip Woelfel philip[at]woelfel.at</dc:rights>
+<dc:date>2009-06-12T17:04:53+01:00</dc:date>
+<dc:creator>Philip Woelfel</dc:creator>
+<dc:subject>HTL Rennweg Absolventen</dc:subject>
+<items>
+<rdf:Seq><rdf:li rdf:resource="index.php?site=news&id=2"/>
+<rdf:li rdf:resource="index.php?site=news&id=3"/>
+<rdf:li rdf:resource="index.php?site=news&id=4"/>
+</rdf:Seq>
+</items>
+<image rdf:resource="images/logo.png"/>
+</channel>
+<item rdf:about="index.php?site=news&id=2">
+<title>Hallo Welt</title>
+<link>index.php?site=news&id=2</link>
+<pubDate>Tue, 21 Apr 2009 17:05:55 +0200</pubDate>
+<description>Wie gehts dir denn?
+
+Test
+
+blablubbb</description>
+<feedburner:origLink>index.php?site=news&id=2</feedburner:origLink>
+</item>
+<item rdf:about="index.php?site=news&id=3">
+<title>blablablubbbb</title>
+<link>index.php?site=news&id=3</link>
+<pubDate>Tue, 21 Apr 2009 17:06:00 +0200</pubDate>
+<description>Hello World!
+
+
+
+lasjhdf
+
+adfhasdfhasd
+
+fa
+
+sdf
+
+as
+
+fa</description>
+<feedburner:origLink>index.php?site=news&id=3</feedburner:origLink>
+</item>
+<item rdf:about="index.php?site=news&id=4">
+<title>Testing</title>
+<link>index.php?site=news&id=4</link>
+<pubDate>Wed, 27 May 2009 08:57:29 +0200</pubDate>
+<description>Datum??
+
+hallo wie gehts
+
+gasdasg
+
+a+gheiahgae
+
+asdg
+
+a
+
+sdgajsrlighwr
+
+gasdf
+
+agljhawogrj</description>
+<feedburner:origLink>index.php?site=news&id=4</feedburner:origLink>
+</item>
+</rdf:RDF>

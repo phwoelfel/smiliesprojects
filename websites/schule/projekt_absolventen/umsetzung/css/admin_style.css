@@ -1,0 +1,49 @@
+body
+{
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 16px;
+}
+#nav
+{
+	position: absolute;
+	width:220px;
+	padding: 5px;
+}
+#content
+{
+	position: absolute;
+	left: 225px;
+}
+/*-----------------------links-----------------------*/
+
+a:visited
+{
+	color: #000;
+	text-decoration: underline;
+	cursor: pointer;	
+}
+a:link
+{
+	color: #000;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a:active
+{
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover
+{
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;	
+}
+
+#content td
+{
+	text-align: center;
+}
