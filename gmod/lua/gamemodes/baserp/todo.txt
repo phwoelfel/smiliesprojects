@@ -1,7 +1,6 @@
 TODO:
-	sql beim joinen
 	jobselect
 	scoreboard
 	türen
 	geldsystem
-	convars
+	hud: health und armor schriftfarbe ändern je nach health/armor
