@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Jan 29 08:59:51 CET 2009
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=MCChat.jar
+manifest.mergeall=true
+manifest.mainclass=nw_prog.MultiClient
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|3AN>~multithreading/;<po|3AN>~nw_prog/~.DS_Store;<po|3AN>~nw_prog/~BadThread.class;<po|3AN>~nw_prog/~ChatClient.class;<po|3AN>~nw_prog/~ChatServ$1.class;<po|3AN>~nw_prog/~ChatServ.class;<po|3AN>~nw_prog/~CLHandler.class;<po|3AN>~nw_prog/~ClientHandle.class;<po|3AN>~nw_prog/~CloseThread.class;<po|3AN>~nw_prog/~EchoServer.class;<po|3AN>~nw_prog/~Hallo_Welt_Server.class;<po|3AN>~nw_prog/~MachwasmitnClient.class;<po|3AN>~nw_prog/~MultiEchoServer.class;<po|3AN>~nw_prog/~MutliSender.class;<po|3AN>~nw_prog/~myEx.class;<po|3AN>~nw_prog/~Qotd_server.class;<po|3AN>~nw_prog/~QotdClientHandler.class;<po|3AN>~nw_prog/~QotdStopper.class;<po|3AN>~nw_prog/~Rechenserver.class;<po|3AN>~nw_prog/~RS_clhandler.class;<po|3AN>~nw_prog/~Server.class;<po|3AN>~nw_prog/~Testclient.class;<po|3AN>~Test.class
+includes=
