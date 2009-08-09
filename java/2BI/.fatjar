@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Oct 02 20:39:27 CEST 2008
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=umrechner.jar
+manifest.mergeall=true
+manifest.mainclass=gui.umrechner
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|2BI>~applets/;<po|2BI>~asdf/;<po|2BI>~ginf/;<po|2BI>~gui/~Border_layout_test.class;<po|2BI>~gui/~Farbzeichnen.class;<po|2BI>~gui/~Grid_Layout_test.class;<po|2BI>~gui/~Kreuzprodukt_vektoren.class;<po|2BI>~gui/~popup.class;<po|2BI>~gui/~Rechner.class;<po|2BI>~gui/~Rechner_border_layout.class;<po|2BI>~gui/~Sinuskurven.class;<po|2BI>~gui/~Taschenrechner.class;<po|2BI>~gui/~TicTacToe.class;<po|2BI>~gui/~umrechner_dd.class;<po|2BI>~gui/~umrechner_rb.class;<po|2BI>~gui/~Zeichnen.class;<po|2BI>~praktisch/;<po|2BI>~praktisch_sinnvoll/;<po|2BI>~schuluebung/;<po|2BI>~Superklassen/;<po|2BI>~tests/;<po|2BI>~ue_labels_checkbox_font/;<po|2BI>~.DS_Store
+includes=

@@ -1,0 +1,9 @@
+Affe;monkey :D
+Baum;tree
+Buchi;gschissenes Kind
+Gerald;kluges Kind
+Haus;house
+Matthias;dummes Kind
+Trimmel;Perverser Idiot
+abcdefghijklmnopqrstuvwxyz;Das Alphabet
+test123;das ist ein test
