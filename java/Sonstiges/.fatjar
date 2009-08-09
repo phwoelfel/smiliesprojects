@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Oct 08 11:26:48 CEST 2008
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=netchat_client.jar
+manifest.mergeall=true
+manifest.mainclass=netchat.TCPClient
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|Sonstiges>~allerhand/;<po|Sonstiges>~gui/;<po|Sonstiges>~netchat/~Clienthandler.class;<po|Sonstiges>~netchat/~GUIClient$1.class;<po|Sonstiges>~netchat/~GUIClient.class;<po|Sonstiges>~netchat/~Server.class;<po|Sonstiges>~org/;<po|Sonstiges>~Widerstandsschaltung/;<po|Sonstiges>~Menues$1.class;<po|Sonstiges>~Menues.class;<po|Sonstiges>~Netzwerk_test$1$1.class;<po|Sonstiges>~Netzwerk_test$1.class;<po|Sonstiges>~Netzwerk_test.class;<po|Sonstiges>~Taschenrechner_1.class;<po|Sonstiges>~TCPServer.class
+includes=
