@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Eieruhr-Server</title>
+</head>
+
+<body>
+
+<h2>Eieruhr-Server</h2>
+<p>Es gibt noch eine Standalone-Eieruhr in Deiner Küche? Vielleicht
+sogar mit mechanischem Uhrwerk?!? Igitt!! Höchste Zeit für
+eine netzwerkfähige Eieruhr... ;-)</p>
+<p>Daher sollst Du einen Server programmieren, der als Eieruhr für mehrere
+telnet-Clients funktioniert. Sobald man mit einem Client eine Verbindung zu
+diesem Server aufnimmt, wird man aufgefordert, die gewünschte Kochzeit
+(in Sekunden) einzugeben. Bei ungültiger Eingabe wird die Aufforderung
+wiederholt.</p>
+<p>Unmittelbar nach der Eingabe beginnt die Zeit zu laufen. Jede Sekunde
+erscheint auf der Client-Konsole ein Punkt zum Zeichen dafür, dass die
+Kochzeit läuft.</p>
+<p>Sobald die Kochkeit abgelaufen ist, erscheint die Nachricht "RRRRRRING!!"
+auf der Client-Konsole. Diese Nachricht wird in Abständen von 2 Sekunden
+solange wiederholt, bis man beim Client irgendeine Taste drückt.
+Danach beendet der Server die Verbindung zu diesem Client.</p>
+<p>Beim Client sieht das dann z.B. so aus:<p>
+<p><img src="screenshot.png" /></p>
+<p>Die folgenden Ereignisse protokolliert der Server auf seiner Konsole:
+<ul>
+<li>sobald der Server betriebsbereit ist</li>
+<li>Verbindungsaufnahme eines Clients</li>
+<li>Beginn der Kochzeit bei einem Client</li>
+<li>Ende der Kochzeit bei einem Client</li>
+<li>Beenden der Verbindung mit einem Client</li>
+<li>Auftreten eines unbehebbaren Fehlers</li>
+</ul></p>
+<p>Der Server muss mehrere Clients zugleich bedienen können. Wenn bei einem
+Client ein Eingabe- oder Netzwerkfehler auftritt, darf das keine Auswirkungen
+auf die anderen Clients haben.</p>
+<h2>Hinweise</h2>
+<p>Sendet man einen Text mit einem <strong><code>PrintWriter</code></strong>, 
+so sollte man danach die <strong><code>flush()</code></strong>-Methode
+des <strong><code>PrintWriter</code></strong>s aufrufen. Nur so kann man sicher sein, 
+dass der ganze Text gleich ins Netz geht und nicht erst
+eine Zeitlang in einem Puffer hängenbleibt.</p>
+<p>Eine ungültige Zahleneingabe erkennt man daran, dass die Methode
+<strong><code>nextInt()</code></strong> eine <strong><code>InputMismatchException</code></strong> auslöst.</p>
+<p>Wenn <strong><code>client</code></strong> der <strong><code>TcpSocket</code></strong> des Clients ist, kann man über
+den Methodenaufruf <strong><code>client.getInputStream().available()</code></strong> feststellen,
+ob beim Client eine Taste gedrückt wurde:
+<ul>
+<li>wenn eine Taste gedrückt wurde, ist der Rückgabewert größer als 0</li>
+<li>wenn keine Taste gedrückt wurde, ist der Rückgabewert gleich 0</li>
+</ul>
+<p>Damit man Deine Eieruhr auch hören kann, gib statt <strong><code>"RRRRRRING!!"</code></strong>
+den String <strong><code>"\u0007"</code></strong> aus. Bitte sparsam verwenden, um Deine
+MitschülerInnen nicht zu stören.</p>
+<h2>Bitte beachten: </h2>
+<ul>
+  <li>Als Referenz und zum Ausprobieren findest Du den fertigen Server in der  Datei <strong><code>eieruhr.jar</code></strong>.
+  Falls Du diese Datei auf Deinem System nicht durch einen Doppelklick ausf&uuml;hren kannst, wechsle an der Eingabeaufforderung
+  in Dein Projektverzeichnis und gib folgende Befehlszeile ein:<br />
+  <pre><strong>java -jar eieruhr.jar</strong></pre>
+  </li>
+  <li>Verwende als Client den telnet-Client Deines Systems.</li>
+  <li>Alle Punkte in der <strong><code>.java</code></strong>-Datei, die von Dir zu bearbeiten ist, sind im Kommentar durch das Wort <strong><code>TODO</code></strong> gekennzeichnet.</li>
+</ul>
+<h2>Bewertung</h2>
+<table border="1">
+<thead><tr><td width="100"><div align="center"><strong>Punkte</strong></div></td><td width="100"><div align="center"><strong>Note</strong></div></td>
+</tr></thead>
+<tbody>
+<tr><td><div align="center">0 bis 12</div></td><td><div align="center">5</div></td>
+</tr>
+<tr><td><div align="center">&gt;12 bis 15</div></td><td><div align="center">4</div></td>
+</tr>
+<tr><td><div align="center">&gt;15 bis 18</div></td><td><div align="center">3</div></td>
+</tr>
+<tr><td><div align="center">&gt;18 bis 21</div></td><td><div align="center">2</div></td>
+</tr>
+<tr><td><div align="center">&gt;21 bis 24</div></td><td><div align="center">1</div></td>
+</tr>
+</tbody></table>
+<h2>Packe die <strong><code>.java</code></strong>-Datei in ein ZIP-Archiv mit dem Namen <span style="font-weight: bold; font-family: courier new,courier,monospace;">UE_1_1_3AN_familienname.zip</span> und lade dieses Archiv wieder auf den Moodle-Server.
+<span style="color: #FF0000"><br/>
+Bitte vor dem Hochladen überprüfen, ob dieses Archiv auch wieder entpackt werden kann!</span></h2>
+<h2>Viel Erfolg! </h2>
+</body>
+</html>
