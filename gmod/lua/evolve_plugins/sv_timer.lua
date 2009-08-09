@@ -16,7 +16,7 @@ function PLUGIN:Call( ply, args )
 		if ( table.Count(args)>=3 ) then
 			local title = args[1];
 			table.remove(args, 1);
-			local secs = args[1];
+			local secs = tonumber(args[1]);
 			if(secs<=50)then
 				table.remove(args, 1);
 				local cmd = args[1];
@@ -25,7 +25,7 @@ function PLUGIN:Call( ply, args )
 				
 				evolve:notify( evolve.colors.blue, ply:Nick( ), evolve.colors.white, " started the timer \"", evolve.colors.red, title, evolve.colors.white, "\"." )
 				timer.Simple(secs, function() game.ConsoleCommand(cmd .." " ..params .."\n") end); //RunConsoleCommand(cmd, params)
-				timer.Create(title, 1, secs, my_ev_timer, title, secs);
+				timer.Create(title, 1, secs-1, my_ev_timer, title, secs);
 				cursec = 0;
 			else
 				evolve:notify( ply, evolve.colors.red, "Can't create a timer longer than 50 seconds!" )
