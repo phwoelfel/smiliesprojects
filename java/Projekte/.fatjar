@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Oct 30 15:15:03 CET 2008
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=snm_rechner.jar
+manifest.mergeall=true
+manifest.mainclass=ip_rechner.SNM_Umrechner
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|Projekte>~ip_rechner/~Dez_bin_iprechner.class;<po|Projekte>~ip_rechner/~IP_Anding.class;<po|Projekte>~ip_rechner/~PLabel.class;<po|Projekte>~ip_rechner/~print2dArray.class;<po|Projekte>~ip_rechner/~printArray.class;<po|Projekte>~ip_rechner/~Rechner.class;<po|Projekte>~ip_rechner/~Rechner_bin.class;<po|Projekte>~ip_rechner/~Test.class;<po|Projekte>~Dame.class;<po|Projekte>~Figur.class;<po|Projekte>~GUI.class;<po|Projekte>~IO.class;<po|Projekte>~Spielfeld.class
+includes=
