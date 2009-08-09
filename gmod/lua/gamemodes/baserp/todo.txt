@@ -1,0 +1,7 @@
+TODO:
+	sql beim joinen
+	jobselect
+	scoreboard
+	türen
+	geldsystem
+	convars
