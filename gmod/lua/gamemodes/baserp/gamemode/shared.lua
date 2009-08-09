@@ -69,6 +69,6 @@ end
 
 local shIncFiles = file.FindInLua("../" ..GM.Folder .."/gamemode/shared/*.lua");
 for _,f in pairs(shIncFiles) do
-	print("[RP Base][Shared] Included "..f);
+	print("[" ..GM.RP_NAME .."][Shared] Included "..f);
 	include("/shared/"..f);
 end
