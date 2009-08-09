@@ -1,0 +1,164 @@
+Besaßen Sie jemals einen Computer?
+Haben Sie ihn verwendet?
+... mehr als 4 Stunden durchgehend?
+... mehr als 8 Stunden?
+... mehr als 16 Stunden?
+... mehr als 32 Stunden?
+Haben Sie jemals Lochstreifen gepatcht?
+Haben Sie wegen Programmierens einmal den Unterricht versäumt?
+... eine Prüfung?
+... eine Hochzeit?
+... Ihre eigene Hochzeit?
+Haben Sie je im betrunkenen Zustand programmiert?
+... hat es am nächsten Tag noch einen Sinn ergeben?
+Haben Sie je einen Flugsimulator geschrieben?
+Haben Sie jemals die Garantiebestimmungen Ihrer Geräte verletzt?
+Einmal den Wert von 4 verändert?
+... unabsichtlich?
+... in einer anderen Sprache als Fortran?
+Machen Sie Ihr Leben mit DWIM (do what I mean) interessant?
+Haben Sie einem Computer einen Namen gegeben?
+Beschweren Sie sich, wenn ein "Feature" behoben wird?
+Essen Sie Schleimpilze?
+Wissen Sie ihr Alter in Tagen?
+Wollten Sie jemals Pizza herunterladen?
+Haben Sie je einen Computerwitz erfunden?
+... hat jemand ihn nicht verstanden?
+Können Sie Jabberwocky aufsagen?
+... rückwärts?
+Haben Sie "Donald Duck in Mathmagic Land" gesehen?
+Haben Sie "Tron" gesehen?
+Haben Sie "Wargames" gesehen?
+Wissen Sie, wofür ASCII steht?
+... EBCDIC?
+Können Sie ASCII hex und oktal lesen und schreiben?
+Kennen Sie die Namen aller ASCII-Steuerzeichen?
+Können Sie EBCDIC hex lesen und schreiben?
+Können Sie von EBCDIC nach ASCII umwandeln und umgekehrt?
+Wissen Sie, welche Zeichen in ASCII und EBCDIC gleich sind?
+Kennen Sie den Wert von maxint auf Ihrem System?
+Jemals zwecks höherer Genauigkeit einen eigenen numerischen Datentyp definiert?
+Können Sie die Zweierpotenzen bis 2**16 in beliebiger Reihenfolge nennen?
+... bis 2*32?
+... bis 2*64?
+Können Sie eine Lochkarte lesen, wenn Sie die Löcher ansehen?
+... wenn Sie die Löcher fühlen?
+Schon einmal Binärcode gepatcht?
+... während das Programm lief?
+Haben Sie einmal Programm-Overlays verwendet?
+Haben Sie einen IBM-Vizepräsidenten kennengelernt?
+Kennen Sie Dennis, Bill oder Ken?
+Jemals ein Bild von einem Monitor abfotografiert?
+Ein Videoband auf einem Monitor abgespielt?
+Haben Sie je ein Bild digitalisiert?
+Haben Sie je vergessen, einen "scratch monkey" zu mounten?
+Haben Sie schon einmal eine Warteschleife optimiert?
+Haben Sie jemals einen Bubble-Sort optimiert?
+Spricht Ihr Terminal/Computer zu Ihnen?
+Haben Sie je in ein akustisches Modem gesprochen?
+... hat es geantwortet?
+Können Sie 300 Baud pfeifen?
+... 1200 Baud?
+Können Sie eine Telefonnummer pfeifen?
+Wurden Sie Zeuge eines Platten-Crashs?
+Haben Sie einen Plattenspeicher jemals "wandern" lassen?
+Haben Sie je einen "puffer train" gebaut?
+... wissen Sie, was das ist?
+Können Sie Musik auf Ihrem Zeilendrucker spielen?
+... auf Ihrer Festplatte?
+... auf Ihrem Magnetband?
+Haben Sie einen Snoopy-Kalender?
+... ist er veraltet?
+Haben Sie ein Zeilendrucker-Bild der Mona Lisa?
+... der Enterprise?
+... von Einstein?
+... von Oliver?
+Haben Sie jemals ein Zeilendrucker-Bild gemacht?
+Wissen Sie, wofür DASD steht?
+... Emacs?
+... ITS?
+... RSTS/E?
+... SNA?
+... Spool?
+... TCP/IP?
+Haben Sie schon einmal TPU verwendet?
+... TECO?
+... Emacs?
+... ed?
+... vi?
+... Xedit (in VM/CMS)?
+... SOS?
+... EDT?
+... WordStar?
+Haben Sie je eine CLIST geschrieben?
+Haben Sie je im X-Window-System programmiert?
+... CICS?
+Schon einmal ein Fax oder eine Fotokopie auf einer Floppy bekommen?
+Haben Sie einem Anfänger schon einmal die "beliebige" Taste gezeigt?
+... war es der Netzschalter?
+Haben Sie je an Usenix teilgenommen?
+... DECUS?
+... SHARE?
+... SIGGRAPH?
+... NetCon?
+Haben Sie jemals in einem Normungsgremium mitgearbeitet?
+Haben Sie jemals Maschinencode über Telefon debuggt?
+Haben Sie schon einmal Voicemail gesehen?
+... konnten Sie es lesen?
+Lösen Sie Kreuzworträtsel mit einem Online-Wörterbuch?
+Haben Sie sich je einem Turing-Test unterzogen?
+... und dabei versagt?
+Haben Sie je einen Lochkartenstapel fallen lassen?
+... konnten Sie ihn wieder richtig zusammensetzen?
+... ohne hinzusehen?
+Beherrschen Sie mehr als 4 Programmiersprachen?
+... mehr als 8 Sprachen?
+... mehr als 16 Sprachen?
+... mehr als 32 Sprachen?
+Haben Sie einmal eine Programmiersprache entworfen?
+Wissen Sie, wofür Basic steht?
+... Pascal?
+Können Sie in Basic programmieren?
+... und geben Sie es zu?
+Können Sie in Cobol programmieren?
+... und streiten Sie es ab?
+Kennen Sie Pascal?
+... Modula-2?
+... Oberon?
+... mehr als zwei Wirth-Sprachen?
+... können Sie einen Nicklaus Wirth-Witz erzählen?
+Kennen Sie Algol-60?
+... Algol-W?
+... Algol-68?
+... verstehen Sie den Algol-68-Report?
+... mögen Sie zweistufige Grammatiken?
+Können Sie auf 2 verschiedenen Maschinen Assembler programmieren?
+... auf 4 verschiedenen Maschinen?
+... auf 8 verschiedenen Maschinen?
+Kennen Sie weniger als drei Personen?
+... weniger als zwei?
+... überhaupt niemanden?
+Sind Ihre Schnürsenkel offen?
+Können Sie mit Fremden schlecht umgehen?
+Gehen Sie vor dem Frühstück online?
+Konsumieren Sie mehr als die halbe letale Koffeindosis pro Tag?
+Beantworten Sie Entweder-Oder-Fragen mit Ja?
+Besitzen Sie eine aktuelle Ausgabe eines Betriebssystemhandbuchs?
+... aller Betriebssystemhandbücher?
+Kommen Andere mit Ihrer angepassten Betriebssystemumgebung schlecht zurecht?
+Träumen Sie in einer Programmiersprache?
+Können Sie sich schwer auf dreidimensionale Objekte konzentrieren?
+Ignorieren Sie Mäuse?
+Verschmähen Sie die Feststelltaste?
+Glauben Sie, dass Menüs in Restaurants gehören?
+Haben Sie einen Mandelbrot an der Wand hängen?
+Haben Sie jemals mit Magnetbändern oder Lochkarten geschmückt?
+Haben Sie eine Festplattenscheibe oder eine nackte Floppy daheim hängen?
+Haben Sie jemals die Morgendämmerung gesehen?
+... zweimal hintereinander?
+Verwenden Sie "foobar" in Ihrer täglichen Konversation?
+... "bletch"?
+Verwenden Sie die P-Konvention?
+Antworten Sie auf Benutzerfragen automatisch mit RTFM?
+... wissen Sie, was das bedeutet?
+Glauben Sie, dass Garbage Collection Speicherverwaltung bedeutet?

@@ -1,0 +1,14 @@
+Besaßen Sie jemals einen Computer?
+Haben Sie ihn verwendet?
+... mehr als 4 Stunden durchgehend?
+... mehr als 8 Stunden?
+... mehr als 16 Stunden?
+... mehr als 32 Stunden?
+Haben Sie wegen Programmierens einmal den Unterricht versäumt?
+... eine Prüfung?
+... eine Hochzeit?
+... Ihre eigene Hochzeit?
+Können Sie ASCII-Zeichen in hex und oktal lesen und schreiben?
+Kennen Sie den Wert von maxint auf Ihrem System?
+Haben Sie jemals Binärcode gepatcht?
+... während das Programm lief?

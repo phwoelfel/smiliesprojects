@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Online-Meinungsumfrage</title>
+</head>
+
+<body>
+
+<h2>Online-Meinungsumfrage</h2>
+<p>In diesem Projekt geht es um einen Server, an dem man online eine Meinungsumfrage durchführen kann. Als Clients verwendet man telnet-Clients.
+Mehrere Benutzer können mit ihren telnet-Clients gleichzeitig an der Meinungsumfrage teilnehmen.</p>
+
+<h3>Funktion aus Sicht der Clients</h3>
+<p>Sobald sich ein Client mit dem Server verbindet,  erscheint dort eine Begrüßung und danach eine Reihe von Fragen. Die Fragen sind so 
+formuliert, dass man sie mit "Ja" oder "Nein" beantworten muss. Als Antwort genügt eines der Zeichen <strong><code>'j'</code></strong> oder 
+<strong><code>'n'</code></strong>. Ist die Antwort unverständlich, so soll ein Hinweis ausgegeben und die Frage wiederholt werden.</p>
+<p>Der Ablauf auf der Clientseite sieht z.B. so aus:</p>
+<p><img src="screenshot1.png" /></p>
+<p>Nach der letzten Antwort bedankt sich der Server und trennt dann die Verbindung.</p>
+
+<h3>Funktion aus Sicht des Servers</h3>
+<p>Der Server besitzt eine grafische Benutzeroberfläche, die folgendermaßen aussieht:</p>
+<p><img src="screenshot2.png" /></p>
+<p>In einer Liste sieht man, wieviel Prozent der Teilnehmer jede Frage mit "Ja" beantwortet haben. Dabei werden nur 
+<i>vollständig ausgefüllte</i> Fragebögen berücksichtigt. Außerdem sieht man, wieviele Teilnehmer derzeit online einen Fragebogen 
+ausfüllen ("in Bearbeitung") und wieviele Fragebögen seit dem Starten des Servers vollständig ausgefüllt wurden ("beantwortet").</p>
+<p>Diese Angaben werden in Echtzeit aktualisiert (d.h. sobald sich ein Client verbindet oder eine Clientverbindung mit 
+(un-)vollständig ausgefülltem Fragebogen endet).</p>
+<p>Mit dem <strong><code>Beenden</code></strong>-Button, durch Schließen des Fensters oder mit <strong><code>Alt-F4</code></strong>
+beendet man den Server.</p>
+
+<h2>Programmaufbau</h2>
+<p>Die Anwendung verwendet folgende Klassen:</p>
+
+<ul>
+<li><p><strong><code>Fragebogen</code></strong>: enthält die Fragen, die man beantworten soll und speichert die Antworten. Alle Frageb&ouml;gen 
+enthalten dieselben Fragen. <strong><code>Fragebogen</code></strong>-Objekte merken sich, welche Fragen beantwortet wurden, sodass man 
+feststellen kann, ob der Fragebogen vollständig ausgefüllt wurde.</p>
+<p><em>Diese Klasse ist bereits vollständig implementiert und darf nicht verändert werden.</em></p>
+</li>
+
+<li><p><strong><code>Server</code></strong>: agiert als Benutzerinterface und als Manager und nimmt ankommende Verbindungen entgegen. Übergibt jede Verbindung an
+ein neues <strong><code>Interview</code></strong>-Objekt zur weiteren Behandlung. Wird von jedem <strong><code>Interview</code></strong>-Objekt
+zu Beginn des Interviews benachrichtigt und erhält am Ende den ausgefüllten Fragebogen zurück.</p>
+</li>
+
+<li><p><strong><code>Interview</code></strong>: ein Thread, der einen neuen Fragebogen von einem Client ausfüllen läßt und der den ausgefüllten 
+Fragebogen an das <strong><code>Server</code></strong>-Objekt übergibt.</p></li>
+</ul>
+
+<h2>Hinweise</h2>
+<ul>
+<li>Alle Punkte in den <strong><code>.java</code></strong>-Dateien, die von Dir zu bearbeiten sind, sind im Kommentar durch das Wort <strong><code>TODO</code></strong> gekennzeichnet.</li>
+<li>Aus den Kommentaren zu den <strong><code>public</code></strong> Methoden der <strong><code>Fragebogen</code></strong>-Klasse kannst Du
+ersehen, wie man diese Klasse einsetzt.</li>
+<li>Die Fragen eines <strong><code>Fragebogen</code></strong>s liefert die Methode <strong><code>getFragen()</code></strong>; man kann
+<strong><code>Fragebogen</code></strong>-Objekte aber auch in "for each"-Schleifen verwenden, sie liefern dann der Reihe nach die 
+Fragen, z.B. so:
+  <pre>Fragebogen fragebogen = new Fragebogen();
+for (String frage : fragebogen) {
+    System.out.println(frage);
+}</pre></li>
+<li>Beachte, dass man in bestimmten Fällen die <strong><code>flush()</code></strong>-Methode benötigt, damit eine Streamausgabe auch auf
+dem telnet-Client erscheint.</li>
+<li>Überlege, welche Datenfehler durch die gleichzeitige Ausführung mehrerer <strong><code>Interview</code></strong>-Objekte entstehen
+können und wie man das verhindert.</li>
+<li>Laufzeitfehler in einem <strong><code>Interview</code></strong> dürfen andere <strong><code>Interview</code></strong>s oder den
+<strong><code>Server</code></strong> nicht beeinträchtigen.</li>
+<li>Bei Laufzeitfehlern müssen offene Streams und Sockets ordnungsgemäß geschlossen werden.</li>
+<li>Als Referenz und zum Ausprobieren findest Du die fertige Anwendung in der Datei <strong><code>umfrage.jar</code></strong>.</li>
+</ul>
+
+<h2>Bewertung</h2>
+<table border="1">
+<thead><tr><td width="100"><div align="center"><strong>Punkte</strong></div></td><td width="100"><div align="center"><strong>Note</strong></div></td>
+</tr></thead>
+<tbody>
+<tr><td><div align="center">0 bis 12</div></td><td><div align="center">5</div></td>
+</tr>
+<tr><td><div align="center">&gt;12 bis 15</div></td><td><div align="center">4</div></td>
+</tr>
+<tr><td><div align="center">&gt;15 bis 18</div></td><td><div align="center">3</div></td>
+</tr>
+<tr><td><div align="center">&gt;18 bis 21</div></td><td><div align="center">2</div></td>
+</tr>
+<tr><td><div align="center">&gt;21 bis 24</div></td><td><div align="center">1</div></td>
+</tr>
+</tbody></table>
+<h2>Packe das Eclipse-Projekt in ein ZIP-Archiv 
+mit dem Namen <span style="font-weight: bold; font-family: courier new,courier,monospace;">UE_1_2_3AN_familienname.zip</span> 
+und lade dieses Archiv wieder auf den Moodle-Server.
+<span style="color: #FF0000"><br/>
+Bitte vor dem Hochladen überprüfen, ob dieses Archiv auch wieder entpackt werden kann!</span></h2>
+<h2>Viel Erfolg! </h2>
+</body>
+</html>
