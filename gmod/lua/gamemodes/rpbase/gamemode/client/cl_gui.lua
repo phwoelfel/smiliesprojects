@@ -82,7 +82,8 @@ function gui_showJobs(ply, cmd, args)
 		icon:SetModel(job.models[1]);
 		icon:SetPos(2, 2);
 		icon.DoClick = function ()
-				
+				RunConsoleCommand("rp_job", job.name);
+				MyWindow:Close();
 			end
 		
 		local jobtxt = vgui.Create("DLabel", pan);

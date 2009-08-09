@@ -1,42 +1,21 @@
 TODO:
-	jobselect
 	scoreboard
 	türen
 	geldsystem
 	hud: health und armor schriftfarbe ändern je nach health/armor
 	
-	
-/*
-local clIncFiles = file.FindInLua("../" ..GM.Folder .."/gamemode/client/*.lua");
-for _,f in pairs(clIncFiles) do
-	print("[" ..RP.RP_NAME .."][Client] Included "..f);
-	include("client/"..f);
-end
-*/
-
-/*
-local shIncFiles = file.FindInLua("../" ..GM.Folder .."/gamemode/shared/*.lua");
-for _,f in pairs(shIncFiles) do
-	print("[" ..RP.RP_NAME .."][Shared] Included "..f);
-	include("shared/"..f);
-end
-*/
-
-/*
 local clAddDlFiles = file.FindInLua("../" ..GM.Folder .."/gamemode/client/*.lua");
 for _,f in pairs(clAddDlFiles) do
 	AddCSLuaFile("client/"..f);
-	print("dld added: ".."client/"..f);
+	print("[" ..RP.RP_NAME .."][Download] Included client/"..f);
 end
 local shAddDlFiles = file.FindInLua("../" ..GM.Folder .."/gamemode/shared/*.lua");
 for _,f in pairs(shAddDlFiles) do
 	AddCSLuaFile("shared/"..f);
-	print("dld added: ".."shared/"..f);
+	print("[" ..RP.RP_NAME .."][Download] Included shared/"..f);
 end
 local svIncFiles = file.FindInLua("../" ..GM.Folder .."/gamemode/server/*.lua");
 for _,f in pairs(svIncFiles) do
-	print("[" ..RP.RP_NAME .."][Server] Included "..f);
 	include("server/"..f);
+	print("[" ..RP.RP_NAME .."][Server] Included server/"..f);
 end
-
-*/
