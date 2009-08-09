@@ -1,11 +1,12 @@
 ------------------------------------
 -- by SMILIE[AUT] 
--- 08.08.2009
 ------------------------------------
+RP = {};
 
+RP.RP_NAME = "Base RP";
+//RP.RP_TABLENAME = "rp_data";
 
-
-CivModels = {
+RP.CivModels = {
 	"models/player/Group01/Female_01.mdl",
 	"models/player/Group01/Female_02.mdl",
 	"models/player/Group01/Female_03.mdl",
@@ -40,35 +41,19 @@ CivModels = {
 	"models/player/Group03/male_09.mdl",
 }
 
-GM.jobs = {};
-GM.jobs[1] = {};
-GM.jobs[1].name = "Citizen";
-GM.jobs[1].color = Color(86, 131, 255, 255);
-GM.jobs[1].models = CivModels;
-GM.jobs[1].salary = 0;
-GM.jobs[1].weps = {};
-GM.jobs[1].ammo = {};
-team.SetUp(1, GM.jobs[1].name, GM.jobs[1].color);
-
-function GM:AddJob(name, color, models, salary, weps, ammo)
-	local id = #self.jobs+1;
-	
-	self.jobs[id] = {};
-	self.jobs[id].name = name;
-	self.jobs[id].color = color;
-	self.jobs[id].models = models;
-	self.jobs[id].salary = salary;
-	self.jobs[id].weps = weps;
-	self.jobs[id].ammo = ammo;
-	
-	//print("id: " ..id);
-	//PrintTable(self.jobs[id]);
-	
-	team.SetUp(id, name, color);
-end
-
-local shIncFiles = file.FindInLua("../" ..GM.Folder .."/gamemode/shared/*.lua");
-for _,f in pairs(shIncFiles) do
-	print("[" ..GM.RP_NAME .."][Shared] Included "..f);
-	include("/shared/"..f);
-end
+RP.colors = {};
+RP.colors.blue = Color(86, 142, 255, 255);
+RP.colors.darkblue = Color(0, 80, 165, 255);
+RP.colors.green = Color(176, 255, 86, 255);
+RP.colors.darkgreen = Color(19, 96, 0, 255);
+RP.colors.red = Color(255, 111, 86, 255);
+RP.colors.grey = Color(140, 140, 140, 255);
+RP.colors.orange = Color(255, 187, 0, 255);
+RP.colors.yellow = Color(255, 229, 0, 255);
+RP.colors.black = Color(0, 0, 0, 255);
+RP.colors.white = Color(255, 255, 255, 255);
+RP.colors.hudblue = Color(86, 142, 255, 200);
+RP.colors.hudred = Color(255, 111, 86, 200);
+RP.colors.hudgrey = Color(140, 140, 140, 200);
+RP.colors.hudorange = Color(255, 187, 0, 200);
+RP.colors.huddarkblue = Color(0, 80, 165, 200);

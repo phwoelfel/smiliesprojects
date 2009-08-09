@@ -1,6 +1,5 @@
 ------------------------------------
 -- by SMILIE[AUT] 
--- 08.08.2009
 ------------------------------------
 
 //GM:AddJob(String name, Color color, Table models, Number salary, Table weps, Table ammo)

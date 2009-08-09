@@ -1,7 +1,18 @@
 ------------------------------------
 -- by SMILIE[AUT] 
--- 08.08.2009
 ------------------------------------
+
+
+RP.colors.hudammo = RP.colors.hudgrey;
+RP.colors.ammo = RP.colors.black;
+RP.colors.hudenergy = RP.colors.hudblue;
+RP.colors.energy = RP.colors.green;
+RP.colors.energylow = RP.colors.red;
+RP.colors.hudmoney = RP.colors.hudorange;
+RP.colors.money = RP.colors.white;
+RP.colors.hudjob = RP.colors.huddarkblue;
+RP.colors.job = RP.colors.white;
+
 
 function GM:HUDPaint()
 	local ply = LocalPlayer();
@@ -18,10 +29,10 @@ function GM:HUDPaint()
 	healthbox.h = 70;
 	healthbox.x = 20;
 	healthbox.y = ScrH()-healthbox.h-20;
-	healthbox.col = self.colors.hudblue;
+	healthbox.col = RP.colors.hudenergy;
 	
 	local healthcolor;
-	if(ply:Health()<25)then healthcolor = self.colors.red else healthcolor = self.colors.green end
+	if(ply:Health()<25)then healthcolor = RP.colors.energylow else healthcolor = RP.colors.energy end
 	
 	draw.RoundedBox(bordersize, healthbox.x, healthbox.y, healthbox.w, healthbox.h, healthbox.col);
 	draw.SimpleText(ply:Health(), "rp_hudtext_large", healthbox.x+healthbox.w/2, healthbox.y+healthbox.h/2, healthcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
@@ -32,10 +43,10 @@ function GM:HUDPaint()
 		armorbox.h = 70;
 		armorbox.x = healthbox.x+healthbox.w+20;
 		armorbox.y = ScrH()-armorbox.h-20;
-		armorbox.col = self.colors.hudblue;
+		armorbox.col = RP.colors.hudenergy;
 		
 		local armorcolor;
-		if(ply:Armor()<25)then armorcolor = self.colors.red else armorcolor = self.colors.green end
+		if(ply:Armor()<25)then armorcolor = RP.colors.energylow else armorcolor = RP.colors.energy end
 		
 		draw.RoundedBox(bordersize, armorbox.x, armorbox.y, armorbox.w, armorbox.h, armorbox.col);
 		draw.SimpleText(ply:Armor(), "rp_hudtext_large", armorbox.x+armorbox.w/2, armorbox.y+armorbox.h/2, armorcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
@@ -48,24 +59,24 @@ function GM:HUDPaint()
 	moneybox.h = 25;
 	moneybox.x = 20;
 	moneybox.y = ScrH()-healthbox.h-moneybox.h-40;
-	moneybox.col = self.colors.hudorange;
+	moneybox.col = RP.colors.hudmoney;
 	
 	local money = ply:GetNWInt("rp_money");
 	
 	draw.RoundedBox(10, moneybox.x, moneybox.y, moneybox.w, moneybox.h, moneybox.col);
-	draw.SimpleText("Money: " ..money, "rp_hudtext_small", moneybox.x+moneybox.w/2, moneybox.y+moneybox.h/2, self.colors.white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+	draw.SimpleText("Money: " ..money, "rp_hudtext_small", moneybox.x+moneybox.w/2, moneybox.y+moneybox.h/2, RP.colors.money, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 	
 	local jobbox = {}; // values for  ammo box
 	jobbox.w = 150;
 	jobbox.h = 20;
 	jobbox.x = 20;
 	jobbox.y = ScrH()-healthbox.h-moneybox.h-jobbox.h-50;
-	jobbox.col = self.colors.huddarkblue;
+	jobbox.col = RP.colors.hudjob;
 	
 	local job = team.GetName(ply:Team());
 	
 	draw.RoundedBox(10, jobbox.x, jobbox.y, jobbox.w, jobbox.h, jobbox.col);
-	draw.SimpleText("Job: " ..job, "rp_hudtext_verysmall", jobbox.x+jobbox.w/2, jobbox.y+jobbox.h/2, self.colors.white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+	draw.SimpleText("Job: " ..job, "rp_hudtext_verysmall", jobbox.x+jobbox.w/2, jobbox.y+jobbox.h/2, RP.colors.job, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 	
 	---------------------------------------------------------------------------------------------------------- Ammo Hud ----------------------------------------------------------------------------------------------------------
 	
@@ -86,10 +97,10 @@ function GM:HUDPaint()
 	secammobox.h = 70;
 	secammobox.x = ScrW()-secammobox.w-20;
 	secammobox.y = ScrH()-secammobox.h-20;
-	secammobox.col = self.colors.hudgrey;
+	secammobox.col = RP.colors.hudammo;
 	
-	local secammocolor = self.colors.black;
-	local secclipcolor = self.colors.black;
+	local secammocolor = RP.colors.ammo;
+	local secclipcolor = RP.colors.ammo;
 	local secammo = ply:GetAmmoCount(ply:GetActiveWeapon():GetSecondaryAmmoType());
 	local secclip = ply:GetActiveWeapon():Clip2();
 	
@@ -108,10 +119,10 @@ function GM:HUDPaint()
 	primammobox.h = 70;
 	primammobox.x = ScrW()-primammobox.w-secammobox.w-40;
 	primammobox.y = ScrH()-primammobox.h-20;
-	primammobox.col = self.colors.hudgrey;
+	primammobox.col = RP.colors.hudammo;
 	
-	local primammocolor = self.colors.black;
-	local primclipcolor = self.colors.black;
+	local primammocolor = RP.colors.ammo;
+	local primclipcolor = RP.colors.ammo;
 	local primammo = ply:GetAmmoCount(ply:GetActiveWeapon():GetPrimaryAmmoType());
 	local primclip = ply:GetActiveWeapon():Clip1();
 	
@@ -141,9 +152,5 @@ function GM:HUDShouldDraw(name)
 	else
 		return true;
 	end
-end
-
-function GM:AddNotify(msg, typ, dur)
-	LocalPlayer():ChatPrint(msg);
 end
 

@@ -1,6 +1,0 @@
-TODO:
-	jobselect
-	scoreboard
-	türen
-	geldsystem
-	hud: health und armor schriftfarbe ändern je nach health/armor
