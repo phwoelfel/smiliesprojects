@@ -11,7 +11,7 @@ function GM:ShowTeam(ply)
 end
 
 function GM:ShowSpare1(ply)
-
+	ply:ConCommand("rp_bmenu");
 end
 
 function GM:ShowSpare2(ply)
@@ -37,16 +37,16 @@ function GM:PlayerSpawnNPC(ply)
 			local cost = GetConVar("rp_npccost"):GetInt();
 			if(ply:CanAfford(cost))then
 				ply:AddMoney(-cost);
-				ply:ChatPrint("You paid $" ..cost .." for this NPC.");
+				ply:SendMsg("You paid $" ..cost .." for this NPC.");
 				return true;
 			else
-				ply:ChatPrint("You can't afford this!");
+				ply:SendMsg("You can't afford this!");
 				return false;
 			end
 			
 		end
 	else
-		ply:ChatPrint("This is not allowed!");
+		ply:SendMsg("This is not allowed!");
 		return false;
 	end
 end
@@ -61,16 +61,16 @@ function GM:PlayerSpawnProp(ply)
 			local cost = GetConVar("rp_propcost"):GetInt();
 			if(ply:CanAfford(cost))then
 				ply:AddMoney(-cost);
-				ply:ChatPrint("You paid $" ..cost .." for this prop.");
+				ply:SendMsg("You paid $" ..cost .." for this prop.");
 				return true;
 			else
-				ply:ChatPrint("You can't afford this!");
+				ply:SendMsg("You can't afford this!");
 				return false;
 			end
 			
 		end
 	else
-		ply:ChatPrint("This is not allowed!");
+		ply:SendMsg("This is not allowed!");
 		return false;
 	end
 end
@@ -85,15 +85,15 @@ function GM:PlayerSpawnRagdoll(ply)
 			local cost = GetConVar("rp_propcost"):GetInt();
 			if(ply:CanAfford(cost))then
 				ply:AddMoney(-cost);
-				ply:ChatPrint("You paid $" ..cost .." for this ragdoll.");
+				ply:SendMsg("You paid $" ..cost .." for this ragdoll.");
 				return true;
 			else
-				ply:ChatPrint("You can't afford this!");
+				ply:SendMsg("You can't afford this!");
 				return false;
 			end
 		end
 	else
-		ply:ChatPrint("This is not allowed!");
+		ply:SendMsg("This is not allowed!");
 		return false;
 	end
 end
@@ -103,14 +103,14 @@ function GM:PlayerSpawnSENT(ply)
 		local cost = GetConVar("rp_sentcost"):GetInt();
 		if(ply:CanAfford(cost))then
 			ply:AddMoney(-cost);
-			ply:ChatPrint("You paid $" ..cost .." for this SENT.");
+			ply:SendMsg("You paid $" ..cost .." for this SENT.");
 			return true;
 		else
-			ply:ChatPrint("You can't afford this!");
+			ply:SendMsg("You can't afford this!");
 			return false;
 		end
 	else
-		ply:ChatPrint("This is not allowed!");
+		ply:SendMsg("This is not allowed!");
 		return false;
 	end
 end
@@ -120,14 +120,14 @@ function GM:PlayerSpawnSWEP(ply)
 		local cost = GetConVar("rp_swepcost"):GetInt();
 		if(ply:CanAfford(cost))then
 			ply:AddMoney(-cost);
-			ply:ChatPrint("You paid $" ..cost .." for this SWEP.");
+			ply:SendMsg("You paid $" ..cost .." for this SWEP.");
 			return true;
 		else
-			ply:ChatPrint("You can't afford this!");
+			ply:SendMsg("You can't afford this!");
 			return false;
 		end
 	else
-		ply:ChatPrint("This is not allowed!");
+		ply:SendMsg("This is not allowed!");
 		return false;
 	end
 end
@@ -137,14 +137,14 @@ function GM:PlayerGiveSWEP(ply)
 		local cost = GetConVar("rp_swepcost"):GetInt();
 		if(ply:CanAfford(cost))then
 			ply:AddMoney(-cost);
-			ply:ChatPrint("You paid $" ..cost .." for this SWEP.");
+			ply:SendMsg("You paid $" ..cost .." for this SWEP.");
 			return true;
 		else
-			ply:ChatPrint("You can't afford this!");
+			ply:SendMsg("You can't afford this!");
 			return false;
 		end
 	else
-		ply:ChatPrint("This is not allowed!");
+		ply:SendMsg("This is not allowed!");
 		return false;
 	end
 end
@@ -156,18 +156,18 @@ function GM:PlayerSpawnVehicle(ply)
 		if(curspawn >= maxspawn)then
 			ply:LimitHit("vehicles");
 		else
-			local cost = GetConVar("rp_vehiclecost"):GetInt();
+			local cost = GetConVar("rp_vehiclecost"):GetInt()/2; // half the price cause you need to own it too
 			if(ply:CanAfford(cost))then
 				ply:AddMoney(-cost);
-				ply:ChatPrint("You paid $" ..cost .." for this vehicle.");
+				ply:SendMsg("You paid $" ..cost .." for this vehicle.");
 				return true;
 			else
-				ply:ChatPrint("You can't afford this!");
+				ply:SendMsg("You can't afford this!");
 				return false;
 			end
 		end
 	else
-		ply:ChatPrint("This is not allowed!");
+		ply:SendMsg("This is not allowed!");
 		return false;
 	end
 end
@@ -176,6 +176,15 @@ function GM:PlayerNoClip(ply)
 	if(GetConVar("rp_noclip"):GetInt()==1 || ply:IsAdmin())then
 		return true;
 	else
+		return false;
+	end
+end
+
+function GM:CanPlayerEnterVehicle(ply, vhcl)
+	if(!vhcl:IsLocked())then
+		return true;
+	else
+		ply:SendMsg("This vehicle is locked!");
 		return false;
 	end
 end

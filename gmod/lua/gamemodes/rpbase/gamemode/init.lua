@@ -11,6 +11,8 @@ AddCSLuaFile("client/cl_gui.lua");
 AddCSLuaFile("client/cl_hud.lua");
 AddCSLuaFile("client/cl_gamemode.lua");
 AddCSLuaFile("shared/sh_teams.lua");
+AddCSLuaFile("shared/sh_entity.lua");
+AddCSLuaFile("shared/sh_player.lua");
 
 
 include("config.lua");
@@ -20,7 +22,8 @@ include("server/sv_convars.lua");
 include("server/sv_gamemode.lua");
 include("server/sv_player.lua");
 include("server/sv_funcs.lua");
-include("server/sv_entity.lua");
+
+
 
 if(!sql.TableExists(GetConVar("rp_sqltable"):GetString()))then
 	sql.Query("create table " ..GetConVar("rp_sqltable"):GetString() .."(uid INTEGER PRIMARY KEY, rpname TEXT, money INTEGER)");

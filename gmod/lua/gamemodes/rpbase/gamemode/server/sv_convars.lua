@@ -19,6 +19,7 @@ RP.convars = {
 	{"rp_sentcost", 200}, // how much a prop/npc/swep/sent/effect/ragdoll costs
 	{"rp_npccost", 200}, // how much a prop/npc/swep/sent/effect/ragdoll costs
 	{"rp_vehiclecost", 100}, // how much a prop/npc/swep/sent/effect/ragdoll costs
+	{"rp_doorcost", 20}, // how much a prop/npc/swep/sent/effect/ragdoll costs
 	{"rp_startmoney", 800} // money when you first spawn
 };
 

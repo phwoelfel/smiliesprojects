@@ -3,5 +3,5 @@
 ------------------------------------
 
 function GM:AddNotify(msg, typ, dur)
-	LocalPlayer():ChatPrint(msg);
+	LocalPlayer():SendMsg(msg);
 end

@@ -12,12 +12,15 @@ RP.colors.hudmoney = RP.colors.hudorange;
 RP.colors.money = RP.colors.white;
 RP.colors.hudjob = RP.colors.huddarkblue;
 RP.colors.job = RP.colors.white;
+RP.colors.enttext = RP.colors.green;
 
 
 function GM:HUDPaint()
 	local ply = LocalPlayer();
 	if( !ply || !ply:Alive() )then return end // hide HUD when dead
-	if(ply && ply:GetActiveWeapon() && ply:GetActiveWeapon():GetClass()=="gmod_camera") then return end // hide HUD when using camera
+	if(ply:Alive() &&
+		ply:GetActiveWeapon()!=null &&
+		ply:GetActiveWeapon():GetClass()=="gmod_camera") then return end // hide HUD when using camera
 	
 	local bordersize = 20; // bordersize for draw.RoundedBox
 	
@@ -79,7 +82,7 @@ function GM:HUDPaint()
 	draw.SimpleText("Job: " ..job, "rp_hudtext_verysmall", jobbox.x+jobbox.w/2, jobbox.y+jobbox.h/2, RP.colors.job, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 	
 	---------------------------------------------------------------------------------------------------------- Ammo Hud ----------------------------------------------------------------------------------------------------------
-	
+
 	if(ply:GetActiveWeapon() &&
 		(ply:GetActiveWeapon():GetClass()=="gmod_camera" ||
 		ply:GetActiveWeapon():GetClass()=="gmod_tool" ||
@@ -87,53 +90,68 @@ function GM:HUDPaint()
 		ply:GetActiveWeapon():GetClass()=="weapon_physcannon" ||
 		ply:GetActiveWeapon():GetClass()=="weapon_crowbar" ||
 		ply:GetActiveWeapon():GetClass()=="weapon_stunstick")
-	)then return end
-	
-	
-	
-	
-	local secammobox = {}; // values for  ammo box
-	secammobox.w = 100;
-	secammobox.h = 70;
-	secammobox.x = ScrW()-secammobox.w-20;
-	secammobox.y = ScrH()-secammobox.h-20;
-	secammobox.col = RP.colors.hudammo;
-	
-	local secammocolor = RP.colors.ammo;
-	local secclipcolor = RP.colors.ammo;
-	local secammo = ply:GetAmmoCount(ply:GetActiveWeapon():GetSecondaryAmmoType());
-	local secclip = ply:GetActiveWeapon():Clip2();
-	
-	
-	draw.RoundedBox(bordersize, secammobox.x, secammobox.y, secammobox.w, secammobox.h, secammobox.col);
-	
-	if(secclip == -1)then
-		draw.SimpleText(secammo, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h/2, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+	)then
 	else
-		draw.SimpleText(secammo, "rp_hudtext_small", secammobox.x+secammobox.w-5, secammobox.y+secammobox.h-20, secammocolor, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER);
-		draw.SimpleText(secclip, "rp_hudtext_large", secammobox.x+10, secammobox.y+secammobox.h/2, secclipcolor, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER);
+		local secammobox = {}; // values for  ammo box
+		secammobox.w = 100;
+		secammobox.h = 70;
+		secammobox.x = ScrW()-secammobox.w-20;
+		secammobox.y = ScrH()-secammobox.h-20;
+		secammobox.col = RP.colors.hudammo;
+		
+		local secammocolor = RP.colors.ammo;
+		local secclipcolor = RP.colors.ammo;
+		local secammo = ply:GetAmmoCount(ply:GetActiveWeapon():GetSecondaryAmmoType());
+		local secclip = ply:GetActiveWeapon():Clip2();
+		
+		
+		draw.RoundedBox(bordersize, secammobox.x, secammobox.y, secammobox.w, secammobox.h, secammobox.col);
+		
+		if(secclip == -1)then
+			draw.SimpleText(secammo, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h/2, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+		else
+			draw.SimpleText(secammo, "rp_hudtext_small", secammobox.x+secammobox.w-5, secammobox.y+secammobox.h-20, secammocolor, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER);
+			draw.SimpleText(secclip, "rp_hudtext_large", secammobox.x+10, secammobox.y+secammobox.h/2, secclipcolor, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER);
+		end
+		
+		local primammobox = {}; // values for  ammo box
+		primammobox.w = 100;
+		primammobox.h = 70;
+		primammobox.x = ScrW()-primammobox.w-secammobox.w-40;
+		primammobox.y = ScrH()-primammobox.h-20;
+		primammobox.col = RP.colors.hudammo;
+		
+		local primammocolor = RP.colors.ammo;
+		local primclipcolor = RP.colors.ammo;
+		local primammo = ply:GetAmmoCount(ply:GetActiveWeapon():GetPrimaryAmmoType());
+		local primclip = ply:GetActiveWeapon():Clip1();
+		
+		
+		draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
+		
+		if(primclip == -1)then
+			draw.SimpleText(primammo, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h/2, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+		else
+			draw.SimpleText(primammo, "rp_hudtext_small", primammobox.x+primammobox.w-5, primammobox.y+primammobox.h-20, primammocolor, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER);
+			draw.SimpleText(primclip, "rp_hudtext_large", primammobox.x+10, primammobox.y+primammobox.h/2, primclipcolor, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER);
+		end
 	end
 	
-	local primammobox = {}; // values for  ammo box
-	primammobox.w = 100;
-	primammobox.h = 70;
-	primammobox.x = ScrW()-primammobox.w-secammobox.w-40;
-	primammobox.y = ScrH()-primammobox.h-20;
-	primammobox.col = RP.colors.hudammo;
+	---------------------------------------------------------------------------------------------------------- Ownable Things ----------------------------------------------------------------------------------------------------------
 	
-	local primammocolor = RP.colors.ammo;
-	local primclipcolor = RP.colors.ammo;
-	local primammo = ply:GetAmmoCount(ply:GetActiveWeapon():GetPrimaryAmmoType());
-	local primclip = ply:GetActiveWeapon():Clip1();
-	
-	
-	draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
-	
-	if(primclip == -1)then
-		draw.SimpleText(primammo, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h/2, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
-	else
-		draw.SimpleText(primammo, "rp_hudtext_small", primammobox.x+primammobox.w-5, primammobox.y+primammobox.h-20, primammocolor, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER);
-		draw.SimpleText(primclip, "rp_hudtext_large", primammobox.x+10, primammobox.y+primammobox.h/2, primclipcolor, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER);
+	local tr = ply:GetEyeTrace();
+	local pos = tr.HitPos:ToScreen();
+	if(!ply:InVehicle())then
+		if(tr.StartPos:Distance(tr.HitPos)<150)then
+			if(tr.Entity && tr.Entity:IsOwnable())then
+				local owner = tr.Entity:GetNWString("rp_ownername", "");
+				if(owner != "")then
+					draw.SimpleText("Owner: " ..owner, "rp_hudtext_verysmall", pos.x, pos.y, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+				else
+					draw.SimpleText("Not owned!", "rp_hudtext_verysmall", pos.x, pos.y, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+				end
+			end
+		end
 	end
 	
 	

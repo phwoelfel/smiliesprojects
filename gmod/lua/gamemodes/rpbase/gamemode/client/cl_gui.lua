@@ -102,3 +102,17 @@ function gui_showJobs(ply, cmd, args)
 	
 end
 concommand.Add("rp_jobs", gui_showJobs);
+
+function gui_showBuyMenu(ply, cmd, args)
+	local menu = DermaMenu();
+	menu:SetPos(ScrW()/2, ScrH()/2);
+	menu:AddOption("buy", function() RunConsoleCommand("rp_buy") gui.EnableScreenClicker(false) end );
+	menu:AddOption("sell", function() RunConsoleCommand("rp_sell") gui.EnableScreenClicker(false) end );
+	menu:AddOption("lock", function() RunConsoleCommand("rp_lock") gui.EnableScreenClicker(false) end );
+	menu:AddOption("unlock", function() RunConsoleCommand("rp_unlock") gui.EnableScreenClicker(false) end );
+	gui.EnableScreenClicker(true);
+end
+concommand.Add("rp_bmenu", gui_showBuyMenu);
+
+
+

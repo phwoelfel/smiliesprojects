@@ -39,4 +39,6 @@ end
 
 
 include("shared/sh_teams.lua");
+include("shared/sh_entity.lua");
+include("shared/sh_player.lua");
 
