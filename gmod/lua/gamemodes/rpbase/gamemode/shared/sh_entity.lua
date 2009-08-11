@@ -111,6 +111,8 @@ function entmeta:RPLock(ply)
 		self:SetNWBool("rp_locked", true);
 		if(self:IsDoor())then
 			self:Fire("lock", "", 0);
+			local snd = Sound("doors/door_latch3.wav");
+			self:EmitSound(snd);
 		end
 	elseif(owner == "")then
 		ply:SendMsg("This belongs to nobody!");
@@ -125,6 +127,8 @@ function entmeta:RPUnLock(ply)
 		self:SetNWBool("rp_locked", false);
 		if(self:IsDoor())then
 			self:Fire("unlock", "", 0);
+			local snd = Sound("doors/door_latch3.wav");
+			self:EmitSound(snd);
 		end
 	elseif(owner == "")then
 		ply:SendMsg("This belongs to nobody!");

@@ -40,5 +40,3 @@ function GM:Initialize()
 	self.BaseClass:Initialize()
 end
 
-GM.Name = "RP Base"
-GM.Author = "SMILIE[AUT]"

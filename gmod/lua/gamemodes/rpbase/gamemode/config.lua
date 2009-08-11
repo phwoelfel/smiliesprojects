@@ -55,3 +55,5 @@ RP.colors.hudred = Color(255, 111, 86, 200);
 RP.colors.hudgrey = Color(140, 140, 140, 200);
 RP.colors.hudorange = Color(255, 187, 0, 200);
 RP.colors.huddarkblue = Color(0, 80, 165, 200);
+RP.colors.jobheader = Color(0, 34, 102, 255);
+RP.colors.jobpanel = Color(75, 84, 102, 255);

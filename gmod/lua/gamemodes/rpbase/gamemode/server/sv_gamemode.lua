@@ -173,6 +173,7 @@ function GM:PlayerSpawnVehicle(ply)
 end
 
 function GM:PlayerNoClip(ply)
+	if ( ply:InVehicle() ) then return false end
 	if(GetConVar("rp_noclip"):GetInt()==1 || ply:IsAdmin())then
 		return true;
 	else

@@ -144,6 +144,35 @@ function ccUnLock(ply, cmd, args)
 end
 concommand.Add("rp_unlock", ccUnLock);
 
+function ccGive(ply, cmd, args)
+	if(args && args[1])then
+		local tr = ply:GetEyeTrace();
+		local amount = tonumber(args[1]);
+		if(amount && amount>0)then
+			if(tr.StartPos:Distance(tr.HitPos)<150)then
+				if(tr.Entity && tr.Entity:IsPlayer())then
+					local pl = tr.Entity;
+					if(ply:CanAfford(amount))then
+						ply:AddMoney(-amount);
+						pl:AddMoney(amount);
+						ply:SendMsg("You sent $" ..amount .." to " ..pl:GetRPName()..".");
+						pl:SendMsg(ply:GetRPName() .." sent you $" ..amount ..".");
+					else
+						ply:SendMsg("You don't have that much money!");
+					end
+				else
+					ply:SendMsg("This is no player!");
+				end
+			end
+		else
+			ply:SendMsg("Amount must be a positive number!");
+		end
+	else
+		ply:SendMsg("Please specify a amount!");
+	end
+end
+concommand.Add("rp_give", ccGive);
+
 function ccChangePayTime(ply, cmd, args)	
 	if(!ply:IsSuperAdmin())then return end
 	if(args && args[1]!="")then

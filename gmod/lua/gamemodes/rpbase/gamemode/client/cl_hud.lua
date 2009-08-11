@@ -18,8 +18,9 @@ RP.colors.enttext = RP.colors.green;
 function GM:HUDPaint()
 	local ply = LocalPlayer();
 	if( !ply || !ply:Alive() )then return end // hide HUD when dead
+	if( #ply:GetWeapons() == 0 )then return end
 	if(ply:Alive() &&
-		ply:GetActiveWeapon()!=null &&
+		ply:GetActiveWeapon()!=nil &&
 		ply:GetActiveWeapon():GetClass()=="gmod_camera") then return end // hide HUD when using camera
 	
 	local bordersize = 20; // bordersize for draw.RoundedBox

@@ -2,6 +2,11 @@
 -- by SMILIE[AUT] 
 ------------------------------------
 
+GM.Name = "RP Base"
+GM.Author = "SMILIE[AUT]"
+GM.Email = "N/A"
+GM.Website = "N/A"
+
 RP.jobs = {};
 /*
 RP.jobs[1] = {};
