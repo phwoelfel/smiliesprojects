@@ -4,8 +4,8 @@
     "version"        "0.1"
 
     "author_name"   "SMILIE[AUT]"
-    "author_email"  "none for you"
-    "author_url"    "also none"
+    "author_email"  ""
+    "author_url"    ""
 
     "icon"  ""
     "info"  ""
