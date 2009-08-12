@@ -62,8 +62,7 @@ function gui_showJobs(ply, cmd, args)
 	local titelpan = vgui.Create("DPanel", JobList);
 	titelpan:SetSize(780,22);
 	titelpan.Paint = function()
-			surface.SetDrawColor(RP.colors.jobheader.r, RP.colors.jobheader.g, RP.colors.jobheader.b, RP.colors.jobheader.a);
-			surface.DrawRect( 0, 0, titelpan:GetWide(), titelpan:GetTall() );
+			draw.RoundedBox(10, 0, 0, titelpan:GetWide(), titelpan:GetTall(), RP.colors.jobheader);
 		end
 	
 	local modeltitel = vgui.Create("DLabel", titelpan);
@@ -87,8 +86,7 @@ function gui_showJobs(ply, cmd, args)
 		local pan = vgui.Create("DPanel", JobList);
 		pan:SetSize(780,68);
 		pan.Paint = function()
-			surface.SetDrawColor(RP.colors.jobpanel.r, RP.colors.jobpanel.g, RP.colors.jobpanel.b, RP.colors.jobpanel.a);
-			surface.DrawRect( 0, 0, pan:GetWide(), pan:GetTall() );
+			draw.RoundedBox(6, 0, 0, pan:GetWide(), pan:GetTall(), RP.colors.jobpanel);
 		end
 		
 		
@@ -108,7 +106,11 @@ function gui_showJobs(ply, cmd, args)
 		
 		local jobbtn = vgui.Create("DButton", pan);
 		jobbtn:SetSize(50, 20);
-		jobbtn:SetText("Apply!");
+		if(job.vote)then
+			jobbtn:SetText("Apply!");
+		else
+			jobbtn:SetText("Change!");
+		end
 		jobbtn:SetPos(720, 24);
 		jobbtn.DoClick = function ()
 				RunConsoleCommand("rp_job", job.name);
@@ -121,10 +123,92 @@ function gui_showJobs(ply, cmd, args)
 end
 concommand.Add("rp_jobs", gui_showJobs);
 
-function gui_showBuyMenu(ply, cmd, args)
-	if(ply.rpmenuopen)then gui.EnableScreenClicker(false) ply.rpmenuopen = false return end
+function gui_showEntBuyMenu(ply, cmd, args)
+	local MyWindow = vgui.Create("DFrame");
+	MyWindow:SetSize(800, 600);
+	MyWindow:SetSizable(false);
+	MyWindow:Center();
+	MyWindow:SetTitle("Buy stuff!");
+	MyWindow:ShowCloseButton(true);
+	MyWindow:MakePopup();
+	MyWindow:SetDraggable(false);
+	MyWindow:SetBackgroundBlur(true);
+	
+	local EntList = vgui.Create("DPanelList", MyWindow);
+	EntList:SetPos(10, 30);
+	EntList:SetSize(780, 560);
+	EntList:SetSpacing(4);
+	EntList:EnableHorizontal(false);
+	EntList:EnableVerticalScrollbar(true);
+	
+	local titelpan = vgui.Create("DPanel", EntList);
+	titelpan:SetSize(780,22);
+	titelpan.Paint = function()
+			draw.RoundedBox(10, 0, 0, titelpan:GetWide(), titelpan:GetTall(), RP.colors.entheader);
+		end
+	
+	local modeltitel = vgui.Create("DLabel", titelpan);
+	modeltitel:SetSize(50, 20);
+	modeltitel:SetText("Model");
+	modeltitel:SetPos(15, 2);
+	
+	local Enttitel = vgui.Create("DLabel", titelpan);
+	Enttitel:SetSize(100, 20);
+	Enttitel:SetText("Title");
+	Enttitel:SetPos(75, 2);
+	
+	local costtitel = vgui.Create("DLabel", titelpan);
+	costtitel:SetSize(100, 20);
+	costtitel:SetText("Prize");
+	costtitel:SetPos(195, 2);
+	
+	EntList:AddItem(titelpan);
+	
+	for k,enttbl in pairs(RP.entities) do
+		if(enttbl.jobid == LocalPlayer():Team())then
+			local pan = vgui.Create("DPanel", EntList);
+			pan:SetSize(780,68);
+			pan.Paint = function()
+				draw.RoundedBox(6, 0, 0, pan:GetWide(), pan:GetTall(), RP.colors.entpanel);
+			end
+			
+			
+			local icon = vgui.Create("SpawnIcon", pan);
+			icon:SetModel(enttbl.showmodel);
+			icon:SetPos(2, 2);
+			
+			local enttxt = vgui.Create("DLabel", pan);
+			enttxt:SetSize(100, 20);
+			enttxt:SetText(enttbl.name);
+			enttxt:SetPos(75, 24);
+			
+			local saltxt = vgui.Create("DLabel", pan);
+			saltxt:SetSize(100, 20);
+			saltxt:SetText(enttbl.prize);
+			saltxt:SetPos(195, 24);
+			
+			local entbtn = vgui.Create("DButton", pan);
+			entbtn:SetSize(50, 20);
+			entbtn:SetText("Buy!");
+			entbtn:SetPos(720, 24);
+			entbtn.DoClick = function ()
+					RunConsoleCommand("rp_buyent", enttbl.class);
+					MyWindow:Close();
+				end
+			
+			EntList:AddItem(pan);
+		end
+	end
+	
+end
+concommand.Add("rp_entmenu", gui_showEntBuyMenu);
+
+local menu;
+function gui_showPlyMenu(ply, cmd, args)
+	if(ply.rpmenuopen)then gui.EnableScreenClicker(false) ply.rpmenuopen = false /*if(menu)then  menu:Hide() end*/ return end
 	ply.rpmenuopen = true;
-	local menu = DermaMenu();
+	menu = DermaMenu();
+	menu:SetDeleteSelf(true);
 	menu:SetPos(ScrW()/2, ScrH()/2);
 	menu:AddOption("buy", function() RunConsoleCommand("rp_buy") gui.EnableScreenClicker(false) ply.rpmenuopen = false; end );
 	menu:AddOption("sell", function() RunConsoleCommand("rp_sell") gui.EnableScreenClicker(false) ply.rpmenuopen = false; end );
@@ -176,7 +260,56 @@ function gui_showBuyMenu(ply, cmd, args)
 								end );
 	gui.EnableScreenClicker(true);
 end
-concommand.Add("rp_bmenu", gui_showBuyMenu);
+concommand.Add("rp_plymenu", gui_showPlyMenu);
+
+function um_JobVote(um)
+	local ply = um:ReadEntity();
+	local jobname = um:ReadString();
+	
+	local MyWindow = vgui.Create("DFrame");
+	MyWindow:SetSize(200, 100);
+	MyWindow:SetSizable(false);
+	MyWindow:SetPos(10, ScrH()/2-100);
+	MyWindow:SetTitle("Vote for change!");
+	MyWindow:ShowCloseButton(false);
+	MyWindow:MakePopup();
+	MyWindow:SetDraggable(false);
+	MyWindow:SetBackgroundBlur(false);
+	
+	local namelab = vgui.Create("DLabel", MyWindow);
+	namelab:SetSize(170, 20);
+	namelab:SetText(ply:GetRPName());
+	//namelab:SetPos(15, 25);
+	namelab:Center(); 
+	local x, y = namelab:GetPos();
+	namelab:SetPos(x, 25);
+	
+	local textlab = vgui.Create("DLabel", MyWindow);
+	textlab:SetSize(170, 50);
+	textlab:SetText(" wants to become a " ..jobname);
+	//textlab:SetPos(15, 25);
+	textlab:Center();
+	
+	local yesbtn = vgui.Create("DButton", MyWindow);
+	yesbtn:SetSize(30, 20);
+	yesbtn:SetText("Yes!");
+	yesbtn:SetPos(15, 60);
+	yesbtn.DoClick = function ()
+			RunConsoleCommand("rp_vote", ply:UserID(), 1);
+			MyWindow:Close();
+		end
+	
+	local nobtn = vgui.Create("DButton", MyWindow);
+	nobtn:SetSize(30, 20);
+	nobtn:SetText("No!");
+	nobtn:SetPos(155, 60);
+	nobtn.DoClick = function ()
+			RunConsoleCommand("rp_vote", ply:UserID(), 0);
+			MyWindow:Close();
+		end
+	
+end
+usermessage.Hook("rp_jobvoting", um_JobVote);
 
 
 

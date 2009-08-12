@@ -5,6 +5,19 @@ RP = {};
 
 RP.RP_NAME = "Base RP";
 //RP.RP_TABLENAME = "rp_data";
+RP.DEBUG = true;
+
+function RP:dbgPrint(msg)
+	if(RP.DEBUG)then
+		print(msg);
+	end
+end
+
+function RP:dbgPrintTable(tbl)
+	if(RP.DEBUG)then
+		PrintTable(tbl);
+	end
+end
 
 RP.CivModels = {
 	"models/player/Group01/Female_01.mdl",
@@ -40,6 +53,13 @@ RP.CivModels = {
 }
 
 RP.colors = {};
+RP.colors.blue1 = Color(0, 0, 255, 255);
+RP.colors.green1 = Color(0, 255, 0, 255);
+RP.colors.red1 = Color(255, 0, 0, 255);
+RP.colors.yellow1 = Color(255, 255, 0, 255);
+RP.colors.black = Color(0, 0, 0, 255);
+RP.colors.white = Color(255, 255, 255, 255);
+
 RP.colors.blue = Color(86, 142, 255, 255);
 RP.colors.darkblue = Color(0, 80, 165, 255);
 RP.colors.green = Color(176, 255, 86, 255);
@@ -48,12 +68,19 @@ RP.colors.red = Color(255, 111, 86, 255);
 RP.colors.grey = Color(140, 140, 140, 255);
 RP.colors.orange = Color(255, 187, 0, 255);
 RP.colors.yellow = Color(255, 229, 0, 255);
-RP.colors.black = Color(0, 0, 0, 255);
-RP.colors.white = Color(255, 255, 255, 255);
+
 RP.colors.hudblue = Color(86, 142, 255, 200);
 RP.colors.hudred = Color(255, 111, 86, 200);
 RP.colors.hudgrey = Color(140, 140, 140, 200);
 RP.colors.hudorange = Color(255, 187, 0, 200);
 RP.colors.huddarkblue = Color(0, 80, 165, 200);
+
 RP.colors.jobheader = Color(0, 34, 102, 255);
 RP.colors.jobpanel = Color(75, 84, 102, 255);
+RP.colors.entheader = Color(21, 71, 10, 255);
+RP.colors.entpanel = Color(38, 127, 19, 255);
+
+RP.jobs = {};
+
+RP.entities = {};
+

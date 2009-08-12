@@ -14,4 +14,4 @@ include("shared.lua");
 include("client/cl_gui.lua");
 include("client/cl_hud.lua");
 include("client/cl_gamemode.lua");
-
+include("client/cl_concommands.lua");

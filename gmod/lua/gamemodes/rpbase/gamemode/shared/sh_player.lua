@@ -32,10 +32,20 @@ function plmeta:PaySalary()
 	end
 end
 
+function plmeta:IsRegistered()
+	local sqlusr = sql.Query("select * from " ..GetConVar("rp_sqltable"):GetString() .." where uid = " ..SQLStr(self:UniqueID()));
+	if(sqlusr)then //user already joined the server
+		return true;
+	else
+		return false;
+	end
+end
+
 function plmeta:ReadData()
 	local sqlusr = sql.Query("select * from " ..GetConVar("rp_sqltable"):GetString() .." where uid = " ..SQLStr(self:UniqueID()));
 	if(sqlusr)then //user already joined the server
-		PrintTable(sqlusr);
+		RP:dbgPrint("Data read for " ..self:GetName());
+		RP:dbgPrintTable(sqlusr);
 		self:SetNWString("rp_name", sqlusr[1].rpname);
 		self:SetNWInt("rp_money", sqlusr[1].money);
 		self:SetNWInt("rp_salary", RP.jobs[self:Team()].salary);
@@ -77,10 +87,20 @@ function plmeta:Reequip()
 	end
 end
 
-function plmeta:SendMsg(msg)
+function plmeta:SendMsg(msg, iserror)
 	self:ChatPrint(msg);
 end
 
 function plmeta:GetRPName()
 	return self:GetNWString("rp_name");
+end
+
+function plmeta:BuyAllowed(entname)
+	local teamid = self:Team();
+	for k,enttbl in pairs(RP.entities) do
+		if(enttbl.class == entname && enttbl.jobid == teamid)then
+			return true;
+		end
+	end
+	return false;
 end

@@ -2,11 +2,124 @@
 -- by SMILIE[AUT] 
 ------------------------------------
 
+/*---------------------------------------------------------
+   Name: CanPlayerSpawnSENT
+---------------------------------------------------------*/
+local function CanPlayerSpawnSENT( player, EntityName )
+
+	// Make sure this is a SWEP
+	local sent = scripted_ents.GetStored( EntityName )
+	if (sent == nil) then 
+	
+		// Is this in the SpawnableEntities list?
+		local SpawnableEntities = list.Get( "SpawnableEntities" )
+		if (!SpawnableEntities) then return false end
+		local EntTable = SpawnableEntities[ EntityName ]
+		if (!EntTable) then return false end
+		if ( EntTable.AdminOnly && !player:IsAdmin() ) then return false end
+		
+		return true 
+	
+	end
+
+	local sent = sent.t
+	
+	// We need a spawn function. The SENT can then spawn itself properly
+	if (!sent.SpawnFunction) then return false end
+	
+	// You're not allowed to spawn this unless you're an admin!
+	if ( !sent.Spawnable && !player:IsAdmin() ) then return false end 
+	if ( sent.AdminOnly && !player:IsAdmin() ) then return false end
+	
+	return true
+	
+end
+
+/*---------------------------------------------------------
+   Name: CCSpawnSENT
+   Desc: Console Command for a player to spawn different items
+---------------------------------------------------------*/
+
+function spawnSent( player, entname )
+
+	local EntityName = entname
+	if ( EntityName == nil ) then return end
+	
+	if ( !CanPlayerSpawnSENT( player, EntityName ) ) then return end
+	
+	// Ask the gamemode if it's ok to spawn this
+	if ( !gamemode.Call( "PlayerSpawnSENT", player, EntityName ) ) then return end
+	
+	local vStart = player:GetShootPos()
+	local vForward = player:GetAimVector()
+	
+	local trace = {}
+	trace.start = vStart
+	trace.endpos = vStart + (vForward * 2048)
+	trace.filter = player
+	
+	local tr = util.TraceLine( trace )
+	
+	local entity = nil
+	local PrintName = nil
+	local sent = scripted_ents.GetStored( EntityName )
+	if ( sent ) then
+	
+		local sent = sent.t
+		entity = sent:SpawnFunction( player, tr )
+		PrintName = sent.PrintName
+	
+	else
+	
+		// Spawn from list table
+		local SpawnableEntities = list.Get( "SpawnableEntities" )
+		if (!SpawnableEntities) then return end
+		local EntTable = SpawnableEntities[ EntityName ]
+		if (!EntTable) then return end
+		
+		PrintName = EntTable.PrintName
+		
+		local SpawnPos = tr.HitPos + tr.HitNormal * 16
+		if ( EntTable.NormalOffset ) then SpawnPos = SpawnPos + tr.HitNormal * EntTable.NormalOffset end
+	
+		entity = ents.Create( EntTable.ClassName )
+			entity:SetPos( SpawnPos )
+		entity:Spawn()
+		entity:Activate()
+		
+		if ( EntTable.DropToFloor ) then
+			entity:DropToFloor()
+		end
+	
+	end
+	
+
+	if ( ValidEntity( entity ) ) then
+	
+		gamemode.Call( "PlayerSpawnedSENT", player, entity )
+		
+		undo.Create("SENT")
+			undo.SetPlayer(player)
+			undo.AddEntity(entity)
+			if ( PrintName ) then
+				undo.SetCustomUndoText( "Undone "..PrintName )
+			end
+		undo.Finish( "Scripted Entity ("..tostring( EntityName )..")" )
+		
+		player:AddCleanup( "sents", entity )		
+		entity:SetVar( "Player", player )
+	
+	end
+	
+	
+end
+
+
 function ccRegisterUser(ply, cmd, args)
 	if(!args) then return end
 	local sqlusrdata = sql.Query("select * from " ..GetConVar("rp_sqltable"):GetString() .." where uid = " ..ply:UniqueID());
 	if(sqlusrdata)then
-		ply:SendMsg("You have already created a useraccount!");
+		ply:SendMsg("You have already created a useraccount!", true);
 	else
 		sql.Query("insert into " ..GetConVar("rp_sqltable"):GetString() .."(uid, rpname, money) values(" ..ply:UniqueID() ..", " ..SQLStr(args[1]) ..", " ..GetConVar("rp_startmoney"):GetInt() ..")")
 		ply:SendMsg("Your useraccount has been created!");
@@ -19,7 +132,7 @@ function ccShowUsersFromDB(ply, cmd, args)
 	if(!ply:IsSuperAdmin())then return end
 	local sqlusers = sql.Query("select * from " ..GetConVar("rp_sqltable"):GetString());
 	if(sqlusers)then
-		PrintTable(sqlusers);
+		RP:dbgPrintTable(sqlusers);
 	end
 
 end
@@ -37,37 +150,94 @@ concommand.Add("rp_save", ccSaveDataToDB);
 function ccChangeJob(ply, cmd, args)	
 	if(!ply || !args)then return end
 	local jobname = args[1];
-	print("job: "..jobname);
+	RP:dbgPrint("job: "..jobname);
 	local jobinfo = RP:getJobByName(jobname);
 	if(jobinfo)then
-		local maxpls = GetConVar("rp_max" ..string.lower(jobinfo.name)):GetInt();
+		local maxpls = GetConVar("rp_max" ..string.lower(jobinfo.name) .."s"):GetInt();
 		local curpls = team.NumPlayers(jobinfo.id);
 		if(curpls>=maxpls)then
-			ply:SendMsg("There are already enough players in this job!");
+			ply:SendMsg("There are already enough players in this job!", true);
 		else
-			ply:SetTeam(jobinfo.id);
-			ply:ReadData();
-			ply:Reequip();
-			local modrand = math.random(#RP.jobs[ply:Team()].models);
-			ply:SetModel(RP.jobs[ply:Team()].models[modrand]);
+			if(jobinfo.vote)then
+				if(RP.Jobvoting)then
+					ply:SendMsg("There is a vote in progress, please try again later.", true);
+				else
+					RP.Jobvoting = true;
+					RP.Jobvoting_data = {};
+					RP.Jobvoting_data.ply = ply;
+					RP.Jobvoting_data.jobid = jobinfo.id;
+					RP.Jobvoting_data.jobname = jobinfo.name;
+					RP.Jobvoting_data.yesvotes = 1;
+					RP.Jobvoting_data.novotes = 0;
+					RP.Jobvoting_data.users = {};
+					
+					local filter = RecipientFilter()
+					filter:AddAllPlayers();
+					filter:RemovePlayer(ply);
+					
+					umsg.Start("rp_jobvoting", filter);
+						umsg.Entity(ply);
+						umsg.String(jobinfo.name);
+					umsg.End();
+					if(#player.GetAll()==1)then
+						RP:finishVote();
+					end
+				end
+			else
+				RP:plyChangeJob(ply, jobinfo.id);
+				ply:SendMsg("You changed your job to " ..jobinfo.name);
+			end
 		end
 	else
-		ply:SendMsg("This job doesn't exist!");
+		ply:SendMsg("This job doesn't exist!", true);
 		return false;
 	end
 	
 end
 concommand.Add("rp_job", ccChangeJob);
 
+function ccJobVote(ply, cmd, args)
+	if(args && #args == 2)then
+		if(RP.Jobvoting)then
+			local userid = tonumber(args[1]);
+			local decision = (tonumber(args[2])==1);
+			RP:dbgPrint("decision: " ..tostring(decision));
+			RP:dbgPrint("userid: " ..tostring(userid));
+			if(RP.Jobvoting_data.ply:UniqueID() == userid)then
+				if(table.HasValue(RP.Jobvoting_data.users, ply:UserID()))then
+					ply:SendMsg("You have already voted!", true);
+				else
+					table.insert(RP.Jobvoting_data.users, ply:UniqueID());
+					if(decision)then
+						RP.Jobvoting_data.yesvotes = RP.Jobvoting_data.yesvotes + 1;
+					else
+						RP.Jobvoting_data.novotes = RP.Jobvoting_data.novotes + 1;
+					end
+					ply:SendMsg("Thanks for your vote.");
+					local anzvotes = RP.Jobvoting_data.novotes + RP.Jobvoting_data.yesvotes;
+					if(anzvotes == #player.GetAll())then
+						RP:finishVote();
+					end
+				end
+			end
+		else
+			ply:SendMsg("There is currently no vote!", true);
+		end
+	else
+		ply:SendMsg("Invalid parameters!", true);
+	end
+end
+concommand.Add("rp_vote", ccJobVote);
+
 
 function ccCreateDoor(ply, cmd, args)
 	if(!ply:IsSuperAdmin())then return end
 	local tr = ply:GetEyeTrace();
-	PrintTable(tr);
+	RP:dbgPrintTable(tr);
 	local pos = tr.HitPos;
-	print(pos);
+	RP:dbgPrint(pos);
 	pos.z = pos.z+60;
-	print(pos);
+	RP:dbgPrint(pos);
 	local dor = ents.Create("prop_door_rotating");
 	dor:SetModel("models/props_c17/door01_left.mdl");
 	dor:SetPos(pos);
@@ -78,16 +248,17 @@ concommand.Add("rp_createdoor", ccCreateDoor);
 function ccEntInfo(ply, cmd, args)
 	if(!ply:IsSuperAdmin())then return end
 	local tr = ply:GetEyeTrace();
-	PrintTable(tr);
+	RP:dbgPrintTable(tr);
 	local hp = tr.HitPos;
 	local ep = tr.StartPos;
 	local dist = ep:Distance(hp);
-	print("distance: " ..dist);
+	RP:dbgPrint("distance: " ..dist);
 	if(tr.Entity)then
-		print("class: " ..tr.Entity:GetClass());
-		print("model: " ..tr.Entity:GetModel());
-		print("ownable: " ..tostring(tr.Entity:IsOwnable()));
-		print("owner: " ..tr.Entity:GetNWString("rp_owner", ""));
+		RP:dbgPrint("class: " ..tr.Entity:GetClass());
+		RP:dbgPrint("model: " ..tr.Entity:GetModel());
+		RP:dbgPrint("ownable: " ..tostring(tr.Entity:IsOwnable()));
+		RP:dbgPrint("owner: " ..tr.Entity:GetNWString("rp_owner", ""));
+		RP:dbgPrint("vehicle?: " ..tostring(tr.Entity:IsVehicle()));
 	end
 end
 concommand.Add("rp_showentinfo", ccEntInfo);
@@ -99,7 +270,7 @@ function ccBuy(ply, cmd, args)
 			local ent = tr.Entity;
 			ent:Own(ply);
 		else
-			ply:SendMsg("Can't buy this!");
+			ply:SendMsg("Can't buy this!", true);
 		end
 	end
 end
@@ -112,11 +283,31 @@ function ccSell(ply, cmd, args)
 			local ent = tr.Entity;
 			ent:UnOwn(ply);
 		else
-			ply:SendMsg("Can't buy this!");
+			ply:SendMsg("Can't sell this!", true);
 		end
 	end
 end
 concommand.Add("rp_sell", ccSell);
+
+function ccBuyEnt(ply, cmd, args)
+	if(args && #args==1)then
+		local entname = tostring(args[1]);
+		if(entname && entname != "")then
+			if(ply:BuyAllowed(entname))then
+				spawnSent(ply, entname);
+				//rpSpawnSent(ply, entname);
+				//ply:ConCommand("gm_spawnsent " ..entname);
+			else
+				ply:SendMsg("Not allowed to buy this!", true);
+			end
+		else
+			ply:SendMsg("Invalid entity name specified!", true);
+		end
+	else
+		ply:SendMsg("No entity name specified!", true);
+	end
+end
+concommand.Add("rp_buyent", ccBuyEnt);
 
 function ccLock(ply, cmd, args)
 	local tr = ply:GetEyeTrace();
@@ -125,7 +316,7 @@ function ccLock(ply, cmd, args)
 			local ent = tr.Entity;
 			ent:RPLock(ply);
 		else
-			ply:SendMsg("Can't lock this!");
+			ply:SendMsg("Can't lock this!", true);
 		end
 	end
 end
@@ -138,7 +329,7 @@ function ccUnLock(ply, cmd, args)
 			local ent = tr.Entity;
 			ent:RPUnLock(ply);
 		else
-			ply:SendMsg("Can't unlock this!");
+			ply:SendMsg("Can't unlock this!", true);
 		end
 	end
 end
@@ -158,17 +349,17 @@ function ccGive(ply, cmd, args)
 						ply:SendMsg("You sent $" ..amount .." to " ..pl:GetRPName()..".");
 						pl:SendMsg(ply:GetRPName() .." sent you $" ..amount ..".");
 					else
-						ply:SendMsg("You don't have that much money!");
+						ply:SendMsg("You don't have that much money!", true);
 					end
 				else
-					ply:SendMsg("This is no player!");
+					ply:SendMsg("This is no player!", true);
 				end
 			end
 		else
-			ply:SendMsg("Amount must be a positive number!");
+			ply:SendMsg("Amount must be a positive number!", true);
 		end
 	else
-		ply:SendMsg("Please specify a amount!");
+		ply:SendMsg("Please specify a amount!", true);
 	end
 end
 concommand.Add("rp_give", ccGive);

@@ -25,13 +25,13 @@ function GM:PlayerSpawn(ply)
 	end
 	*/
 	local modrand = math.random(#RP.jobs[teamid].models);
-	print(ply:Name() ..": " ..RP.jobs[teamid].models[modrand]);
+	RP:dbgPrint(ply:Name() ..": " ..RP.jobs[teamid].models[modrand]);
 	ply:SetModel(RP.jobs[teamid].models[modrand]);
 	
 end
 
 function GM:PlayerLoadout(ply)
-	print("loadout");
+	RP:dbgPrint("loadout");
 	local teamid = ply:Team();
 	
 	if( GetConVar("rp_physgun"):GetInt()==1 || ply:IsAdmin() || ply:IsSuperAdmin() )then

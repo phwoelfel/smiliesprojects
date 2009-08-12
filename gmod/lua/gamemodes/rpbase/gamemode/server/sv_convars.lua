@@ -14,12 +14,12 @@ RP.convars = {
 	{"rp_allowspawnsweps", 0}, // allow swep spawning or not
 	{"rp_allowspawnvehicles", 1}, // allow vehicle spawning or not
 	{"rp_noclip", 1}, // allow noclip or not
-	{"rp_propcost", 10}, // how much a prop/npc/swep/sent/effect/ragdoll costs
-	{"rp_swepcost", 500}, // how much a prop/npc/swep/sent/effect/ragdoll costs
-	{"rp_sentcost", 200}, // how much a prop/npc/swep/sent/effect/ragdoll costs
-	{"rp_npccost", 200}, // how much a prop/npc/swep/sent/effect/ragdoll costs
-	{"rp_vehiclecost", 100}, // how much a prop/npc/swep/sent/effect/ragdoll costs
-	{"rp_doorcost", 20}, // how much a prop/npc/swep/sent/effect/ragdoll costs
+	{"rp_propcost", 10}, // how much a prop costs
+	{"rp_defswepcost", 500}, // default cost for sweps
+	{"rp_defsentcost", 200}, // default cost for a sent
+	{"rp_npccost", 200}, // how much a npc costs
+	{"rp_vehiclecost", 100}, // how much a vehicle costs
+	{"rp_doorcost", 20}, // how much a door costs
 	{"rp_startmoney", 800} // money when you first spawn
 };
 

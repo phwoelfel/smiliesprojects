@@ -111,8 +111,8 @@ function GM:HUDPaint()
 		if(secclip == -1)then
 			draw.SimpleText(secammo, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h/2, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 		else
-			draw.SimpleText(secammo, "rp_hudtext_small", secammobox.x+secammobox.w-5, secammobox.y+secammobox.h-20, secammocolor, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER);
-			draw.SimpleText(secclip, "rp_hudtext_large", secammobox.x+10, secammobox.y+secammobox.h/2, secclipcolor, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER);
+			draw.SimpleText(secclip, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+5, secclipcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP);
+			draw.SimpleText(secammo, "rp_hudtext_small", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h-25, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM);
 		end
 		
 		local primammobox = {}; // values for  ammo box
@@ -133,8 +133,8 @@ function GM:HUDPaint()
 		if(primclip == -1)then
 			draw.SimpleText(primammo, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h/2, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 		else
-			draw.SimpleText(primammo, "rp_hudtext_small", primammobox.x+primammobox.w-5, primammobox.y+primammobox.h-20, primammocolor, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER);
-			draw.SimpleText(primclip, "rp_hudtext_large", primammobox.x+10, primammobox.y+primammobox.h/2, primclipcolor, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER);
+			draw.SimpleText(primclip, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+5, primclipcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP);
+			draw.SimpleText(primammo, "rp_hudtext_small", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h-25, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM);
 		end
 	end
 	

@@ -10,9 +10,9 @@ function entmeta:IsOwnable()
 		class == "prop_door_rotating" ||
 		class == "func_door" ||
 		class == "func_door_rotating" ||
-		class == "prop_vehicle_prisoner_pod" ||
 		class == "prop_vehicle_jeep" ||
-		class == "prop_vehicle_airboat")
+		class == "prop_vehicle_airboat" ||
+		class == "prop_vehicle_prisoner_pod")
 	then
 		return true
 	end
@@ -20,18 +20,14 @@ end
 
 function entmeta:GetPrize()
 	local class = self:GetClass();
-	if(
-		class == "prop_door_rotating" ||
-		class == "func_door" ||
-		class == "func_door_rotating" )
-	then
+	if(self:IsDoor())then
 		return GetConVar("rp_doorcost"):GetInt();
-	elseif(	
-		class == "prop_vehicle_prisoner_pod" ||
-		class == "prop_vehicle_jeep" ||
-		class == "prop_vehicle_airboat")
-	then
+	elseif(class == "prop_vehicle_jeep" ||
+		class == "prop_vehicle_airboat" ||
+		class == "prop_vehicle_prisoner_pod")then
 		return GetConVar("rp_vehiclecost"):GetInt()/2; // half the price cause you had to spawn it too
+	else
+		return self:GetNWInt("rp_prize", 0);
 	end
 	return 0;
 end
@@ -48,8 +44,6 @@ function entmeta:IsDoor()
 		return false;
 	end
 end
-
-
 
 function entmeta:IsOwner(ply)
 	if(self:GetNWString("rp_owner", "") == ply:UniqueID())then
@@ -72,8 +66,10 @@ function entmeta:Own(ply)
 			self:SetNWString("rp_ownername", ply:GetRPName());
 			if(self:IsDoor())then
 				ply:SendMsg("You paid $" ..self:GetPrize() .." for this door.");
-			else
+			elseif(self:IsVehicle())then
 				ply:SendMsg("You paid $" ..self:GetPrize() .." for this vehicle.");
+			else
+				ply:SendMsg("You paid $" ..self:GetPrize() .." for this entity.");
 			end
 			return true;
 		else
@@ -95,8 +91,10 @@ function entmeta:UnOwn(ply)
 		self:SetNWString("rp_ownername", "");
 		if(self:IsDoor())then
 			ply:SendMsg("You got $" ..self:GetPrize() .." for selling this door.");
-		else
+		elseif(self:IsVehicle())then
 			ply:SendMsg("You got $" ..self:GetPrize() .." for selling this vehicle.");
+		else
+			ply:SendMsg("You got $" ..self:GetPrize() .." for selling this entity.");
 		end
 	elseif(owner == "")then
 		ply:SendMsg("This belongs to nobody!");
