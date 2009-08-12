@@ -79,8 +79,15 @@ RP.colors.jobheader = Color(0, 34, 102, 255);
 RP.colors.jobpanel = Color(75, 84, 102, 255);
 RP.colors.entheader = Color(21, 71, 10, 255);
 RP.colors.entpanel = Color(38, 127, 19, 255);
+RP.colors.wepheader = Color(135, 20, 0, 255);
+RP.colors.weppanel = Color(173, 91, 74, 255);
+RP.colors.ammoheader = Color(135, 20, 0, 255);
+RP.colors.ammopanel = Color(173, 91, 74, 255);
+
 
 RP.jobs = {};
-
 RP.entities = {};
+RP.weapons = {};
+RP.ammo = {};
+
 

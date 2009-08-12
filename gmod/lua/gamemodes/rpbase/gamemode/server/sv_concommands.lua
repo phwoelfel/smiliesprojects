@@ -2,6 +2,7 @@
 -- by SMILIE[AUT] 
 ------------------------------------
 
+------------------------------------------------------ Garry's functions ( with some modifications ) ------------------------------------------------------
 /*---------------------------------------------------------
    Name: CanPlayerSpawnSENT
 ---------------------------------------------------------*/
@@ -113,6 +114,70 @@ function spawnSent( player, entname )
 	
 	
 end
+/*---------------------------------------------------------
+	// Give a swep.. duh.
+---------------------------------------------------------*/
+function spawnSWEP( player, entname )
+
+	if ( entname == nil ) then return end
+	if(
+		entname =="weapon_physcannon" ||
+		entname =="weapon_physgun" ||
+		entname =="weapon_crowbar" ||
+		entname =="weapon_stunstick" ||
+		entname =="weapon_pistol" ||
+		entname =="weapon_357" ||
+		entname =="weapon_smg1" ||
+		entname =="weapon_ar2" ||
+		entname =="weapon_shotgun" ||
+		entname =="weapon_crossbow" ||
+		entname =="weapon_rpg" ||
+		entname =="weapon_slam" ||
+		entname =="weapon_frag" ||
+		entname =="gmod_tool" ||
+		entname =="gmod_camera"
+	)then
+		if ( !gamemode.Call( "PlayerSpawnSWEP", player, entname, swep ) ) then return end
+		
+		local tr = player:GetEyeTraceNoCursor()
+
+		if ( !tr.Hit ) then return end
+		
+		local entity = ents.Create( entname )
+		
+		if ( ValidEntity( entity ) ) then
+		
+			entity:SetPos( tr.HitPos + tr.HitNormal * 32 )
+			entity:Spawn()
+		
+		end
+	else
+		// Make sure this is a SWEP
+		local swep = weapons.GetStored( entname )
+		if (swep == nil) then return end
+		
+		// You're not allowed to spawn this!
+		if ( !swep.Spawnable && !player:IsAdmin() ) then
+			return
+		end
+		
+		if ( !gamemode.Call( "PlayerSpawnSWEP", player, entname, swep ) ) then return end
+		
+		local tr = player:GetEyeTraceNoCursor()
+
+		if ( !tr.Hit ) then return end
+		
+		local entity = ents.Create( swep.Classname )
+		
+		if ( ValidEntity( entity ) ) then
+		
+			entity:SetPos( tr.HitPos + tr.HitNormal * 32 )
+			entity:Spawn()
+		
+		end
+	end
+end
+------------------------------------------------------ end Garry's functions ( with some modifications ) ------------------------------------------------------
 
 
 function ccRegisterUser(ply, cmd, args)
@@ -176,7 +241,8 @@ function ccChangeJob(ply, cmd, args)
 					filter:RemovePlayer(ply);
 					
 					umsg.Start("rp_jobvoting", filter);
-						umsg.Entity(ply);
+						umsg.String(ply:UniqueID());
+						umsg.String(ply:GetRPName());
 						umsg.String(jobinfo.name);
 					umsg.End();
 					if(#player.GetAll()==1)then
@@ -199,7 +265,7 @@ concommand.Add("rp_job", ccChangeJob);
 function ccJobVote(ply, cmd, args)
 	if(args && #args == 2)then
 		if(RP.Jobvoting)then
-			local userid = tonumber(args[1]);
+			local userid = args[1];
 			local decision = (tonumber(args[2])==1);
 			RP:dbgPrint("decision: " ..tostring(decision));
 			RP:dbgPrint("userid: " ..tostring(userid));
@@ -207,7 +273,7 @@ function ccJobVote(ply, cmd, args)
 				if(table.HasValue(RP.Jobvoting_data.users, ply:UserID()))then
 					ply:SendMsg("You have already voted!", true);
 				else
-					table.insert(RP.Jobvoting_data.users, ply:UniqueID());
+					table.insert(RP.Jobvoting_data.users, ply:UserID());
 					if(decision)then
 						RP.Jobvoting_data.yesvotes = RP.Jobvoting_data.yesvotes + 1;
 					else
@@ -215,7 +281,9 @@ function ccJobVote(ply, cmd, args)
 					end
 					ply:SendMsg("Thanks for your vote.");
 					local anzvotes = RP.Jobvoting_data.novotes + RP.Jobvoting_data.yesvotes;
-					if(anzvotes == #player.GetAll())then
+					RP:dbgPrint("votes: " ..anzvotes);
+					RP:dbgPrint("players: " ..#player.GetAll());
+					if(anzvotes >= #player.GetAll())then
 						RP:finishVote();
 					end
 				end
@@ -298,7 +366,7 @@ function ccBuyEnt(ply, cmd, args)
 				//rpSpawnSent(ply, entname);
 				//ply:ConCommand("gm_spawnsent " ..entname);
 			else
-				ply:SendMsg("Not allowed to buy this!", true);
+				ply:SendMsg("You are not allowed to buy this!", true);
 			end
 		else
 			ply:SendMsg("Invalid entity name specified!", true);
@@ -308,6 +376,51 @@ function ccBuyEnt(ply, cmd, args)
 	end
 end
 concommand.Add("rp_buyent", ccBuyEnt);
+
+function ccBuyWep(ply, cmd, args)
+	if(args && #args==1)then
+		local entname = tostring(args[1]);
+		if(entname && entname != "")then
+			if(ply:BuyAllowed(entname))then
+				spawnSWEP(ply, entname);
+				local wepinfo = RP:getWepByName(entname);
+				ply:GiveAmmo(wepinfo.ammo[2], wepinfo.ammo[1]);
+			else
+				ply:SendMsg("You are not allowed to buy this!", true);
+			end
+		else
+			ply:SendMsg("Invalid weapon name specified!", true);
+		end
+	else
+		ply:SendMsg("No weapon name specified!", true);
+	end
+end
+concommand.Add("rp_buyswep", ccBuyWep);
+
+function ccBuyAmmo(ply, cmd, args)
+	if(args && #args==1)then
+		local ammoname = tostring(args[1]);
+		if(ammoname && ammoname != "")then
+			if(ply:BuyAllowed(ammoname))then
+				local ammoinfo = RP:getAmmoByName(ammoname);
+				if(ply:CanAfford(ammoinfo.prize))then
+					ply:AddMoney(-ammoinfo.prize);
+					ply:GiveAmmo(ammoinfo.amount, ammoinfo.type);
+					ply:SendMsg("You bought " ..ammoinfo.amount .." rounds of " ..ammoinfo.name ..".");
+				else
+					ply:SendMsg("You can't afford this!", true);
+				end
+			else
+				ply:SendMsg("You are not allowed to buy this!", true);
+			end
+		else
+			ply:SendMsg("Invalid ammo name specified!", true);
+		end
+	else
+		ply:SendMsg("No ammo name specified!", true);
+	end
+end
+concommand.Add("rp_buyammo", ccBuyAmmo);
 
 function ccLock(ply, cmd, args)
 	local tr = ply:GetEyeTrace();
@@ -363,6 +476,31 @@ function ccGive(ply, cmd, args)
 	end
 end
 concommand.Add("rp_give", ccGive);
+
+
+function ccChangeModel(ply, cmd, args)
+	if(args && #args == 1)then
+		local mdl = tostring(args[1]);
+		local valid = false;
+		for k,model in pairs(RP.jobs[ply:Team()].models) do
+			if(model == mdl)then
+				valid = true;
+			end
+		end
+		if(valid)then
+			ply:SetModel(mdl);
+			ply:SetNWString("rp_model", mdl);
+			ply:SendMsg("You changed your model.");
+		else
+			ply:SendMsg("This model isn't allowed!", true);
+		end
+		
+	else
+		ply:SendMsg("Invalid parameters!", true);
+	end
+end
+concommand.Add("rp_model", ccChangeModel);
+
 
 function ccChangePayTime(ply, cmd, args)	
 	if(!ply:IsSuperAdmin())then return end

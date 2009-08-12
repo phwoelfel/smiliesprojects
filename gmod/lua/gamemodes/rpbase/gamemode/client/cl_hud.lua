@@ -90,9 +90,12 @@ function GM:HUDPaint()
 		ply:GetActiveWeapon():GetClass()=="weapon_physgun" ||
 		ply:GetActiveWeapon():GetClass()=="weapon_physcannon" ||
 		ply:GetActiveWeapon():GetClass()=="weapon_crowbar" ||
-		ply:GetActiveWeapon():GetClass()=="weapon_stunstick")
+		ply:GetActiveWeapon():GetClass()=="weapon_stunstick" ||
+		ply:GetActiveWeapon():GetClass()=="hands")
 	)then
 	else
+		local nodraw = false;
+		
 		local secammobox = {}; // values for  ammo box
 		secammobox.w = 100;
 		secammobox.h = 70;
@@ -106,21 +109,34 @@ function GM:HUDPaint()
 		local secclip = ply:GetActiveWeapon():Clip2();
 		
 		
-		draw.RoundedBox(bordersize, secammobox.x, secammobox.y, secammobox.w, secammobox.h, secammobox.col);
 		
-		if(secclip == -1)then
-			draw.SimpleText(secammo, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h/2, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+		
+		if(secclip == -1 || secclip == 0)then
+			if(secammo != 0)then
+				draw.RoundedBox(bordersize, secammobox.x, secammobox.y, secammobox.w, secammobox.h, secammobox.col);
+				draw.SimpleText(secammo, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h/2, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+			else
+				nodraw = true;
+			end
 		else
+			draw.RoundedBox(bordersize, secammobox.x, secammobox.y, secammobox.w, secammobox.h, secammobox.col);
 			draw.SimpleText(secclip, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+5, secclipcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP);
 			draw.SimpleText(secammo, "rp_hudtext_small", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h-25, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM);
 		end
-		
 		local primammobox = {}; // values for  ammo box
-		primammobox.w = 100;
-		primammobox.h = 70;
-		primammobox.x = ScrW()-primammobox.w-secammobox.w-40;
-		primammobox.y = ScrH()-primammobox.h-20;
-		primammobox.col = RP.colors.hudammo;
+		if(nodraw)then
+			primammobox.w = 100;
+			primammobox.h = 70;
+			primammobox.x = ScrW()-primammobox.w-20;
+			primammobox.y = ScrH()-primammobox.h-20;
+			primammobox.col = RP.colors.hudammo;
+		else
+			primammobox.w = 100;
+			primammobox.h = 70;
+			primammobox.x = ScrW()-primammobox.w-secammobox.w-40;
+			primammobox.y = ScrH()-primammobox.h-20;
+			primammobox.col = RP.colors.hudammo;
+		end
 		
 		local primammocolor = RP.colors.ammo;
 		local primclipcolor = RP.colors.ammo;
@@ -128,11 +144,15 @@ function GM:HUDPaint()
 		local primclip = ply:GetActiveWeapon():Clip1();
 		
 		
-		draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
 		
-		if(primclip == -1)then
-			draw.SimpleText(primammo, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h/2, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+		
+		if(primclip == -1 || primclip == 0)then
+			if(primammo != 0)then
+				draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
+				draw.SimpleText(primammo, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h/2, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+			end
 		else
+			draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
 			draw.SimpleText(primclip, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+5, primclipcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP);
 			draw.SimpleText(primammo, "rp_hudtext_small", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h-25, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM);
 		end

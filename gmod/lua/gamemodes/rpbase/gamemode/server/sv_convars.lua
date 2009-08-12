@@ -15,8 +15,10 @@ RP.convars = {
 	{"rp_allowspawnvehicles", 1}, // allow vehicle spawning or not
 	{"rp_noclip", 1}, // allow noclip or not
 	{"rp_propcost", 10}, // how much a prop costs
+	{"rp_effectscost", 10}, // how much a effect costs
 	{"rp_defswepcost", 500}, // default cost for sweps
-	{"rp_defsentcost", 200}, // default cost for a sent
+	{"rp_defsentcost", 200}, // default cost for sents
+	{"rp_defammocost", 50}, // default cost for ammo
 	{"rp_npccost", 200}, // how much a npc costs
 	{"rp_vehiclecost", 100}, // how much a vehicle costs
 	{"rp_doorcost", 20}, // how much a door costs

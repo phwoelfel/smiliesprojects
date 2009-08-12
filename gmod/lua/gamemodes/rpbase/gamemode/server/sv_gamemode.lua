@@ -20,9 +20,25 @@ end
 
 
 function GM:PlayerSpawnEffect(ply, mdlname)
-	if(ply:IsAdmin())then
-		return true;
+	if(GetConVar("rp_allowspawneffects"):GetInt()==1 || ply:IsAdmin())then
+		local maxspawn = server_settings.Int( "sbox_maxeffects", 0 )
+		local curspawn = ply:GetCount("effects");
+		if(curspawn >= maxspawn)then
+			ply:LimitHit("effects");
+		else
+			local cost = GetConVar("rp_effectscost"):GetInt();
+			if(ply:CanAfford(cost))then
+				ply:AddMoney(-cost);
+				ply:SendMsg("You paid $" ..cost .." for this effect.");
+				return true;
+			else
+				ply:SendMsg("You can't afford this!", true);
+				return false;
+			end
+			
+		end
 	else
+		ply:SendMsg("This is not allowed!", true);
 		return false;
 	end
 end
@@ -126,34 +142,42 @@ end
 
 function GM:PlayerSpawnSWEP(ply, swepname)
 	if(GetConVar("rp_allowspawnsweps"):GetInt()==1 || ply:IsAdmin())then
-		local cost = GetConVar("rp_swepcost"):GetInt();
-		if(ply:CanAfford(cost))then
-			ply:AddMoney(-cost);
-			ply:SendMsg("You paid $" ..cost .." for this SWEP.");
-			return true;
+		local cost = RP:getWepPrize(swepname);
+		if(ply:BuyAllowed(swepname))then
+			if(ply:CanAfford(cost))then
+				ply:AddMoney(-cost);
+				ply:SendMsg("You paid $" ..cost .." for this SWEP.");
+				return true;
+			else
+				ply:SendMsg("You can't afford this!", true);
+				return false;
+			end
 		else
-			ply:SendMsg("You can't afford this!", true);
-			return false;
+			ply:SendMsg("You are not allowed to buy this weapon!", true);
 		end
 	else
-		ply:SendMsg("This is not allowed!", true);
+		ply:SendMsg("You are not allowed to buy a weapon!", true);
 		return false;
 	end
 end
 
 function GM:PlayerGiveSWEP(ply, swepname, wep)
 	if(GetConVar("rp_allowspawnsweps"):GetInt()==1 || ply:IsAdmin())then
-		local cost = GetConVar("rp_swepcost"):GetInt();
-		if(ply:CanAfford(cost))then
-			ply:AddMoney(-cost);
-			ply:SendMsg("You paid $" ..cost .." for this SWEP.");
-			return true;
+		local cost = RP:getWepPrize(swepname);
+		if(ply:BuyAllowed(swepname))then
+			if(ply:CanAfford(cost))then
+				ply:AddMoney(-cost);
+				ply:SendMsg("You paid $" ..cost .." for this SWEP.");
+				return true;
+			else
+				ply:SendMsg("You can't afford this!", true);
+				return false;
+			end
 		else
-			ply:SendMsg("You can't afford this!", true);
-			return false;
+			ply:SendMsg("You are not allowed to buy this weapon!", true);
 		end
 	else
-		ply:SendMsg("This is not allowed!", true);
+		ply:SendMsg("You are not allowed to buy a weapon!", true);
 		return false;
 	end
 end

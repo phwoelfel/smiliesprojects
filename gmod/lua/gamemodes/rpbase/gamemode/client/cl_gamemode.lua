@@ -7,6 +7,11 @@ function GM:AddNotify(msg, typ, dur)
 end
 
 function GM:AddDeathNotice(attacker, attackerteam, weapon, victim, victimteam)
+	RP:dbgPrint("attacker: " ..tostring(attacker));
+	RP:dbgPrint("attackerteam: " ..tostring(attackerteam));
+	RP:dbgPrint("weapon: " ..tostring(weapon));
+	RP:dbgPrint("victim: " ..tostring(victim));
+	RP:dbgPrint("victimteam: " ..tostring(victimteam));
 	if(weapon == "worldspawn")then
 		chat.AddText(RP.colors.blue1,  
 		victim, 

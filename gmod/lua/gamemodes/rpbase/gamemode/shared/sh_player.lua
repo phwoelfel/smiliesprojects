@@ -5,6 +5,7 @@
 local plmeta = FindMetaTable("Player");
 
 function plmeta:AddMoney(amount)
+	self:ReadData();
 	local curamount = self:GetNWInt("rp_money");
 	local newamount = curamount+amount;
 	if(newamount<0)then newamount = 0; end
@@ -61,6 +62,8 @@ end
 
 function plmeta:SetUp()
 	self:ReadData();
+	local modrand = math.random(#RP.jobs[self:Team()].models);
+	self:SetNWInt("rp_model", RP.jobs[self:Team()].models[modrand]);
 	timer.Create("rpsalary_" ..self:UniqueID(), 5*60, 0, function() self:PaySalary() end);
 end
 
@@ -98,9 +101,22 @@ end
 function plmeta:BuyAllowed(entname)
 	local teamid = self:Team();
 	for k,enttbl in pairs(RP.entities) do
-		if(enttbl.class == entname && enttbl.jobid == teamid)then
+		if(enttbl.class == entname && (table.HasValue(enttbl.jobids, teamid) || #enttbl.jobids==0))then
 			return true;
 		end
 	end
+	
+	for k,weptbl in pairs(RP.weapons) do
+		if(weptbl.class == entname && (table.HasValue(weptbl.jobids, teamid) || #weptbl.jobids==0))then
+			return true;
+		end
+	end
+	
+	for k,ammotbl in pairs(RP.ammo) do
+		if(ammotbl.type == entname && (table.HasValue(ammotbl.jobids, teamid) || #ammotbl.jobids==0))then
+			return true;
+		end
+	end
+	
 	return false;
 end
