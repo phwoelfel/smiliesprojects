@@ -24,6 +24,7 @@ function GM:PlayerLoadout(ply)
 	end
 	ply:Give("weapon_physcannon");
 	ply:Give("gmod_camera");
+	ply:Give("hands");
 	
 	for _,wp in pairs(RP.jobs[teamid].weps) do
 		ply:Give(wp);

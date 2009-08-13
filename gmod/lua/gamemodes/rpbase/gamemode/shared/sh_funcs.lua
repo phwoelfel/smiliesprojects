@@ -40,7 +40,7 @@ end
 
 
 
-function RP:AddJob(name, color, models, salary, weps, ammo, maxamount, needsvote)
+function RP:AddJob(name, color, models, salary, weps, ammo, maxamount, needsvote, jobneeded)
 	local id = #RP.jobs+1;
 	
 	RP.jobs[id] = {};
@@ -52,6 +52,7 @@ function RP:AddJob(name, color, models, salary, weps, ammo, maxamount, needsvote
 	RP.jobs[id].weps = weps;
 	RP.jobs[id].ammo = ammo;
 	RP.jobs[id].vote = needsvote;
+	RP.jobs[id].jobneeded = jobneeded;
 	
 	local maxcvarn = "rp_max" ..string.lower(string.Replace(name, " ", "_")) .."s";
 	if(SERVER)then

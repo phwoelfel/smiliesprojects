@@ -146,7 +146,8 @@ function GM:PlayerSpawnSWEP(ply, swepname)
 		if(ply:BuyAllowed(swepname))then
 			if(ply:CanAfford(cost))then
 				ply:AddMoney(-cost);
-				ply:SendMsg("You paid $" ..cost .." for this SWEP.");
+				local wepinfo = RP:getWepByName(swepname);
+				ply:SendMsg("You paid $" ..cost .." for this " ..wepinfo.name ..".");
 				return true;
 			else
 				ply:SendMsg("You can't afford this!", true);
@@ -167,7 +168,8 @@ function GM:PlayerGiveSWEP(ply, swepname, wep)
 		if(ply:BuyAllowed(swepname))then
 			if(ply:CanAfford(cost))then
 				ply:AddMoney(-cost);
-				ply:SendMsg("You paid $" ..cost .." for this SWEP.");
+				local wepinfo = RP:getWepByName(swepname);
+				ply:SendMsg("You paid $" ..cost .." for this " ..wepinfo.name ..".");
 				return true;
 			else
 				ply:SendMsg("You can't afford this!", true);
@@ -223,6 +225,28 @@ function GM:CanPlayerEnterVehicle(ply, vhcl)
 	end
 end
 
+function GM:PlayerDeath(ply, wep, killer)
+	ply.weps = nil;
+end
 
+
+function GM:PlayerCanPickupWeapon(ply, wep)
+	hook.Call("RPWeaponPickup", nil, ply, wep:GetClass());
+	return true;
+end
+
+function RPWeaponPickUpHook(ply, wepclass)
+	RP:dbgPrint("svname: " ..ply:GetRPName());
+	RP:dbgPrint("svweapon: " ..wepclass);
+	local wepinfo = RP:getWepByName(wepclass);
+	if(wepinfo)then
+		ply:GiveAmmo(wepinfo.ammo[2], wepinfo.ammo[1]);
+		local wepinfo2 = weapons.Get(wepinfo.class);
+		if(wepinfo2)then
+			timer.Simple(0, function() ply:RemoveAmmo(wepinfo2.Primary.DefaultClip-wepinfo2.Primary.ClipSize, wepinfo2.Primary.Ammo) end);
+		end
+	end
+end
+hook.Add("RPWeaponPickup", "RP_Weapon_Pickup_Hook", RPWeaponPickUpHook);
 
 

@@ -11,6 +11,7 @@ surface.CreateFont("coolvetica", ScreenScale(7), 400, true, false, "rp_hudtext_v
 
 include("config.lua");
 include("shared.lua");
+include("client/cl_hudpickup.lua");
 include("client/cl_gui.lua");
 include("client/cl_hud.lua");
 include("client/cl_gamemode.lua");

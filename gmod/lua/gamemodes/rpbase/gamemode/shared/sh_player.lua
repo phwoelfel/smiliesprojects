@@ -69,25 +69,23 @@ end
 
 function plmeta:Reequip()
 	if(self:InVehicle())then self:ExitVehicle() end
-	self:StripWeapons();
+	//self:StripWeapons();
 	local teamid = self:Team();
 	
-	if( GetConVar("rp_physgun"):GetInt()==1 || self:IsAdmin() || self:IsSuperAdmin() )then
-		self:Give("weapon_physgun");
+	for _,wep in pairs(self:GetWeapons()) do
+		if(!table.HasValue(self.weps, wep))then
+			self:StripWeapon(wep:GetClass());
+		end
 	end
-	if( GetConVar("rp_toolgun"):GetInt()==1 || self:IsAdmin() || self:IsSuperAdmin() )then
-		self:Give("gmod_tool");
-	end
-	self:Give("weapon_physcannon");
-	self:Give("gmod_camera");
-	
-	for _,wp in pairs(RP.jobs[teamid].weps) do
+
+	for k,wp in pairs(RP.jobs[teamid].weps) do
 		self:Give(wp);
 	end
 	
 	for _,ammo in pairs(RP.jobs[teamid].ammo) do
 		self:GiveAmmo(ammo[2], ammo[1]);
 	end
+	
 end
 
 function plmeta:SendMsg(msg, iserror)

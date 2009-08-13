@@ -42,4 +42,3 @@ function GM:AddDeathNotice(attacker, attackerteam, weapon, victim, victimteam)
 		"!");
 	end
 end
-

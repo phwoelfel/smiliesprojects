@@ -218,41 +218,65 @@ function ccChangeJob(ply, cmd, args)
 	RP:dbgPrint("job: "..jobname);
 	local jobinfo = RP:getJobByName(jobname);
 	if(jobinfo)then
-		local maxpls = GetConVar("rp_max" ..string.lower(jobinfo.name) .."s"):GetInt();
-		local curpls = team.NumPlayers(jobinfo.id);
-		if(curpls>=maxpls)then
-			ply:SendMsg("There are already enough players in this job!", true);
-		else
-			if(jobinfo.vote)then
-				if(RP.Jobvoting)then
-					ply:SendMsg("There is a vote in progress, please try again later.", true);
-				else
-					RP.Jobvoting = true;
-					RP.Jobvoting_data = {};
-					RP.Jobvoting_data.ply = ply;
-					RP.Jobvoting_data.jobid = jobinfo.id;
-					RP.Jobvoting_data.jobname = jobinfo.name;
-					RP.Jobvoting_data.yesvotes = 1;
-					RP.Jobvoting_data.novotes = 0;
-					RP.Jobvoting_data.users = {};
-					
-					local filter = RecipientFilter()
-					filter:AddAllPlayers();
-					filter:RemovePlayer(ply);
-					
-					umsg.Start("rp_jobvoting", filter);
-						umsg.String(ply:UniqueID());
-						umsg.String(ply:GetRPName());
-						umsg.String(jobinfo.name);
-					umsg.End();
-					if(#player.GetAll()==1)then
-						RP:finishVote();
-					end
-				end
+		if(ply:Team()==jobinfo.jobneeded || jobinfo.jobneeded == 0)then
+			local maxpls = GetConVar("rp_max" ..string.lower(jobinfo.name) .."s"):GetInt();
+			local curpls = team.NumPlayers(jobinfo.id);
+			if(curpls>=maxpls)then
+				ply:SendMsg("There are already enough players in this job!", true);
 			else
-				RP:plyChangeJob(ply, jobinfo.id);
-				ply:SendMsg("You changed your job to " ..jobinfo.name);
+				if(jobinfo.vote)then
+					if(RP.Jobvoting)then
+						ply:SendMsg("There is a vote in progress, please try again later.", true);
+					else
+						RP.Jobvoting = true;
+						RP.Jobvoting_data = {};
+						RP.Jobvoting_data.ply = ply;
+						RP.Jobvoting_data.jobid = jobinfo.id;
+						RP.Jobvoting_data.jobname = jobinfo.name;
+						RP.Jobvoting_data.yesvotes = 1;
+						RP.Jobvoting_data.novotes = 0;
+						RP.Jobvoting_data.users = {};
+						
+						local filter = RecipientFilter()
+						filter:AddAllPlayers();
+						filter:RemovePlayer(ply);
+						
+						umsg.Start("rp_jobvoting", filter);
+							umsg.String(ply:UniqueID());
+							umsg.String(ply:GetRPName());
+							umsg.String(jobinfo.name);
+						umsg.End();
+						ply.weps = {};
+						ply.ammo = {};
+						for _,wp in pairs(ply:GetWeapons()) do
+							if(!table.HasValue(RP.jobs[ply:Team()].weps, wp:GetClass()))then
+								table.insert(ply.weps, wp);
+								table.insert(ply.ammo, {wp:GetPrimaryAmmoClass(), ply:GetAmmoCount(wp:GetPrimaryAmmoType())});
+							end
+						end
+						RP:dbgPrintTable(ply.ammo);
+						if(#player.GetAll()==1)then
+							RP:finishVote();
+						else
+							ply:SendMsg("You applied for changing you job to " ..jobinfo.name ..". Please wait for the vote to finish.");
+						end
+					end
+				else
+					ply.weps = {};
+					ply.ammo = {};
+					for _,wp in pairs(ply:GetWeapons()) do
+						if(!table.HasValue(RP.jobs[ply:Team()].weps, wp:GetClass()))then
+							table.insert(ply.weps, wp);
+							table.insert(ply.ammo, {wp:GetPrimaryAmmoClass(), ply:GetAmmoCount(wp:GetPrimaryAmmoType())});
+						end
+					end
+					RP:dbgPrintTable(ply.ammo);
+					RP:plyChangeJob(ply, jobinfo.id);
+					ply:SendMsg("You changed your job to " ..jobinfo.name);
+				end
 			end
+		else
+			ply:SendMsg("You need to be " ..RP.jobs[jobinfo.jobneeded].name .." first!", true);
 		end
 	else
 		ply:SendMsg("This job doesn't exist!", true);
@@ -383,8 +407,6 @@ function ccBuyWep(ply, cmd, args)
 		if(entname && entname != "")then
 			if(ply:BuyAllowed(entname))then
 				spawnSWEP(ply, entname);
-				local wepinfo = RP:getWepByName(entname);
-				ply:GiveAmmo(wepinfo.ammo[2], wepinfo.ammo[1]);
 			else
 				ply:SendMsg("You are not allowed to buy this!", true);
 			end

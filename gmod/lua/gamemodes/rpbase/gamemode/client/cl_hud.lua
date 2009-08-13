@@ -111,7 +111,7 @@ function GM:HUDPaint()
 		
 		
 		
-		if(secclip == -1 || secclip == 0)then
+		if(secclip == -1)then
 			if(secammo != 0)then
 				draw.RoundedBox(bordersize, secammobox.x, secammobox.y, secammobox.w, secammobox.h, secammobox.col);
 				draw.SimpleText(secammo, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h/2, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
@@ -146,11 +146,9 @@ function GM:HUDPaint()
 		
 		
 		
-		if(primclip == -1 || primclip == 0)then
-			if(primammo != 0)then
-				draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
-				draw.SimpleText(primammo, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h/2, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
-			end
+		if(primclip == -1)then
+			draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
+			draw.SimpleText(primammo, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h/2, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 		else
 			draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
 			draw.SimpleText(primclip, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+5, primclipcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP);
