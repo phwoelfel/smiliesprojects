@@ -12,7 +12,7 @@ RP:AddJob("Cop", Color(48,119,32,255) , {"models/player/combine_soldier.mdl", "m
 RP:AddEnt("sent_ball", 50, {}, "Bouncy Ball", "models/Combine_Helicopter/helicopter_bomb01.mdl");
 
 //RP:AddWeapon(String classname, Number prize, Table jobids, String nicename, String showmodel, Table ammo)
-//if jobids table is empty then every class can buy this entity
+//if jobids table is empty then every class can buy this weapon
 // ammo ={ "type", amount} 
 RP:AddWeapon("weapon_pistol", 30, {}, "Pistol", "models/weapons/W_pistol.mdl", {"pistol", 20});
 RP:AddWeapon("weapon_deagle", 50, {}, "Deagle", "models/weapons/w_pist_deagle.mdl", {"pistol", 10});
@@ -25,7 +25,7 @@ RP:AddWeapon("weapon_mp5", 100, {2}, "MP5", "models/weapons/w_smg_mp5.mdl", {"sm
 RP:AddWeapon("weapon_pumpshotgun", 100, {2}, "M3", "models/weapons/w_shot_m3super90.mdl", {"buckshot", 10});
 
 //RP:AddAmmo(String ammotype, Number prize, Table jobids, String nicename, String showmodel, Number amount)
-//if jobids table is empty then every class can buy this entity
+//if jobids table is empty then every class can buy this ammo
 // ammo ={ "type", amount} 
 RP:AddAmmo("pistol", 50, {}, "Pistol Ammo", "models/Items/BoxSRounds.mdl", 50);
 RP:AddAmmo("SMG1", 150, {2}, "SMG Ammo", "models/Items/BoxSRounds.mdl", 100);
