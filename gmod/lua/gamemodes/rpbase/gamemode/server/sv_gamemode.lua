@@ -225,10 +225,10 @@ function GM:CanPlayerEnterVehicle(ply, vhcl)
 	end
 end
 
-function GM:PlayerDeath(ply, wep, killer)
+function RPPlayerDeath(ply, wep, killer)
 	ply.weps = nil;
 end
-
+hook.Add( "PlayerDeath", "RPPlayerDeath", RPPlayerDeath );
 
 function GM:PlayerCanPickupWeapon(ply, wep)
 	hook.Call("RPWeaponPickup", nil, ply, wep:GetClass());
@@ -249,4 +249,11 @@ function RPWeaponPickUpHook(ply, wepclass)
 end
 hook.Add("RPWeaponPickup", "RP_Weapon_Pickup_Hook", RPWeaponPickUpHook);
 
+
+/*
+function GM:PlayerSay( ply, text, teamonly )
+	local str = ply:GetRPName() ..": " ..text;
+	return str;
+end
+*/
 

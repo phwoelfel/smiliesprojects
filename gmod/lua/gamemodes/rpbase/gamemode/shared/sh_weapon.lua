@@ -21,6 +21,7 @@ local wepmeta = FindMetaTable("Weapon");
 
 function wepmeta:GetPrimaryAmmoClass()
 	local typ = self:GetPrimaryAmmoType();
+	print("ptyp: " ..typ);
 	if(typ<1)then
 		return "none";
 	else
@@ -30,6 +31,7 @@ end
 
 function wepmeta:GetSecondaryAmmoClass()
 	local typ = self:GetSecondaryAmmoType();
+	print("styp: " ..typ);
 	if(typ<1)then
 		return "none";
 	else

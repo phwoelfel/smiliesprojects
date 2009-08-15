@@ -252,6 +252,7 @@ function ccChangeJob(ply, cmd, args)
 							if(!table.HasValue(RP.jobs[ply:Team()].weps, wp:GetClass()))then
 								table.insert(ply.weps, wp);
 								table.insert(ply.ammo, {wp:GetPrimaryAmmoClass(), ply:GetAmmoCount(wp:GetPrimaryAmmoType())});
+								table.insert(ply.ammo, {wp:GetSecondaryAmmoClass(), ply:GetAmmoCount(wp:GetSecondaryAmmoType())});
 							end
 						end
 						RP:dbgPrintTable(ply.ammo);
@@ -268,6 +269,7 @@ function ccChangeJob(ply, cmd, args)
 						if(!table.HasValue(RP.jobs[ply:Team()].weps, wp:GetClass()))then
 							table.insert(ply.weps, wp);
 							table.insert(ply.ammo, {wp:GetPrimaryAmmoClass(), ply:GetAmmoCount(wp:GetPrimaryAmmoType())});
+							table.insert(ply.ammo, {wp:GetSecondaryAmmoClass(), ply:GetAmmoCount(wp:GetSecondaryAmmoType())});
 						end
 					end
 					RP:dbgPrintTable(ply.ammo);

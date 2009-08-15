@@ -75,6 +75,8 @@ RP.colors.hudgrey = Color(140, 140, 140, 200);
 RP.colors.hudorange = Color(255, 187, 0, 200);
 RP.colors.huddarkblue = Color(0, 80, 165, 200);
 
+
+//job and buy menus
 RP.colors.jobheader = Color(0, 34, 102, 255);
 RP.colors.jobpanel = Color(75, 84, 102, 255);
 RP.colors.entheader = Color(21, 71, 10, 255);
@@ -83,6 +85,15 @@ RP.colors.wepheader = Color(135, 20, 0, 255);
 RP.colors.weppanel = Color(173, 91, 74, 255);
 RP.colors.ammoheader = Color(135, 20, 0, 255);
 RP.colors.ammopanel = Color(173, 91, 74, 255);
+
+//scoreboard
+RP.colors.scbbg = Color(56, 37, 0, 200); //background
+RP.colors.scbbgb = Color(22, 14, 0, 255); //background border
+// Color(255, 170, 0, 200)
+RP.colors.scbfg = Color(255, 170, 0, 255); //foreground
+//Color(0, 85, 255, 255)
+RP.colors.scbtxt = Color(174, 174, 174, 255); //text
+//Color(0, 85, 255, 255)
 
 
 RP.jobs = {};

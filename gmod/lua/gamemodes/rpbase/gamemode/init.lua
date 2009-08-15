@@ -7,11 +7,12 @@ DeriveGamemode("sandbox")
 AddCSLuaFile("config.lua");
 AddCSLuaFile("shared.lua");
 AddCSLuaFile("cl_init.lua");
-AddCSLuaFile("client/cl_hudpickup.lua");
 AddCSLuaFile("client/cl_gui.lua");
 AddCSLuaFile("client/cl_hud.lua");
 AddCSLuaFile("client/cl_concommands.lua");
 AddCSLuaFile("client/cl_gamemode.lua");
+AddCSLuaFile("client/cl_hudpickup.lua");
+AddCSLuaFile("client/cl_scoreboard.lua");
 AddCSLuaFile("shared/sh_teams.lua");
 AddCSLuaFile("shared/sh_entity.lua");
 AddCSLuaFile("shared/sh_player.lua");

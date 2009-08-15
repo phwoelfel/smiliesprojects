@@ -1,5 +1,8 @@
+------------------------------------
+-- by SMILIE[AUT] 
+------------------------------------
 
-RP:dbgPrint("cl_hudpickup.lua!!!!");
+
 function GM:HUDDrawPickupHistory( )
 	RP:dbgPrint("bla");
 	

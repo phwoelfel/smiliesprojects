@@ -48,4 +48,10 @@ end
 
 function GM:PlayerDisconnected(ply)
 	timer.Destroy("rpsalary_"  ..ply:UniqueID());
+	for _, ent in pairs(ents.GetAll())do
+		if(ent:GetNWString("rp_owner", "") == ply:UniqueID())then
+			ent:SetNWString("rp_owner", "");
+			ent:SetNWString("rp_ownername", "");
+		end
+	end
 end

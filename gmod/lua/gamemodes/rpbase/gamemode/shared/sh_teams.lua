@@ -7,7 +7,7 @@
 // jobneeded is the id of the job which you have to be before changing
 RP:AddJob("Citizen", Color(86, 131, 255, 255), RP.CivModels, 0, {}, {}, 100, false, 0)
 RP:AddJob("Cop", Color(48,119,32,255) , {"models/player/police.mdl", "models/player/combine_soldier.mdl", "models/player/combine_soldier_prisonguard.mdl"}, 50, {"weapon_stunstick", "weapon_pistol"}, {{"Pistol", 50}}, 5, true, 0)
-RP:AddJob("SWAT", Color(24,58,15,255) , {"models/player/gasmask.mdl", "models/player/swat.mdl", "models/player/riot.mdl", "models/player/urban.mdl", "models/player/combine_super_soldier.mdl"}, 50, {"weapon_stunstick", "weapon_deagle", "weapon_m4"}, {{"Pistol", 50}, {"SMG1", 200}}, 5, true, 2)
+RP:AddJob("SWAT", Color(24,58,15,255) , {"models/player/gasmask.mdl", "models/player/swat.mdl", "models/player/riot.mdl", "models/player/urban.mdl", "models/player/combine_super_soldier.mdl"}, 100, {"weapon_stunstick", "weapon_deagle", "weapon_m4"}, {{"Pistol", 50}, {"SMG1", 200}}, 5, true, 2)
 
 //RP:AddEnt(String classname, Number prize, Table jobids, String nicename, String showmodel)
 //if jobids table is empty then every class can buy this entity
