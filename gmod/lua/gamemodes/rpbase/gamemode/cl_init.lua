@@ -23,3 +23,4 @@ include("client/cl_hud.lua");
 include("client/cl_gamemode.lua");
 include("client/cl_concommands.lua");
 include("client/cl_scoreboard.lua");
+include("client/cl_usermessages.lua");

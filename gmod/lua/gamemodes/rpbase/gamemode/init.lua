@@ -13,6 +13,7 @@ AddCSLuaFile("client/cl_concommands.lua");
 AddCSLuaFile("client/cl_gamemode.lua");
 AddCSLuaFile("client/cl_hudpickup.lua");
 AddCSLuaFile("client/cl_scoreboard.lua");
+AddCSLuaFile("client/cl_usermessages.lua");
 AddCSLuaFile("shared/sh_teams.lua");
 AddCSLuaFile("shared/sh_entity.lua");
 AddCSLuaFile("shared/sh_player.lua");
@@ -24,6 +25,7 @@ include("config.lua");
 include("shared.lua");
 
 RP.Jobvoting = false;
+RP.Salarytime = 5;
 
 include("server/sv_concommands.lua");
 include("server/sv_convars.lua");

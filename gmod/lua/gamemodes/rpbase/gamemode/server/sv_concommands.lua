@@ -388,7 +388,10 @@ function ccBuyEnt(ply, cmd, args)
 		local entname = tostring(args[1]);
 		if(entname && entname != "")then
 			if(ply:BuyAllowed(entname))then
-				spawnSent(ply, entname);
+				umsg.Start("RP_spawnsent", ply)
+					umsg.String(entname);
+				umsg.End();
+				//spawnSent(ply, entname);
 				//rpSpawnSent(ply, entname);
 				//ply:ConCommand("gm_spawnsent " ..entname);
 			else
@@ -408,7 +411,10 @@ function ccBuyWep(ply, cmd, args)
 		local entname = tostring(args[1]);
 		if(entname && entname != "")then
 			if(ply:BuyAllowed(entname))then
-				spawnSWEP(ply, entname);
+				//spawnSWEP(ply, entname);
+				umsg.Start("RP_giveswep", ply);
+					umsg.String(entname);
+				umsg.End();
 			else
 				ply:SendMsg("You are not allowed to buy this!", true);
 			end
@@ -533,6 +539,10 @@ function ccChangePayTime(ply, cmd, args)
 		for _,pl in pairs(player.GetAll()) do
 			timer.Adjust("rpsalary_" ..ply:UniqueID(), newtime*60, 0, function() ply:PaySalary() end);
 		end
+		RP.Salarytime = newtime;
 	end
 end
-concommand.Add("rp_paytime", ccChangePayTime);
+function ccChangePayTimeCompl()
+	return {tostring(RP.Salarytime)};
+end
+concommand.Add("rp_paytime", ccChangePayTime, ccChangePayTimeCompl);
