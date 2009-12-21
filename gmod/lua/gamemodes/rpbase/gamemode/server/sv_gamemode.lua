@@ -3,7 +3,7 @@
 ------------------------------------
 
 function GM:ShowHelp(ply)
-	
+	ply:ConCommand("rp_plymenu");
 end
 
 function GM:ShowTeam(ply)
@@ -11,11 +11,11 @@ function GM:ShowTeam(ply)
 end
 
 function GM:ShowSpare1(ply)
-	ply:ConCommand("rp_plymenu");
+	ply:ConCommand("rp_entmenu")
 end
 
 function GM:ShowSpare2(ply)
-	ply:ConCommand("rp_entmenu")
+	
 end
 
 

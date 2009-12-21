@@ -1,0 +1,86 @@
+				/|||||||||||||||||||||||||\
+				  ||WÜNSCHE  -  RP Base||
+				\|||||||||||||||||||||||||/
+
+				  Geldautomat / Banksystem
+ein banksystem das das geld schpeichert.
+und natürlich einen bankautomaten um das geld ab zu heben, einzuzahlen oder zu überweisen.
+hier ist der bildschirm wie er aussehen sollte:
+				______________________________
+				|_________Spielername_________|
+				|                             |
+				|      Guthaben: xxxx         |
+				|                   	      |
+				|                             |
+				|         Überweisung 	      |
+				|                             |
+				|    Einzahlen    Abheben     |
+				|_____________________________|
+hier ist ein mögliches model:
+http://www.garrysmod.org/downloads/?a=view&id=41901
+(das 2. bild das schwarze teil neben der roten telefonzelle)
+
+
+					  Inventar
+ein ganz gewöhnliches inventar.
+es gibt die Waffe Tasche und wenn man die tasche hat und linke maustaste drückt nimmt man einen gegenstand ins inventar. und rechte maustaste öffnet das inventar.
+bei den gegenständen gibt es denn Use und Drop (Natürlich kann man den Gelddrucker und mikrowelle nicht einstecken^^)
+
+
+				  Neues Design für F3 menü
+titel: Türen
+		Tür Kaufen (buy door for 20$)
+		Tür Verkaufen (sell door for 20$)
+		Tür owner adden
+		Tür Titel ändern (wenn man auf die tür guckt steht z.b. bar dort halt den titel den man eingibt)
+		Tür aufschließen
+		Tür abschließen
+
+Titel: Geld
+		Drop money
+		give money
+		
+Titel: Aktionen
+		Sleep
+		Sit down
+		Advert (kleines menu um zu schreben: suche worker zahle gut usw. nachdem er enter drückt wirds abgeschickt an alle leute "nur alle 30 sekunden möglich")
+
+
+					 Gelddrucker
+man kann ihn für 1000$ kaufen und er printet alle 90 sekunden 100-150$ "Zufall: mal 112$ und mal 148$"
+
+
+					 Mikrowelle
+wenn man e drückt wird für 6$ ein chinesisches essen gemacht.
+
+
+					  Drugmod
+einfache Drugmod von Garrysmod.org (kannst du ganz zum schluss machen)
+
+
+					 Hungermod
+Wenn ein koch da ist wird die hungermod aktiviert und jeder spieler hat dann 100% und mit der zeit geht diese zahl runter und
+wenn man nichts isst kommst bei null in der mitte des Bldschirms: DU VERHUNGERST! und nach ein paar sekunden ist man tot.
+
+
+	 Cop/SWAT/"Bürgermeister" nur für leute die in eine liste eingetragen sind
+eine art Admin menu nur halt für "VIPS" die den beruf wählen dürfen
+also in diese liste wird die Steam iD eingetragen und die flags also COP/SWAT/"Bürgermeister"
+
+
+				    Automatisches Advert
+eine automatische werbung alle 30 sekunden.
+z.b. besucht uns auf www.blabla.de
+
+			              Help menü auf F1
+---------------------------------------------------
+	  	|				  |
+    Titel 1  	|  				  |
+	  	|				  |
+    Titel 2  	|  Text für ausgewählten titel	  |
+	  	|				  |
+    Titel 3  	|				  |
+	  	|				  |
+---------------------------------------------------
+
+links buttons die leicht zu bearbeiten sind und rechts der text wenn man auf einen button drückt.
