@@ -142,20 +142,7 @@ end
 
 function GM:PlayerSpawnSWEP(ply, swepname)
 	if(GetConVar("rp_allowspawnsweps"):GetInt()==1 || ply:IsAdmin())then
-		local cost = RP:getWepPrize(swepname);
-		if(ply:BuyAllowed(swepname))then
-			if(ply:CanAfford(cost))then
-				ply:AddMoney(-cost);
-				local wepinfo = RP:getWepByName(swepname);
-				ply:SendMsg("You paid $" ..cost .." for this " ..wepinfo.name ..".");
-				return true;
-			else
-				ply:SendMsg("You can't afford this!", true);
-				return false;
-			end
-		else
-			ply:SendMsg("You are not allowed to buy this weapon!", true);
-		end
+		RP:payWep(ply, swepname);
 	else
 		ply:SendMsg("You are not allowed to buy a weapon!", true);
 		return false;
@@ -163,21 +150,11 @@ function GM:PlayerSpawnSWEP(ply, swepname)
 end
 
 function GM:PlayerGiveSWEP(ply, swepname, wep)
+	RP:print("PlayerGiveSWEP wep arg:");
+	RP:dbgPrintTable(wep);
+	RP:print("PlayerGiveSWEP wep arg end");
 	if(GetConVar("rp_allowspawnsweps"):GetInt()==1 || ply:IsAdmin())then
-		local cost = RP:getWepPrize(swepname);
-		if(ply:BuyAllowed(swepname))then
-			if(ply:CanAfford(cost))then
-				ply:AddMoney(-cost);
-				local wepinfo = RP:getWepByName(swepname);
-				ply:SendMsg("You paid $" ..cost .." for this " ..wepinfo.name ..".");
-				return true;
-			else
-				ply:SendMsg("You can't afford this!", true);
-				return false;
-			end
-		else
-			ply:SendMsg("You are not allowed to buy this weapon!", true);
-		end
+		RP:payWep(ply, swepname);
 	else
 		ply:SendMsg("You are not allowed to buy a weapon!", true);
 		return false;
@@ -249,6 +226,13 @@ function RPWeaponPickUpHook(ply, wepclass)
 end
 hook.Add("RPWeaponPickup", "RP_Weapon_Pickup_Hook", RPWeaponPickUpHook);
 
+function GM:CanPlayerEnterVehicle(ply, vhcl, role)
+	if(vhcl:IsOwner(ply))then
+		return true;
+	else
+		return false;
+	end
+end
 
 /*
 function GM:PlayerSay( ply, text, teamonly )

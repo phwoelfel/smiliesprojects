@@ -7,7 +7,7 @@ DeriveGamemode("sandbox");
 // surface.CreateFont( string font_name, number size, number weight, boolean antialiasing, boolean italic, string new_font_name )
 surface.CreateFont("coolvetica", ScreenScale(20), 400, true, false, "rp_hudtext_large");
 surface.CreateFont("coolvetica", ScreenScale(10), 400, true, false, "rp_hudtext_small");
-surface.CreateFont("coolvetica", ScreenScale(7), 400, true, false, "rp_hudtext_verysmall");
+surface.CreateFont("coolvetica", ScreenScale(8), 400, true, false, "rp_hudtext_verysmall");
 surface.CreateFont("Verdana", ScreenScale(5), 400, true, false, "rp_scbtext_small");
 surface.CreateFont("Verdana", ScreenScale(20), 400, true, false, "rp_scbtext_large");
 

@@ -412,9 +412,19 @@ function ccBuyWep(ply, cmd, args)
 		if(entname && entname != "")then
 			if(ply:BuyAllowed(entname))then
 				//spawnSWEP(ply, entname);
+				/*
 				umsg.Start("RP_giveswep", ply);
 					umsg.String(entname);
 				umsg.End();
+				
+				RP:dbgPrintTable(weapons.Get(entname));
+				local ret = gamemode.Call("PlayerGiveSWEP", ply, entname, weapons.Get(entname));
+				RP:print("ret: " ..tostring(ret));
+				*/
+				local ret = RP:payWep(ply, entname);
+				if(ret)then
+					ply:Give(entname);
+				end
 			else
 				ply:SendMsg("You are not allowed to buy this!", true);
 			end

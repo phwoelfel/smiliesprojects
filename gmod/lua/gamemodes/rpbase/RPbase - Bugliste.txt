@@ -1,0 +1,42 @@
+				/|||||||||||||||||||||||||\
+				  ||Bugliste -  RP Base||
+				\|||||||||||||||||||||||||/
+
+				---------------------------
+				|          BUGS           |
+				---------------------------
+	    Money, "Job" und die schrifft bei der tür ist zu klein geschrieben					done
+		 Man sollte nicht in unowned Vehicles einsteigen können								done
+			HL2 Pistole und smg kann man nicht kaufen										done
+
+				---------------------------
+				|         WÜNSCHE         |
+				---------------------------
+				  Geldautomat / Banksystem
+					  Inventar
+				  Neues Design für F3 menü
+					 Gelddrucker
+					 Mikrowelle
+					  Drugmod
+					 Hungermod
+	 Cop/SWAT/"Bürgermeister" nur für leute die in eine liste eingetragen sind
+				    Automatisches Advert
+			              Help menü auf F1
+
+
+				------------------------------
+				|             INFO            |
+				------------------------------
+				  
+				   Geldautomat / Banksystem
+				______________________________
+				|_________Spielername_________|
+				|                             |
+				|      Guthaben: xxxx         |
+				|                   	      |
+				|                             |
+				|         Überweisung 	      |
+				|                             |
+				|    Einzahlen    Abheben     |
+				|_____________________________|
+Der Bankautomat sollte immer auf der Map stehen und NICHT über den Beruf Banker gemacht werden

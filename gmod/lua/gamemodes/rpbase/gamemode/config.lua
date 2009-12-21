@@ -13,6 +13,10 @@ function RP:dbgPrint(msg)
 	end
 end
 
+function RP:print(msg)
+	RP:dbgPrint(msg);
+end
+
 function RP:dbgPrintTable(tbl)
 	if(RP.DEBUG)then
 		PrintTable(tbl);

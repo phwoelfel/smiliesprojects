@@ -19,10 +19,27 @@ function RP:finishVote()
 		RP:plyChangeJob(data.ply, data.jobid)
 		data.ply:SendMsg("You changed your job to " ..data.jobname);
 	else
-		data.ply:SendMsg("Your vote didn't success!", true);
+		data.ply:SendMsg("Your vote didn't succeed!", true);
 	end
 	RP.Jobvoting = false;
 	table.Empty(RP.Jobvoting_data);
 end
 
 
+function RP:payWep(ply, swepname)
+	local cost = RP:getWepPrize(swepname);
+	if(ply:BuyAllowed(swepname))then
+		if(ply:CanAfford(cost))then
+			ply:AddMoney(-cost);
+			local wepinfo = RP:getWepByName(swepname);
+			ply:SendMsg("You paid $" ..cost .." for this " ..wepinfo.name ..".");
+			return true;
+		else
+			ply:SendMsg("You can't afford this!", true);
+			return false;
+		end
+	else
+		ply:SendMsg("You are not allowed to buy this weapon!", true);
+		return false;
+	end
+end
