@@ -142,7 +142,7 @@ end
 
 function GM:PlayerSpawnSWEP(ply, swepname)
 	if(GetConVar("rp_allowspawnsweps"):GetInt()==1 || ply:IsAdmin())then
-		RP:payWep(ply, swepname);
+		return RP:payWep(ply, swepname);
 	else
 		ply:SendMsg("You are not allowed to buy a weapon!", true);
 		return false;
@@ -154,7 +154,7 @@ function GM:PlayerGiveSWEP(ply, swepname, wep)
 	RP:dbgPrintTable(wep);
 	RP:print("PlayerGiveSWEP wep arg end");
 	if(GetConVar("rp_allowspawnsweps"):GetInt()==1 || ply:IsAdmin())then
-		RP:payWep(ply, swepname);
+		return RP:payWep(ply, swepname);
 	else
 		ply:SendMsg("You are not allowed to buy a weapon!", true);
 		return false;
