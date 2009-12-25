@@ -71,13 +71,13 @@ function plmeta:Reequip()
 	if(self:InVehicle())then self:ExitVehicle() end
 	//self:StripWeapons();
 	local teamid = self:Team();
-	
+	/*
 	for _,wep in pairs(self:GetWeapons()) do
 		if(!table.HasValue(self.weps, wep))then
 			self:StripWeapon(wep:GetClass());
 		end
 	end
-
+*/
 	for k,wp in pairs(RP.jobs[teamid].weps) do
 		self:Give(wp);
 	end

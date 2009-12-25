@@ -204,6 +204,7 @@ end
 
 function RPPlayerDeath(ply, wep, killer)
 	ply.weps = nil;
+	ply.ammo = nil;
 end
 hook.Add( "PlayerDeath", "RPPlayerDeath", RPPlayerDeath );
 

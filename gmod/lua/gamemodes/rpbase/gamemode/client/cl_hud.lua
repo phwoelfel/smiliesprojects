@@ -74,7 +74,7 @@ function GM:HUDPaint()
 	jobbox.w = 150;
 	jobbox.h = 20;
 	jobbox.x = 20;
-	jobbox.y = ScrH()-healthbox.h-moneybox.h-jobbox.h-50;
+	jobbox.y = ScrH()-healthbox.h-moneybox.h-jobbox.h-49;
 	jobbox.col = RP.colors.hudjob;
 	
 	local job = team.GetName(ply:Team());
