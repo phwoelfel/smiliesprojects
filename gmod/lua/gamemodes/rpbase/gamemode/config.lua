@@ -105,4 +105,5 @@ RP.entities = {};
 RP.weapons = {};
 RP.ammo = {};
 
-
+RP.walkSpeed = 190;
+RP.runSpeed = 250;

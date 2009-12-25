@@ -10,6 +10,8 @@ function GM:PlayerSpawn(ply)
 	local model = ply:GetNWInt("rp_model", RP.jobs[teamid].models[1]);
 	RP:dbgPrint(ply:Name() ..": " ..model);
 	ply:SetModel(model);
+	ply:SetWalkSpeed(RP.walkSpeed);
+	ply:SetRunSpeed(RP.runSpeed);
 end
 
 function GM:PlayerLoadout(ply)
@@ -37,7 +39,8 @@ end
 
 function GM:PlayerInitialSpawn(ply)
 	ply:SetTeam(1);
-	
+	ply:SetWalkSpeed(RP.walkSpeed);
+	ply:SetRunSpeed(RP.runSpeed);
 	if(ply:ReadData())then
 		ply:ChatPrint("Welcome back " ..ply:GetNWString("rp_name") .."!");
 		ply:SetUp();

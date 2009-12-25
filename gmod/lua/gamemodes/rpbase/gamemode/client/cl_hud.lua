@@ -167,7 +167,7 @@ function GM:HUDPaint()
 				if(owner != "")then
 					draw.SimpleText("Owner: " ..owner, "rp_hudtext_verysmall", pos.x, pos.y, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 				else
-					draw.SimpleText("Not owned!", "rp_hudtext_verysmall", pos.x, pos.y, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+					draw.SimpleText("Buy this for " ..tr.Entity:GetPrize() .."$!", "rp_hudtext_verysmall", pos.x, pos.y, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 				end
 			end
 		end

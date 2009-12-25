@@ -399,9 +399,11 @@ function gui_showEntBuyMenu(ply, cmd, args)
 end
 concommand.Add("rp_entmenu", gui_showEntBuyMenu);
 
+
+
 local menu;
 function gui_showPlyMenu(ply, cmd, args)
-	if(ply.rpmenuopen)then gui.EnableScreenClicker(false) ply.rpmenuopen = false /*if(menu)then  menu:Hide() end*/ return end
+	if(ply.rpmenuopen)then gui.EnableScreenClicker(false) ply.rpmenuopen = false  return end //if(menu)then  menu:Hide() end
 	ply.rpmenuopen = true;
 	menu = DermaMenu();
 	menu:SetDeleteSelf(true);

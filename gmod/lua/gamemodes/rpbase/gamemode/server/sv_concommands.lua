@@ -543,7 +543,7 @@ concommand.Add("rp_model", ccChangeModel);
 
 
 function ccChangePayTime(ply, cmd, args)	
-	if(!ply:IsSuperAdmin())then return end
+	if(!ply:IsAdmin())then return end
 	if(args && args[1]!="")then
 		local newtime = tonumber(args[1]);
 		for _,pl in pairs(player.GetAll()) do
@@ -556,3 +556,25 @@ function ccChangePayTimeCompl()
 	return {tostring(RP.Salarytime)};
 end
 concommand.Add("rp_paytime", ccChangePayTime, ccChangePayTimeCompl);
+
+function ccChangeRunSpeed(ply, cmd, args)	
+	if(!ply:IsAdmin())then return end
+	if(args && args[1]!="")then
+		local newspeed = tonumber(args[1]);
+		for _,pl in pairs(player.GetAll()) do
+			pl:SetRunSpeed(newspeed);
+		end
+	end
+end
+concommand.Add("rp_runspeed", ccChangeRunSpeed);
+
+function ccChangeWalkSpeed(ply, cmd, args)	
+	if(!ply:IsAdmin())then return end
+	if(args && args[1]!="")then
+		local newspeed = tonumber(args[1]);
+		for _,pl in pairs(player.GetAll()) do
+			pl:SetWalkSpeed(newspeed);
+		end
+	end
+end
+concommand.Add("rp_walkspeed", ccChangeWalkSpeed);

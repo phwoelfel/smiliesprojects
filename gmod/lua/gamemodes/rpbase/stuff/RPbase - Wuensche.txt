@@ -1,7 +1,13 @@
 				/|||||||||||||||||||||||||\
 				  ||WÜNSCHE  -  RP Base||
 				\|||||||||||||||||||||||||/
-
+				
+				-------------------------------------------------BUGS-------------------------------------------------
+				sprintgeschwindigkeit niedriger (250/190)					done
+				türen: Buy this door for $20!								done		
+				scoreboard													done
+				-------------------------------------------------BUGS ende--------------------------------------------
+				
 				  Geldautomat / Banksystem
 ein banksystem das das geld schpeichert.
 und natürlich einen bankautomaten um das geld ab zu heben, einzuzahlen oder zu überweisen.
@@ -27,7 +33,7 @@ es gibt die Waffe Tasche und wenn man die tasche hat und linke maustaste drückt 
 bei den gegenständen gibt es denn Use und Drop (Natürlich kann man den Gelddrucker und mikrowelle nicht einstecken^^)
 
 
-				  Neues Design für F3 menü
+				  Neues Design für F1 menü
 titel: Türen
 		Tür Kaufen (buy door for 20$)
 		Tür Verkaufen (sell door for 20$)

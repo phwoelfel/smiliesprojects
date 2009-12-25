@@ -14,7 +14,7 @@
 				---------------------------
 				  Geldautomat / Banksystem
 					  Inventar
-				  Neues Design für F3 menü
+				  Neues Design für F1 menü
 					 Gelddrucker
 					 Mikrowelle
 					  Drugmod

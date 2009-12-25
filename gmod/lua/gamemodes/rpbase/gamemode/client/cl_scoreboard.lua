@@ -27,13 +27,13 @@ function GM:HUDDrawScoreBoard()
 	*/
 	local plytext = {};
 	plytext.y = scby+115;
-	plytext.heady = scbx+80;
+	plytext.heady = scby+80;
 	plytext.rpnamex = scbx+20;
-	plytext.namex = scbx+120;
-	plytext.jobx = scbx+220;
-	plytext.deathx = scbx+scbw-50;
-	plytext.killx = plytext.deathx-40;
-	plytext.pingx = plytext.killx-50;
+	plytext.namex = scbx+220;
+	plytext.jobx = scbx+420;
+	plytext.deathx = scbx+scbw-80;
+	plytext.killx = plytext.deathx-50;
+	plytext.pingx = plytext.killx-60;
 	 
 	
 	local scbinfo = {};
@@ -50,12 +50,12 @@ function GM:HUDDrawScoreBoard()
 	draw.RoundedBox(scbinfo.bordersize, scbinfo.x, scbinfo.y, scbinfo.w, scbinfo.h, scbinfo.color);
 	draw.SimpleText(GAMEMODE.Name .. " - " .. GAMEMODE.Author, "rp_scbtext_large", scbx+scbw/2, scby+20, RP.colors.scbtxt, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP);
 	
-	draw.SimpleText("RP Name", "rp_scbtext_small", plytext.rpnamex, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
-	draw.SimpleText("Name", "rp_scbtext_small", plytext.namex, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
-	draw.SimpleText("Job", "rp_scbtext_small", plytext.jobx, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
-	draw.SimpleText("Ping", "rp_scbtext_small", plytext.pingx, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
-	draw.SimpleText("Kills", "rp_scbtext_small", plytext.killx, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
-	draw.SimpleText("Deaths", "rp_scbtext_small", plytext.deathx, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
+	draw.SimpleText("RP Name", "rp_scbhead", plytext.rpnamex, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
+	draw.SimpleText("Name", "rp_scbhead", plytext.namex, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
+	draw.SimpleText("Job", "rp_scbhead", plytext.jobx, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
+	draw.SimpleText("Ping", "rp_scbhead", plytext.pingx, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
+	draw.SimpleText("Kills", "rp_scbhead", plytext.killx, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
+	draw.SimpleText("Deaths", "rp_scbhead", plytext.deathx, plytext.heady, RP.colors.scbtxt, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP);
 	
 	surface.SetDrawColor(RP.colors.scbfg.r, RP.colors.scbfg.g, RP.colors.scbfg.b, RP.colors.scbfg.a);
 	//surface.DrawLine(scbx+10, plytext.heady-10, scbx+scbw-10, plytext.heady-10);
