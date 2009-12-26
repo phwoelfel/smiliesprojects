@@ -400,7 +400,7 @@ end
 concommand.Add("rp_entmenu", gui_showEntBuyMenu);
 
 
-
+/*
 local menu;
 function gui_showPlyMenu(ply, cmd, args)
 	if(ply.rpmenuopen)then gui.EnableScreenClicker(false) ply.rpmenuopen = false  return end //if(menu)then  menu:Hide() end
@@ -457,6 +457,56 @@ function gui_showPlyMenu(ply, cmd, args)
 										end
 								end );
 	gui.EnableScreenClicker(true);
+end
+*/
+
+function gui_showPlyMenu(ply, cmd, args)
+	local MyWindow = vgui.Create("DFrame");
+	MyWindow:SetSize(200, 600);
+	MyWindow:SetSizable(false);
+	MyWindow:Center();
+	MyWindow:SetTitle("Do something!");
+	MyWindow:ShowCloseButton(true);
+	MyWindow:MakePopup();
+	MyWindow:SetDraggable(true);
+	MyWindow:SetBackgroundBlur(false);
+	
+	local lst = vgui.Create("DPanelList", MyWindow);
+	lst:SetAutoSize(true);
+	lst:SetSpacing(0);
+	lst:EnableHorizontal(false);
+	lst:EnableVerticalScrollbar(true);
+	lst:SetPos(10, 30);
+	lst:SetSize(180, 500);
+
+	
+	for k,men in pairs(RP.plymenu) do
+		RP:print("men: " ..k);
+		RP:dbgPrintTable(men);
+		RP:print("menend");
+		local cat = vgui.Create("DCollapsibleCategory", lst);
+		cat:SetExpanded(1);
+		cat:SetLabel(men.titel);
+		
+		local conts = vgui.Create("DPanelList");
+		conts:SetAutoSize(true);
+		conts:SetSpacing(0);
+		conts:EnableHorizontal(false);
+		conts:EnableVerticalScrollbar(false);
+		
+		for i=1,table.getn(men) do
+			RP:dbgPrintTable(men[i]);
+			local btn = vgui.Create("DButton");
+			btn:SetSize(150, 30);
+			btn:SetText(men[i].titel);
+			btn.DoClick = men[i].onclick;
+			conts:AddItem(btn);
+		end
+		
+		cat:SetContents(conts);
+		lst:AddItem(cat);
+	end
+	
 end
 concommand.Add("rp_plymenu", gui_showPlyMenu);
 

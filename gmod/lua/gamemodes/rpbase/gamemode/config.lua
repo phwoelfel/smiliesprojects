@@ -107,3 +107,4 @@ RP.ammo = {};
 
 RP.walkSpeed = 190;
 RP.runSpeed = 250;
+

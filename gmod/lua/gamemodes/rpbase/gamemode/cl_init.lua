@@ -25,3 +25,4 @@ include("client/cl_gamemode.lua");
 include("client/cl_concommands.lua");
 include("client/cl_scoreboard.lua");
 include("client/cl_usermessages.lua");
+include("client/cl_menus.lua");

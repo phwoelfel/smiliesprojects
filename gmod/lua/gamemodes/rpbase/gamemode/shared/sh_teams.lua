@@ -14,10 +14,10 @@ RP:AddJob("Medic", Color(86, 131, 255, 255), {"models/player/kleiner.mdl"},  65,
 RP:AddJob("Gundealer", Color(48,119,32,255) , {"models/player/monk.mdl"}, 65, {}, {}, 3, false, 0)
 RP:AddJob("Gangster", Color(86, 131, 255, 255), RP.CivModels, 45, {}, {}, 4, false, 0)
 RP:AddJob("Gangsterboss", Color(86, 131, 255, 255), {"models/player/gman.mdl"}, 90, {}, {}, 1, false, 0)
-RP:AddJob("Lawyer", Color(86, 131, 255, 255), {"models/player/magnusson.mdl"}  100, {}, {}, 2, true, 0)
+RP:AddJob("Lawyer", Color(86, 131, 255, 255), {"models/player/magnusson.mdl"},  100, {}, {}, 2, true, 0)
 RP:AddJob("Cop", Color(48,119,32,255) , {"models/player/police.mdl", "models/player/combine_soldier.mdl", "models/player/combine_soldier_prisonguard.mdl"}, 75, {"weapon_stunstick", "weapon_pistol"}, {{"Pistol", 50}}, 4, true, 0)
 RP:AddJob("SWAT", Color(24,58,15,255) , {"models/player/gasmask.mdl", "models/player/swat.mdl", "models/player/riot.mdl", "models/player/urban.mdl", "models/player/combine_super_soldier.mdl"}, 90, {"weapon_stunstick", "weapon_deagle", "weapon_m4"}, {{"Pistol", 50}, {"SMG1", 200}}, 4, true, 2)
-RP:AddJob("Mayor", Color(86, 131, 255, 255), {"models/player/breen.mdl"}  130, {}, {}, 1, true, 0)
+RP:AddJob("Mayor", Color(86, 131, 255, 255), {"models/player/breen.mdl"},  130, {}, {}, 1, true, 0)
 
 
 

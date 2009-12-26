@@ -8,6 +8,16 @@
 				scoreboard													done
 				-------------------------------------------------BUGS ende--------------------------------------------
 				
+				-------------------------------------------------TODO-------------------------------------------------
+				Türen mit mehreren Ownern
+				Türen mit Titel
+				bestimmte Jobs nur für Leute auf Liste
+				automatische Adverts
+				Help Menu
+				Geld drop
+				Schlafen
+				aktionen menü
+				-------------------------------------------------TODO ende--------------------------------------------
 				  Geldautomat / Banksystem
 ein banksystem das das geld schpeichert.
 und natürlich einen bankautomaten um das geld ab zu heben, einzuzahlen oder zu überweisen.
@@ -78,7 +88,7 @@ also in diese liste wird die Steam iD eingetragen und die flags also COP/SWAT/"B
 eine automatische werbung alle 30 sekunden.
 z.b. besucht uns auf www.blabla.de
 
-			              Help menü auf F1
+			              Help menü auf F4
 ---------------------------------------------------
 	  	|				  |
     Titel 1  	|  				  |
