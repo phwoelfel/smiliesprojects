@@ -167,6 +167,7 @@ function GM:PlayerSpawnVehicle(ply)
 		local curspawn = ply:GetCount("vehicles");
 		if(curspawn >= maxspawn)then
 			ply:LimitHit("vehicles");
+			return false;
 		else
 			local cost = GetConVar("rp_vehiclecost"):GetInt()/2; // half the price cause you need to own it too
 			if(ply:CanAfford(cost))then

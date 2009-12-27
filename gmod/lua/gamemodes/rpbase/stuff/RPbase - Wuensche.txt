@@ -4,13 +4,13 @@
 				
 				-------------------------------------------------BUGS-------------------------------------------------
 				sprintgeschwindigkeit niedriger (250/190)					done
-				türen: Buy this door for $20!								done		
-				scoreboard													done
+				türen: Buy this door for $20!							done		
+				scoreboard									done
 				-------------------------------------------------BUGS ende--------------------------------------------
 				
 				-------------------------------------------------TODO-------------------------------------------------
 				Türen mit mehreren Ownern
-				Türen mit Titel
+				Türen mit Titel									done
 				bestimmte Jobs nur für Leute auf Liste
 				automatische Adverts
 				Help Menu

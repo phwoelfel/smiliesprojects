@@ -18,6 +18,20 @@ function entmeta:IsOwnable()
 	end
 end
 
+function entmeta:IsDoor()
+	local class = self:GetClass();
+	if(
+		class == "prop_door_rotating" ||
+		class == "func_door" ||
+		class == "func_door_rotating" )
+	then
+		return true;
+	else
+		return false;
+	end
+end
+
+
 function entmeta:GetPrize()
 	local class = self:GetClass();
 	if(self:IsDoor())then
@@ -32,17 +46,45 @@ function entmeta:GetPrize()
 	return 0;
 end
 
-function entmeta:IsDoor()
-	local class = self:GetClass();
-	if(
-		class == "prop_door_rotating" ||
-		class == "func_door" ||
-		class == "func_door_rotating" )
-	then
-		return true;
+
+
+function entmeta:SetTitle(title, ply)
+	if(self:IsOwner(ply))then
+		self:SetNWString("rp_title", tostring(title));
 	else
-		return false;
+		ply:SendMsg("This is not your " ..self:GetType() .."!", true);
 	end
+end
+
+function entmeta:GetTitle()
+	return self:GetNWString("rp_title", "");
+end
+
+
+
+function entmeta:SetType(typ)
+	self:SetNWString("rp_type", tostring(typ));
+end
+
+function entmeta:GetType()
+	local typ = self:GetNWString("rp_type", "");
+	//RP:print("isvhcl: " ..tostring(self:IsVehicle()));
+	if(typ!="")then
+		return typ;
+	elseif(self:IsDoor())then
+		return "door";
+	elseif(self:IsVehicle())then
+		return "vehicle";
+	else
+		return "entity";
+	end
+	return "";
+end
+
+
+
+function entmeta:GetOwnerName(ply)
+	return self:GetNWString("rp_ownername", "");
 end
 
 function entmeta:IsOwner(ply)
@@ -53,10 +95,6 @@ function entmeta:IsOwner(ply)
 	end
 end
 
-function entmeta:IsLocked(ply)
-	return self:GetNWBool("rp_locked", false)
-end
-
 function entmeta:Own(ply)
 	local owner = self:GetNWString("rp_owner", "");
 	if(owner == "")then
@@ -64,22 +102,16 @@ function entmeta:Own(ply)
 			ply:AddMoney(-self:GetPrize());
 			self:SetNWString("rp_owner", ply:UniqueID());
 			self:SetNWString("rp_ownername", ply:GetRPName());
-			if(self:IsDoor())then
-				ply:SendMsg("You paid $" ..self:GetPrize() .." for this door.");
-			elseif(self:IsVehicle())then
-				ply:SendMsg("You paid $" ..self:GetPrize() .." for this vehicle.");
-			else
-				ply:SendMsg("You paid $" ..self:GetPrize() .." for this entity.");
-			end
+			ply:SendMsg("You paid $" ..self:GetPrize() .." for this " ..self:GetType() ..".");
 			return true;
 		else
-			ply:SendMsg("Can't afford this!");
+			ply:SendMsg("Can't afford this " ..self:GetType() .."!");
 			return false;
 		end
 	elseif(owner == ply:UniqueID())then
-		ply:SendMsg("This already belongs to you!");
+		ply:SendMsg("This " ..self:GetType() .." already belongs to you!");
 	else
-		ply:SendMsg("This belongs to someone else!");
+		ply:SendMsg("This " ..self:GetType() .." belongs to someone else!");
 	end
 end
 
@@ -89,18 +121,20 @@ function entmeta:UnOwn(ply)
 		ply:AddMoney(self:GetPrize());
 		self:SetNWString("rp_owner", "");
 		self:SetNWString("rp_ownername", "");
-		if(self:IsDoor())then
-			ply:SendMsg("You got $" ..self:GetPrize() .." for selling this door.");
-		elseif(self:IsVehicle())then
-			ply:SendMsg("You got $" ..self:GetPrize() .." for selling this vehicle.");
-		else
-			ply:SendMsg("You got $" ..self:GetPrize() .." for selling this entity.");
-		end
+		self:SetTitle("");
+		ply:SendMsg("You got $" ..self:GetPrize() .." for selling this " ..self:GetType() ..".");
+		
 	elseif(owner == "")then
-		ply:SendMsg("This belongs to nobody!");
+		ply:SendMsg("This " ..self:GetType() .." belongs to nobody!");
 	else
-		ply:SendMsg("This belongs to someone else!");
+		ply:SendMsg("This " ..self:GetType() .." belongs to someone else!");
 	end
+end
+
+
+
+function entmeta:IsLocked(ply)
+	return self:GetNWBool("rp_locked", false)
 end
 
 function entmeta:RPLock(ply)
@@ -113,9 +147,9 @@ function entmeta:RPLock(ply)
 			self:EmitSound(snd);
 		end
 	elseif(owner == "")then
-		ply:SendMsg("This belongs to nobody!");
+		ply:SendMsg("This " ..self:GetType() .." belongs to nobody!");
 	else
-		ply:SendMsg("This belongs to someone else!");
+		ply:SendMsg("This " ..self:GetType() .." belongs to someone else!");
 	end
 end
 
@@ -129,8 +163,9 @@ function entmeta:RPUnLock(ply)
 			self:EmitSound(snd);
 		end
 	elseif(owner == "")then
-		ply:SendMsg("This belongs to nobody!");
+		ply:SendMsg("This " ..self:GetType() .." belongs to nobody!");
 	else
-		ply:SendMsg("This belongs to someone else!");
+		ply:SendMsg("This " ..self:GetType() .." belongs to someone else!");
 	end
 end
+

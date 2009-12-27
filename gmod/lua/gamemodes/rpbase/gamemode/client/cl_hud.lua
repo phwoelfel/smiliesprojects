@@ -163,11 +163,15 @@ function GM:HUDPaint()
 	if(!ply:InVehicle())then
 		if(tr.StartPos:Distance(tr.HitPos)<150)then
 			if(tr.Entity && tr.Entity:IsOwnable())then
-				local owner = tr.Entity:GetNWString("rp_ownername", "");
+				local ent = tr.Entity;
+				local owner = ent:GetOwnerName();
 				if(owner != "")then
 					draw.SimpleText("Owner: " ..owner, "rp_hudtext_verysmall", pos.x, pos.y, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+					if(ent:GetTitle()!="")then
+						draw.SimpleText(ent:GetTitle(), "rp_hudtext_verysmall", pos.x, pos.y+20, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+					end
 				else
-					draw.SimpleText("Buy this for " ..tr.Entity:GetPrize() .."$!", "rp_hudtext_verysmall", pos.x, pos.y, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
+					draw.SimpleText("Buy this " ..ent:GetType() .." for " ..ent:GetPrize() .."$!", "rp_hudtext_verysmall", pos.x, pos.y, RP.colors.enttext, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 				end
 			end
 		end

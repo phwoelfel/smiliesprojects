@@ -92,7 +92,7 @@ function gui_showJobs(ply, cmd, args)
 		local pan = vgui.Create("DPanel", JobList);
 		pan:SetSize(780,68);
 		pan.Paint = function()
-			draw.RoundedBox(6, 0, 0, pan:GetWide(), pan:GetTall(), job.color);
+			draw.RoundedBox(6, 0, 0, pan:GetWide(), pan:GetTall(), RP.colors.jobpanel);//job.color
 		end
 		
 		
@@ -462,12 +462,10 @@ end
 
 function gui_showPlyMenu(ply, cmd, args)
 	local MyWindow = vgui.Create("DFrame");
-	MyWindow:SetSize(200, 600);
 	MyWindow:SetSizable(false);
 	MyWindow:Center();
 	MyWindow:SetTitle("Do something!");
 	MyWindow:ShowCloseButton(true);
-	MyWindow:MakePopup();
 	MyWindow:SetDraggable(true);
 	MyWindow:SetBackgroundBlur(false);
 	
@@ -479,8 +477,10 @@ function gui_showPlyMenu(ply, cmd, args)
 	lst:SetPos(10, 30);
 	lst:SetSize(180, 500);
 
-	
+	local anzcat = 0;
+	local anzbtn = 0;
 	for k,men in pairs(RP.plymenu) do
+		anzcat = anzcat+1;
 		RP:print("men: " ..k);
 		RP:dbgPrintTable(men);
 		RP:print("menend");
@@ -493,7 +493,6 @@ function gui_showPlyMenu(ply, cmd, args)
 		conts:SetSpacing(0);
 		conts:EnableHorizontal(false);
 		conts:EnableVerticalScrollbar(false);
-		
 		for i=1,table.getn(men) do
 			RP:dbgPrintTable(men[i]);
 			local btn = vgui.Create("DButton");
@@ -501,12 +500,17 @@ function gui_showPlyMenu(ply, cmd, args)
 			btn:SetText(men[i].titel);
 			btn.DoClick = men[i].onclick;
 			conts:AddItem(btn);
+			anzbtn = anzbtn+1;
 		end
 		
 		cat:SetContents(conts);
 		lst:AddItem(cat);
 	end
-	
+	RP:print("anzcat: " ..tostring(anzcat));
+	RP:print("anzbtn: " ..tostring(anzbtn));
+	RP:print("size: " ..tostring(50+anzcat*25+anzbtn*30));
+	MyWindow:SetSize(200, 50+anzcat*25+anzbtn*30);
+	MyWindow:MakePopup();
 end
 concommand.Add("rp_plymenu", gui_showPlyMenu);
 

@@ -352,7 +352,7 @@ function ccEntInfo(ply, cmd, args)
 		RP:dbgPrint("model: " ..tr.Entity:GetModel());
 		RP:dbgPrint("ownable: " ..tostring(tr.Entity:IsOwnable()));
 		RP:dbgPrint("owner: " ..tr.Entity:GetNWString("rp_owner", ""));
-		RP:dbgPrint("vehicle?: " ..tostring(tr.Entity:IsVehicle()));
+		RP:dbgPrint("vehicle: " ..tostring(tr.Entity:IsVehicle()));
 	end
 end
 concommand.Add("rp_showentinfo", ccEntInfo);
@@ -467,7 +467,11 @@ function ccLock(ply, cmd, args)
 	if(tr.StartPos:Distance(tr.HitPos)<150)then
 		if(tr.Entity && tr.Entity:IsOwnable())then
 			local ent = tr.Entity;
-			ent:RPLock(ply);
+			if(ent:IsOwner(ply))then
+				ent:RPLock(ply);
+			else
+				ply:SendMsg("Can't lock this!", true);
+			end
 		else
 			ply:SendMsg("Can't lock this!", true);
 		end
@@ -480,7 +484,11 @@ function ccUnLock(ply, cmd, args)
 	if(tr.StartPos:Distance(tr.HitPos)<150)then
 		if(tr.Entity && tr.Entity:IsOwnable())then
 			local ent = tr.Entity;
-			ent:RPUnLock(ply);
+			if(ent:IsOwner(ply))then
+				ent:RPUnLock(ply);
+			else
+				ply:SendMsg("Can't unlock this!", true);
+			end
 		else
 			ply:SendMsg("Can't unlock this!", true);
 		end
@@ -578,3 +586,21 @@ function ccChangeWalkSpeed(ply, cmd, args)
 	end
 end
 concommand.Add("rp_walkspeed", ccChangeWalkSpeed);
+
+
+function ccSetTitle(ply, cmd, args)
+	if(args && args[1]!="")then
+		local title = args[1];
+		local tr = ply:GetEyeTrace();
+		if(tr.StartPos:Distance(tr.HitPos)<150)then
+			if(tr.Entity && tr.Entity:IsOwnable())then
+				local ent = tr.Entity;
+				ent:SetTitle(title, ply);
+			else
+				ply:SendMsg("Can't set the title!", true);
+			end
+		end
+	end
+end
+concommand.Add("rp_settitle", ccSetTitle);
+

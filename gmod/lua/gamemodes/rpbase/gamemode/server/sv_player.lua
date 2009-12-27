@@ -55,6 +55,7 @@ function GM:PlayerDisconnected(ply)
 		if(ent:GetNWString("rp_owner", "") == ply:UniqueID())then
 			ent:SetNWString("rp_owner", "");
 			ent:SetNWString("rp_ownername", "");
+			ent:SetTitle("");
 		end
 	end
 end

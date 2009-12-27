@@ -14,6 +14,35 @@ RP.plymenu[1][3].onclick = function() RunConsoleCommand("rp_lock") end
 RP.plymenu[1][4] = {};
 RP.plymenu[1][4].titel = "unlock";
 RP.plymenu[1][4].onclick = function() RunConsoleCommand("rp_unlock") end
+RP.plymenu[1][5] = {};
+RP.plymenu[1][5].titel = "set title";
+RP.plymenu[1][5].onclick = function() 
+								local MyWindow = vgui.Create( "DFrame" );
+								MyWindow:SetSize( 200, 120 );
+								MyWindow:SetSizable( false );
+								MyWindow:Center();
+								MyWindow:SetTitle( "Set title." );
+								MyWindow:ShowCloseButton( false );
+								MyWindow:MakePopup();
+								
+								local Txt = vgui.Create("DLabel", MyWindow);
+								Txt:SetSize(50, 20);
+								Txt:SetText("Title:");
+								Txt:SetPos(10, 30);
+								
+								local TitleTxtf = vgui.Create("DTextEntry", MyWindow);
+								TitleTxtf:SetSize(100, 20);
+								TitleTxtf:SetPos(70, 30);
+								
+								local CloseButton = vgui.Create("DButton", MyWindow);
+								CloseButton:SetSize(50, 20);
+								CloseButton:SetPos(75, 60);
+								CloseButton:SetText("Set title!");
+								CloseButton.DoClick = function()
+										RunConsoleCommand("rp_settitle", TitleTxtf:GetValue());
+										MyWindow:Close();
+									end 
+							end
 
 RP.plymenu[2] = {};
 RP.plymenu[2].titel = "Moneymenu";
