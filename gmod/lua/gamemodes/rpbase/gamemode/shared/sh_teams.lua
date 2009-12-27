@@ -5,19 +5,19 @@
 //RP:AddJob(String name, Color color, Table models, Number salary, Table weps, Table ammo, Number maxamount, Boolean needsvote, Number jobneeded)
 // ammo ={ { "type1", amount1}, { "type2", amount2} }  Note: if you give a default HL2 weapon the default ammo amount will also be given
 // jobneeded is the id of the job which you have to be before changing
-RP:AddJob("Citizen", Color(86, 131, 255, 255), RP.CivModels, 30, {}, {}, 100, false, 0)
-RP:AddJob("Hobo", Color(86, 131, 255, 255), RP.CivModels, 15, {}, {}, 4, false, 0)
-RP:AddJob("Cook", Color(48,119,32,255) , {"models/player/mossman.mdl"}, 40, {"", ""}, {{"", 50}}, 3, false, 0)
-RP:AddJob("Barkeeper", Color(86, 131, 255, 255), {"models/player/mossman.mdl"},  35, {}, {}, 3, false, 0)
-RP:AddJob("Worker", Color(86, 131, 255, 255), {"models/player/combine_soldier.mdl"},  50, {}, {}, 3, false, 0)
-RP:AddJob("Medic", Color(86, 131, 255, 255), {"models/player/kleiner.mdl"},  65, {}, {}, 3, false, 0)
-RP:AddJob("Gundealer", Color(48,119,32,255) , {"models/player/monk.mdl"}, 65, {}, {}, 3, false, 0)
-RP:AddJob("Gangster", Color(86, 131, 255, 255), RP.CivModels, 45, {}, {}, 4, false, 0)
-RP:AddJob("Gangsterboss", Color(86, 131, 255, 255), {"models/player/gman.mdl"}, 90, {}, {}, 1, false, 0)
-RP:AddJob("Lawyer", Color(86, 131, 255, 255), {"models/player/magnusson.mdl"},  100, {}, {}, 2, true, 0)
-RP:AddJob("Cop", Color(48,119,32,255) , {"models/player/police.mdl", "models/player/combine_soldier.mdl", "models/player/combine_soldier_prisonguard.mdl"}, 75, {"weapon_stunstick", "weapon_pistol"}, {{"Pistol", 50}}, 4, true, 0)
-RP:AddJob("SWAT", Color(24,58,15,255) , {"models/player/gasmask.mdl", "models/player/swat.mdl", "models/player/riot.mdl", "models/player/urban.mdl", "models/player/combine_super_soldier.mdl"}, 90, {"weapon_stunstick", "weapon_deagle", "weapon_m4"}, {{"Pistol", 50}, {"SMG1", 200}}, 4, true, 2)
-RP:AddJob("Mayor", Color(86, 131, 255, 255), {"models/player/breen.mdl"},  130, {}, {}, 1, true, 0)
+RP:AddJob("Citizen", Color(0, 122, 8, 255), RP.CivModels, 30, {}, {}, 100, false, 0)
+RP:AddJob("Hobo", Color(140, 175, 0, 255), RP.CivModels, 15, {}, {}, 4, false, 0)
+RP:AddJob("Cook", Color(211 , 2, 65, 255) , {"models/player/mossman.mdl"}, 40, {"", ""}, {{"", 50}}, 3, false, 0)
+RP:AddJob("Barkeeper", Color(2, 211, 110, 255), {"models/player/mossman.mdl"},  35, {}, {}, 3, false, 0)
+RP:AddJob("Worker", Color(40, 40, 40, 255), {"models/player/combine_soldier.mdl"},  50, {}, {}, 3, false, 0)
+RP:AddJob("Medic", Color(17, 201, 211, 255), {"models/player/kleiner.mdl"},  65, {}, {}, 3, false, 0)
+RP:AddJob("Gundealer", Color(216, 153, 15, 255) , {"models/player/monk.mdl"}, 65, {}, {}, 3, false, 0)
+RP:AddJob("Gangster", Color(71, 47, 0, 255), RP.CivModels, 45, {}, {}, 4, false, 0)
+RP:AddJob("Gangsterboss", Color(0, 0, 0, 255), {"models/player/gman.mdl"}, 90, {}, {}, 1, false, 0)
+RP:AddJob("Lawyer", Color(138, 9, 181, 255), {"models/player/magnusson.mdl"},  100, {}, {}, 2, true, 0)
+RP:AddJob("Cop", Color(15, 85, 216, 255) , {"models/player/police.mdl", "models/player/combine_soldier.mdl", "models/player/combine_soldier_prisonguard.mdl"}, 75, {"weapon_stunstick", "weapon_pistol"}, {{"Pistol", 50}}, 4, true, 0)
+RP:AddJob("SWAT", Color(31, 6, 216, 255) , {"models/player/gasmask.mdl", "models/player/swat.mdl", "models/player/riot.mdl", "models/player/urban.mdl", "models/player/combine_super_soldier.mdl"}, 90, {"weapon_stunstick", "weapon_deagle", "weapon_m4"}, {{"Pistol", 50}, {"SMG1", 200}}, 4, true, 2)
+RP:AddJob("Mayor", Color(170, 34, 10, 255), {"models/player/breen.mdl"},  130, {}, {}, 1, true, 0)
 
 
 
