@@ -400,7 +400,7 @@ end
 concommand.Add("rp_entmenu", gui_showEntBuyMenu);
 
 
-/*
+
 local menu;
 function gui_showPlyMenu(ply, cmd, args)
 	if(ply.rpmenuopen)then gui.EnableScreenClicker(false) ply.rpmenuopen = false  return end //if(menu)then  menu:Hide() end
@@ -458,8 +458,8 @@ function gui_showPlyMenu(ply, cmd, args)
 								end );
 	gui.EnableScreenClicker(true);
 end
-*/
 
+/*
 function gui_showPlyMenu(ply, cmd, args)
 	local MyWindow = vgui.Create("DFrame");
 	MyWindow:SetSizable(false);
@@ -511,7 +511,7 @@ function gui_showPlyMenu(ply, cmd, args)
 	RP:print("size: " ..tostring(50+anzcat*25+anzbtn*30));
 	MyWindow:SetSize(200, 50+anzcat*25+anzbtn*30);
 	MyWindow:MakePopup();
-end
+end*/
 concommand.Add("rp_plymenu", gui_showPlyMenu);
 
 

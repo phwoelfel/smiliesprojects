@@ -119,11 +119,10 @@ function entmeta:UnOwn(ply)
 	local owner = self:GetNWString("rp_owner", "");
 	if(owner == ply:UniqueID())then
 		ply:AddMoney(self:GetPrize());
+		self:SetTitle("", ply);
 		self:SetNWString("rp_owner", "");
 		self:SetNWString("rp_ownername", "");
-		self:SetTitle("");
 		ply:SendMsg("You got $" ..self:GetPrize() .." for selling this " ..self:GetType() ..".");
-		
 	elseif(owner == "")then
 		ply:SendMsg("This " ..self:GetType() .." belongs to nobody!");
 	else

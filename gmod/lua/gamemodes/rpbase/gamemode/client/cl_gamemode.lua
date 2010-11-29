@@ -36,7 +36,7 @@ function GM:AddDeathNotice(attacker, attackerteam, weapon, victim, victimteam)
 		RP.colors.white, 
 		" was killed by ", 
 		RP.jobs[attackerteam].color, 
-		attacker, 
+		plyat:GetRPName(), 
 		RP.colors.white, 
 		" using ", 
 		RP.colors.red1, 

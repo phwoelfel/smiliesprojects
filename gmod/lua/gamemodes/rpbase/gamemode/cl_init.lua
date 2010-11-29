@@ -5,6 +5,7 @@
 DeriveGamemode("sandbox");
 
 function GM:Initialize()
+	self.BaseClass:Initialize()
 	GAMEMODE.ShowScoreboard = false
 	// surface.CreateFont( string font_name, number size, number weight, boolean antialiasing, boolean italic, string new_font_name )
 	surface.CreateFont("coolvetica", ScreenScale(20), 400, true, false, "rp_hudtext_large");

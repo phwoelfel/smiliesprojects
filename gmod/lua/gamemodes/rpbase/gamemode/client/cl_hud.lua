@@ -42,7 +42,7 @@ function GM:HUDPaint()
 	draw.SimpleText(ply:Health(), "rp_hudtext_large", healthbox.x+healthbox.w/2, healthbox.y+healthbox.h/2, healthcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER);
 	
 	if(ply:Armor()!=0)then
-		local armorbox = {}; // values for health box
+		local armorbox = {}; // values for armor box
 		armorbox.w = 100;
 		armorbox.h = 70;
 		armorbox.x = healthbox.x+healthbox.w+20;
@@ -121,7 +121,7 @@ function GM:HUDPaint()
 		else
 			draw.RoundedBox(bordersize, secammobox.x, secammobox.y, secammobox.w, secammobox.h, secammobox.col);
 			draw.SimpleText(secclip, "rp_hudtext_large", secammobox.x+secammobox.w/2, secammobox.y+5, secclipcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP);
-			draw.SimpleText(secammo, "rp_hudtext_small", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h-25, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM);
+			draw.SimpleText(secammo, "rp_hudtext_small", secammobox.x+secammobox.w/2, secammobox.y+secammobox.h-15, secammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM);
 		end
 		local primammobox = {}; // values for  ammo box
 		if(nodraw)then
@@ -152,7 +152,7 @@ function GM:HUDPaint()
 		else
 			draw.RoundedBox(bordersize, primammobox.x, primammobox.y, primammobox.w, primammobox.h, primammobox.col);
 			draw.SimpleText(primclip, "rp_hudtext_large", primammobox.x+primammobox.w/2, primammobox.y+5, primclipcolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_TOP);
-			draw.SimpleText(primammo, "rp_hudtext_small", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h-25, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM);
+			draw.SimpleText(primammo, "rp_hudtext_small", primammobox.x+primammobox.w/2, primammobox.y+primammobox.h-15, primammocolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM);
 		end
 	end
 	

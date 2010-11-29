@@ -88,7 +88,7 @@ function plmeta:Reequip()
 	
 end
 
-function plmeta:SendMsg(msg, iserror)
+function plmeta:SendMsg(msg)
 	self:ChatPrint(msg);
 end
 
