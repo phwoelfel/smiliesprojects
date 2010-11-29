@@ -92,7 +92,7 @@ function gui_showJobs(ply, cmd, args)
 		local pan = vgui.Create("DPanel", JobList);
 		pan:SetSize(780,68);
 		pan.Paint = function()
-			draw.RoundedBox(6, 0, 0, pan:GetWide(), pan:GetTall(), RP.colors.jobpanel);//job.color
+			draw.RoundedBox(6, 0, 0, pan:GetWide(), pan:GetTall(), job.color);//RP.colors.jobpanel
 		end
 		
 		

@@ -22,7 +22,7 @@ SWEP.WorldModel		= ""
 
 SWEP.ViewModelFOV = 62
 SWEP.ViewModelFlip = false
-SWEP.AnimPrefix	 = "rpg"
+SWEP.AnimPrefix	 = "normal"
 
 SWEP.Spawnable = false
 SWEP.AdminSpawnable = true
@@ -52,10 +52,10 @@ end
 
 
 function SWEP:PrimaryAttack()
-	
+	RunConsoleCommand("rp_lock");
 end
 
 
 function SWEP:SecondaryAttack()
-	
+	RunConsoleCommand("rp_unlock");
 end
