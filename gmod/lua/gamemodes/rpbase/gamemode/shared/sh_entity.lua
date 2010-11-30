@@ -96,6 +96,7 @@ function entmeta:IsOwner(ply)
 end
 
 function entmeta:Own(ply)
+	//local owners = string.Explode(self:GetNWString("rp_owner", ""), ";");
 	local owner = self:GetNWString("rp_owner", "");
 	if(owner == "")then
 		if(ply:CanAfford(self:GetPrize()))then

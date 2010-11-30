@@ -13,7 +13,7 @@ end
 -- Variables that are used on both client and server
 
 SWEP.Author = "SMILE[AUT]"
-SWEP.Instructions = ""
+SWEP.Instructions = "Left click lock, right click unlock!"
 SWEP.Contact = ""
 SWEP.Purpose = ""
 
@@ -22,7 +22,7 @@ SWEP.WorldModel		= ""
 
 SWEP.ViewModelFOV = 62
 SWEP.ViewModelFlip = false
-SWEP.AnimPrefix	 = "normal"
+SWEP.AnimPrefix	 = "rpg"
 
 SWEP.Spawnable = false
 SWEP.AdminSpawnable = true
@@ -30,17 +30,21 @@ SWEP.Primary.ClipSize = -1
 SWEP.Primary.DefaultClip = 0
 SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = ""
+SWEP.Primary.Delay = 2 
+SWEP.Primary.TakeAmmo = 0
 
 SWEP.Secondary.ClipSize = -1
 SWEP.Secondary.DefaultClip = 0
 SWEP.Secondary.Automatic = false
 SWEP.Secondary.Ammo = ""
+SWEP.Secondary.Delay = 2 
+SWEP.Secondary.TakeAmmo = 0
 
 
 function SWEP:Initialize()
-	if (SERVER) then
+	//if (SERVER) then
 		self:SetWeaponHoldType("normal")
-	end
+	//end
 end
 
 function SWEP:Deploy()
@@ -52,10 +56,16 @@ end
 
 
 function SWEP:PrimaryAttack()
+	//if ( !self:CanPrimaryAttack() ) then return end 
+	self:SetNextPrimaryFire( CurTime() + self.Primary.Delay ) 
 	RunConsoleCommand("rp_lock");
+	print("primary");
 end
 
 
 function SWEP:SecondaryAttack()
+	//if ( !self:CanSecondaryAttack() ) then return end 
+	self:SetNextSecondaryFire( CurTime() + self.Secondary.Delay )
 	RunConsoleCommand("rp_unlock");
+	print("secondary");
 end
