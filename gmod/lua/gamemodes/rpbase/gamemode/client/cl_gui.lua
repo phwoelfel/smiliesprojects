@@ -296,7 +296,11 @@ function gui_showEntBuyMenu(ply, cmd, args)
 		
 		local wepammo = vgui.Create("DLabel", pan);
 		wepammo:SetSize(100, 20);
-		wepammo:SetText(weptbl.ammo[2]);
+		if(#weptbl.ammo>0)then
+			wepammo:SetText(weptbl.ammo[2]);
+		else
+			wepammo:SetText("none");
+		end
 		wepammo:SetPos(315, 24);
 		
 		local wepbtn = vgui.Create("DButton", pan);

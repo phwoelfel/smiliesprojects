@@ -50,6 +50,7 @@ function plmeta:ReadData()
 		self:SetNWString("rp_name", sqlusr[1].rpname);
 		self:SetNWInt("rp_money", sqlusr[1].money);
 		self:SetNWInt("rp_salary", RP.jobs[self:Team()].salary);
+		self:SetNWString("rp_model", sqlusr[1].model);
 		return true;
 	else
 		return false;
@@ -57,13 +58,13 @@ function plmeta:ReadData()
 end
 
 function plmeta:SaveData()
-	sql.Query("update " ..GetConVar("rp_sqltable"):GetString() .." set money = " ..self:GetNWInt("rp_money") ..", rpname = " .. SQLStr(self:GetNWString("rp_name")) .." where uid = " ..SQLStr(self:UniqueID()));
+	sql.Query("update " ..GetConVar("rp_sqltable"):GetString() .." set money = " ..self:GetNWInt("rp_money") ..", rpname = " .. SQLStr(self:GetNWString("rp_name")) ..", model = " ..SQLStr(self:GetModel()) .." where uid = " ..SQLStr(self:UniqueID()));
 end
 
 function plmeta:SetUp()
 	self:ReadData();
-	local modrand = math.random(#RP.jobs[self:Team()].models);
-	self:SetNWInt("rp_model", RP.jobs[self:Team()].models[modrand]);
+	//local modrand = math.random(#RP.jobs[self:Team()].models);
+	//self:SetNWString("rp_model", RP.jobs[self:Team()].models[modrand]);
 	timer.Create("rpsalary_" ..self:UniqueID(), 5*60, 0, function() self:PaySalary() end);
 end
 

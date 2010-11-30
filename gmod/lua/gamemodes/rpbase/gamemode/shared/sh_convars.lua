@@ -26,5 +26,8 @@ RP.convars = {
 };
 
 for _,cv in pairs(RP.convars)do
-	if(!ConVarExists(cv[1]))then CreateConVar(cv[1], cv[2], { FCVAR_REPLICATED, FCVAR_ARCHIVE }); end
+	if(!ConVarExists(cv[1]))then
+		CreateConVar(cv[1], cv[2], { FCVAR_REPLICATED, FCVAR_ARCHIVE });
+		RP:dbgPrint("created convar " ..cv[1] .." with value " ..cv[2]);
+	end
 end

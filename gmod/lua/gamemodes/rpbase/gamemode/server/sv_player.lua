@@ -7,7 +7,7 @@ function GM:PlayerSpawn(ply)
 	self.BaseClass:PlayerSpawn(ply)
 	local teamid = ply:Team();
 	
-	local model = ply:GetNWInt("rp_model", RP.jobs[teamid].models[1]);
+	local model = ply:GetNWString("rp_model", RP.jobs[teamid].models[1]);
 	RP:dbgPrint(ply:Name() ..": " ..model);
 	ply:SetModel(model);
 	ply:SetWalkSpeed(RP.walkSpeed);
@@ -41,7 +41,7 @@ function GM:PlayerInitialSpawn(ply)
 	ply:SetTeam(1);
 	ply:SetWalkSpeed(RP.walkSpeed);
 	ply:SetRunSpeed(RP.runSpeed);
-	if(ply:ReadData())then
+	if(ply:IsRegistered())then
 		ply:ChatPrint("Welcome back " ..ply:GetNWString("rp_name") .."!");
 		ply:SetUp();
 	else // create new user account in database
@@ -50,6 +50,7 @@ function GM:PlayerInitialSpawn(ply)
 end
 
 function GM:PlayerDisconnected(ply)
+	ply:SaveData();
 	timer.Destroy("rpsalary_"  ..ply:UniqueID());
 	for _, ent in pairs(ents.GetAll())do
 		if(ent:GetNWString("rp_owner", "") == ply:UniqueID())then

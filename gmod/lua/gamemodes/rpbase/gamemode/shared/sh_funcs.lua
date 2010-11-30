@@ -59,8 +59,8 @@ function RP:AddJob(id, name, color, models, salary, weps, ammo, maxamount, needs
 		if(!ConVarExists(maxcvarn))then CreateConVar(maxcvarn, maxamount, { FCVAR_ARCHIVE }); end
 	end
 	
-	RP:dbgPrint("id: " ..id);
-	RP:dbgPrintTable(RP.jobs[id]);
+	//RP:dbgPrint("id: " ..id);
+	//RP:dbgPrintTable(RP.jobs[id]);
 	
 	team.SetUp(id, name, color);
 end

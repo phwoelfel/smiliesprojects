@@ -16,4 +16,6 @@ include("shared/sh_teams.lua");
 include("shared/sh_entity.lua");
 include("shared/sh_player.lua");
 include("shared/sh_weapon.lua");
+include("shared/sh_convars.lua");
+
 

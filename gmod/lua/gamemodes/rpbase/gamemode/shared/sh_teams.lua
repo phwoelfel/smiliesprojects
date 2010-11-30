@@ -39,12 +39,16 @@ RP:AddWeapon(5, "weapon_mp5", 100, {6, 11}, "MP - Navy", "models/weapons/w_smg_m
 RP:AddWeapon(6, "weapon_ak47", 100, {6, 11}, "AK - 47", "models/weapons/w_rif_ak47.mdl", {"smg1", 30});
 RP:AddWeapon(7, "weapon_m4", 100, {6, 11}, "M4A1", "models/weapons/w_rif_m4a1.mdl", {"smg1", 30});
 
+RP:AddWeapon(8, "weapon_crowbar", 30, {}, "Crowbar", "models/weapons/w_crowbar.mdl", {});
+RP:AddWeapon(9, "weapon_smg1", 90, {}, "SMG", "models/weapons/w_smg1.mdl", {"smg1", 30});
+
 
 
 //RP:AddAmmo(Number id, String ammotype, Number prize, Table jobids, String nicename, String showmodel, Number amount)
 //if jobids table is empty then every class can buy this ammo
 RP:AddAmmo(1, "pistol", 20, {}, "Pistol Ammo", "models/Items/357ammobox.mdl", 15);
 RP:AddAmmo(2, "SMG1", 40, {}, "SMG Ammo", "models/Items/BoxSRounds.mdl", 30);
+RP:AddAmmo(3, "SMG1_Grenade", 80, {}, "SMG Grenade", "models/Items/AR2_Grenade.mdl", 1);
 
 
 
@@ -72,6 +76,8 @@ models/Items/ammocrate_grenade.mdl
 models/Items/HealthKit.mdl
 models/Items/item_item_crate.mdl
 models/Items/Flare.mdl
+models/weapons/w_smg1.mdl
+
 Ammo types:
 AR2 - Ammunition of the AR2/Pulse Rifle
 AlyxGun

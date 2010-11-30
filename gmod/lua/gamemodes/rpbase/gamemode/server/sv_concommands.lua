@@ -219,7 +219,7 @@ function ccChangeJob(ply, cmd, args)
 	local jobinfo = RP:getJobByName(jobname);
 	if(jobinfo)then
 		if(ply:Team()==jobinfo.jobneeded || jobinfo.jobneeded == 0)then
-			local maxpls = GetConVar("rp_max" ..string.lower(jobinfo.name) .."s"):GetInt();
+			local maxpls = GetConVar("rp_max" ..string.lower(string.Replace(jobinfo.name, " ", "_")) .."s"):GetInt();
 			local curpls = team.NumPlayers(jobinfo.id);
 			if(curpls>=maxpls)then
 				ply:SendMsg("There are already enough players in this job!", true);
