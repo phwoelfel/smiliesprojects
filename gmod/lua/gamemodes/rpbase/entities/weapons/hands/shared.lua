@@ -54,18 +54,15 @@ function SWEP:Deploy()
 	end
 end
 
-
-function SWEP:PrimaryAttack()
-	//if ( !self:CanPrimaryAttack() ) then return end 
-	self:SetNextPrimaryFire( CurTime() + self.Primary.Delay ) 
-	RunConsoleCommand("rp_lock");
-	print("primary");
-end
+if(SERVER)then
+	function SWEP:PrimaryAttack()
+		self:SetNextPrimaryFire( CurTime() + self.Primary.Delay ) 
+		RunConsoleCommand("rp_lock");
+	end
 
 
-function SWEP:SecondaryAttack()
-	//if ( !self:CanSecondaryAttack() ) then return end 
-	self:SetNextSecondaryFire( CurTime() + self.Secondary.Delay )
-	RunConsoleCommand("rp_unlock");
-	print("secondary");
+	function SWEP:SecondaryAttack()
+		self:SetNextSecondaryFire( CurTime() + self.Secondary.Delay )
+		RunConsoleCommand("rp_unlock");
+	end
 end

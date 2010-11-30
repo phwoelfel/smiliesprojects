@@ -2,8 +2,8 @@
 -- by SMILIE[AUT] 
 ------------------------------------
 
-function RP:AddEnt(classname, prize, jobids, nicename, showmodel)
-	local id = #RP.entities+1;
+function RP:AddEnt(id, classname, prize, jobids, nicename, showmodel)
+	//local id = #RP.entities+1;
 	
 	RP.entities[id] = {};
 	RP.entities[id].class = classname;
@@ -14,8 +14,8 @@ function RP:AddEnt(classname, prize, jobids, nicename, showmodel)
 	
 end
 
-function RP:AddWeapon(classname, prize, jobids, nicename, showmodel, ammo)
-	local id = #RP.weapons+1;
+function RP:AddWeapon(id, classname, prize, jobids, nicename, showmodel, ammo)
+	//local id = #RP.weapons+1;
 	
 	RP.weapons[id] = {};
 	RP.weapons[id].class = classname;
@@ -26,8 +26,8 @@ function RP:AddWeapon(classname, prize, jobids, nicename, showmodel, ammo)
 	RP.weapons[id].ammo = ammo;
 end
 
-function RP:AddAmmo(ammotype, prize, jobids, nicename, showmodel, amount)
-	local id = #RP.ammo+1;
+function RP:AddAmmo(id, ammotype, prize, jobids, nicename, showmodel, amount)
+	//local id = #RP.ammo+1;
 	
 	RP.ammo[id] = {};
 	RP.ammo[id].type = ammotype;
@@ -40,8 +40,8 @@ end
 
 
 
-function RP:AddJob(name, color, models, salary, weps, ammo, maxamount, needsvote, jobneeded)
-	local id = #RP.jobs+1;
+function RP:AddJob(id, name, color, models, salary, weps, ammo, maxamount, needsvote, jobneeded)
+	//local id = #RP.jobs+1;
 	
 	RP.jobs[id] = {};
 	RP.jobs[id].id = id;
